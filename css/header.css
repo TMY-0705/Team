@@ -1,0 +1,26 @@
+body {
+	margin: 0px;
+}
+
+img {
+	height: 64px;
+}
+
+.header {
+	padding: 6px 8px 0px 8px;
+	background-color: gray;
+	display: flex;
+	justify-content: space-between;
+}
+
+span {
+	vertical-align: top;
+}
+
+#m1, #m2, #m3>a {
+	padding: 0 10px;
+}
+
+input {
+	width: 40vw;
+}
