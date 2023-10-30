@@ -44,18 +44,22 @@ body {
 	padding: 4px 52px 0px 0px;
 
 	background-color: #606060;
-	color: white;
-
 	text-align: right;
-	-webkit-text-stroke: black 0.25px;
+}
 
+.edit_profile>a:link {
+	color: white;
+	text-decoration: none;
+	-webkit-text-stroke: black 0.25px;
 	font-size: x-large;
 }
 
-.edit_profile:hover {
-	color: cyan;
+.edit_profile>a:hover {
+	color: yellow;
+	text-decoration: underline;
 }
 
-.edit_profile:active {
+.edit_profile>a:active {
 	color: blue;
+	text-decoration: underline;
 }
