@@ -8,15 +8,16 @@ img {
 
 form {
 	margin: 0px;
-	padding: 0px 8px;
+	padding: 8px 0px;
 	background-color: gray;
 	display: flex;
 	justify-content: space-between;
-	align-items: center
+	align-items: center;
+	text-align: center;
 }
 
 #m1, #m2, #m3>a {
-	padding: 0 8px;
+	padding: 0 12px;
 }
 
 #m2 {
@@ -24,4 +25,8 @@ form {
 }
 #m2>input {
 	width: 40vw;
+}
+
+#m3 {
+	display: flex;
 }
