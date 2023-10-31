@@ -20,6 +20,13 @@ body {
 	padding: 0 8px;
 }
 
+.moji>a:link {
+	color: black;
+	text-decoration: none;
+	-webkit-text-stroke: black 0.25px;
+	font-size: x-large;
+}
+
 .edit_profile {
 	margin: 0px;
 	padding: 4px 52px 0px 0px;
