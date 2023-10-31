@@ -1,8 +1,102 @@
-h1 {
-color: #000;
-font-family: Inter;
-font-size: 64px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+.html{
+    overflow-x: hidden;
+    }
+
+.login{
+    color: #000;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 12px;
+    margin-left: 9px;
+    margin-bottom: 26px;
+    /* ログイン */ 
+}
+
+.login_form_top {
+    border: 1px solid #000;
+    background: #FFF;
+    width: 450px;
+    height: 450px;
+    flex-shrink: 0;
+    margin:auto;
+    /* ボーダー */ 
+}
+
+.two {
+    color: #000;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 7px;
+    /* メールアドレスとパスワード */ 
+}
+
+.three {
+    border-radius: 12px;
+    border: 1px solid #000;
+    background: #FFF;
+    width: 375px;
+    height: 30px;
+    flex-shrink: 0;
+    margin-left: 25px;
+    font-size: large;
+    /* テキストボックス */ 
+}
+
+.login_button {
+    border-radius: 24px;
+    background: #FCFF67;
+    width: 186px;
+    height: 39px;
+    flex-shrink: 0;
+    margin-top: 38px;
+    margin-left: auto; 
+    margin-right: auto;
+    display: block;
+    /* ログインボタン */ 
+}
+
+
+::placeholder{
+    font-size: 12px;
+    margin:auto;
+    /* ○○を入力してください */ 
+}
+
+.link{
+    margin-top: 26px;
+    margin-left: 32.5px;
+    margin-bottom: 26px;
+    color: #40A3FF;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+}
+
+.create_button{
+    width: 294px;
+    height: 49px;
+    flex-shrink: 0;
+    border-radius: 13px;
+    border: 2px solid #000;
+    background: hsl(0, 0%, 100%);
+    margin-top: 20px;
+    margin-left: auto; 
+    margin-right: auto;
+    display: block;
+}
+
+section{
+    margin-top: 30px;
+    margin-left: 27px;
+    margin-right: 27px;
+    border-top:solid 0.1vw;
 }
