@@ -1,0 +1,37 @@
+body {
+	margin: 0px;
+}
+
+.img_btn {
+	height: 58px;
+}
+
+.headerbar {
+	margin: 0px;
+	padding: 8px 16px;
+	background-color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+}
+
+.m1{
+	padding: 0 8px;
+}
+
+.moji>a:link {
+	color: black;
+	text-decoration: none;
+	-webkit-text-stroke: black 0.25px;
+	font-size: x-large;
+	margin-right: 300px;
+}
+
+.edit_profile {
+	margin: 0px;
+	padding: 4px 52px 0px 0px;
+
+	background-color: #606060;
+	text-align: right;
+}
