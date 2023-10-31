@@ -2,6 +2,10 @@ body {
 	margin: 0px;
 }
 
+.img_btn {
+	height: 58px;
+}
+
 .headerbar {
 	margin: 0px;
 	padding: 8px 16px;
