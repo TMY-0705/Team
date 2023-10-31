@@ -92,6 +92,7 @@
     margin-left: auto; 
     margin-right: auto;
     display: block;
+    /* アカウント作成ボタン */
 }
 
 section{
@@ -99,4 +100,13 @@ section{
     margin-left: 27px;
     margin-right: 27px;
     border-top:solid 0.1vw;
+    /* ボーダー */
+}
+
+.home{
+    margin-left: auto; 
+    margin-right: auto;
+    display: block;
+    max-width: 70px;
+    min-width: 20px; 
 }
