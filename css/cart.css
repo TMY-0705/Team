@@ -1,0 +1,35 @@
+body {
+	margin: 0px;
+}
+
+.content {
+	margin: 50px auto auto 50px;
+	display: flex;
+}
+
+#product_detail {
+	width: 60vw;
+}
+
+#title {
+	font-size: 5vw;
+}
+
+#cost {	
+	margin-right: 50px;
+	margin-left: auto;
+	padding: 20px;
+	font-size: 3vw;
+	background-color: #e8e8e8;
+	width: 20vw;
+	height: 80vh;
+}
+
+#cost>form>button {
+	padding: 8px;
+	border-style: none;
+	border-radius: 20px;
+	width: 100%;
+	color: inherit;
+	background: #FCFF67;
+}
