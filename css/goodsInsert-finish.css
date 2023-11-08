@@ -1,0 +1,26 @@
+.button{
+    width: 180px;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    border: 1px solid #000;
+    background: #CACACA;
+    margin-top: 28px;
+    text-align: center;
+}
+.shohin{
+    width: 700px;
+    height: 90px;
+    flex-shrink: 0;
+    border: 1px solid #000;
+    background: #FFF;
+    margin-left: 300px;
+}
+.img{
+    margin-right: 120px;
+    height: 70px;
+}
+span{
+    display: inline-block;
+    vertical-align: center;
+}
