@@ -11,16 +11,20 @@
 .shohin{
     width: 700px;
     height: 90px;
-    flex-shrink: 0;
     border: 1px solid #000;
     background: #FFF;
     margin-left: 300px;
+    padding-top: 10px;
 }
-.img{
-    margin-right: 120px;
+.img1{
+    border: 1px solid #000;
+    margin-right: 100px;
     height: 70px;
+    width: 70px;
+    flex-shrink: 0;
+    margin-left: 25px
 }
-span{
+.itiran{
     display: inline-block;
-    vertical-align: center;
+    vertical-align: super;
 }
