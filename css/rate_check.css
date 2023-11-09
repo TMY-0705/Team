@@ -1,0 +1,13 @@
+body {
+	margin: 0px;
+}
+
+.detail {
+	margin: 20px;
+}
+
+img {
+	max-width: 256px;
+	max-height: 256px;
+	border: 1px solid gray;
+}

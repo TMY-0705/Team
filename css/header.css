@@ -17,7 +17,7 @@ body {
 .headerbar {
 	margin: 0px;
 	padding: 8px 16px;
-	background-color: gray;
+	background-color: #606060;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -43,7 +43,7 @@ body {
 	margin: 0px;
 	padding: 4px 52px 0px 0px;
 
-	background-color: #606060;
+	background-color: #808080;
 	text-align: right;
 }
 
