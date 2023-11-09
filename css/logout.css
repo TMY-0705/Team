@@ -15,7 +15,7 @@ h1{
     font-weight: 400;
     line-height: normal;
     text-align: center;
-    margin-top: 5vw;
+    margin-top: 7vw;
     margin-bottom: 11vw;
     /* ログアウトしますか？ */
 }
@@ -43,7 +43,7 @@ h1{
     text-decoration-line: underline;
     text-align: right;
     text-decoration: none;
-    margin-left: 26vw;
+    margin-left: 24vw;
     /* いいえ */
 }
 
