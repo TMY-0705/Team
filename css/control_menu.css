@@ -1,0 +1,47 @@
+form{
+    padding:  20px;
+}
+
+.menu1 {
+    display: inline-block;
+    margin-top: 4vw;
+    margin-left: 13vw;
+    margin-right: 8vw;
+}
+
+.menu1 img {
+    display: block;
+    width: 30vw;
+}
+
+.menu2 {
+    display: inline-block;
+    margin-left: 1vw;
+}
+
+.menu2 img {
+    display: block;
+    width: 30vw;
+}
+
+.menu3 {
+    display: inline-block;
+    margin-top: 2vw;
+    margin-left: 13vw;
+    margin-right: 8vw;
+}
+
+.menu3 img {
+    display: block;
+    width: 30vw;
+}
+
+.menu4 {
+    display: inline-block;
+    margin-left: 1vw;
+}
+
+.menu4 img {
+    display: block;
+    width: 30vw;
+}
