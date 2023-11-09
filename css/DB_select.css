@@ -1,11 +1,10 @@
 .button{
-    width: 180px;
-    height: 38px;
+    width: 90px;
+    height: 40px;
     flex-shrink: 0;
     border-radius: 30px;
     border: 1px solid #000;
-    background: #CACACA;
-    margin-top: 28px;
+    background: #F33;
     text-align: center;
 }
 .shohin{
@@ -13,8 +12,8 @@
     height: 90px;
     border: 1px solid #000;
     background: #FFF;
-    margin-left: 300px;
-    padding-top: 10px;
+    
+    margin-top: 30px
 }
 .img1{
     border: 1px solid #000;
