@@ -1,0 +1,16 @@
+table {
+	border-spacing: 16px 16px;
+}
+
+td {
+    border: 1px solid #000;
+    background: #FFF;
+	
+	text-align: center;
+}
+
+
+img {
+    max-width: 198px;
+    max-height: 198px;
+}
