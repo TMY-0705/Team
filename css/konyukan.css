@@ -1,0 +1,121 @@
+.kanryou {
+    color: #000;
+    font-family: Inter;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width:400px;
+    margin: auto;     
+}
+
+
+img{
+    width: 333.333px;
+    height: 319.015px;
+    flex-shrink: 0;
+    margin-left:140px;
+    float: left;
+   
+}
+
+.taitol{
+    color: #000;
+
+font-family: Inter;
+font-size: 50px;
+font-style: normal;
+font-weight: 400;
+line-height: normal; 
+padding-top:35px;
+
+}
+
+h3{
+    font-size:30px; 
+    top: 30; 
+}
+.sute{
+     margin-left:500px;
+     
+    
+}
+
+
+button{
+    
+    margin-left:460px;
+    border-radius: 50px;
+    background: #CACACA;
+    width: 300px;
+    height: 39px;
+    flex-shrink: 0;
+}
+
+.clearfix{
+    clear:both;
+}
+
+input{
+    width:30px;
+}
+
+
+
+@media (max-width: 768px) {
+    .kanryou {
+        color: #000;
+        font-family: Inter;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        width:400px;
+        margin: auto;     
+    }
+    
+    
+    img{
+        width: 333.333px;
+        height: 319.015px;
+        flex-shrink: 0;
+        margin-left:20px;
+        float: left;
+       
+    }
+    
+    .taitol{
+        color: #000;
+    margin-top:10px;
+    font-family: Inter;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+    padding-top: 30px;
+    }
+    
+    h3{
+        font-size:30px; 
+        top: 30; 
+    }
+    .sute{
+        margin-top:20px;
+        margin-left:120px;
+         
+        
+    }
+    
+    
+    button{
+        width:300px;
+        border-radius: 50px;
+        background: #CACACA;
+        margin-left:160px;
+        margin-top:50px;
+    }
+    
+    .clearfix{
+        clear:both;
+    }
+}
