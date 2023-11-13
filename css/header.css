@@ -31,12 +31,12 @@ body {
 .m1, .m2, .m3>a {
 	padding: 0 8px;
 	margin: 0;
+	font-size: 0px;
 }
 
 .m2 {
 	display: inline-flex;
 	box-sizing: border-box;
-	font-size: 0px;
 }
 .m2>input {
 	width: 40vw;
