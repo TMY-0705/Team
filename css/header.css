@@ -36,6 +36,7 @@ body {
 .m2 {
 	display: inline-flex;
 	box-sizing: border-box;
+	font-size: 0px;
 }
 .m2>input {
 	width: 40vw;
