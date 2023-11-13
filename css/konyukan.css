@@ -4,6 +4,7 @@ body{
 
 .content{
     margin-top: 0px;
+    
 }
 
 
@@ -16,6 +17,8 @@ body{
     line-height: normal;
     width:400px;
     margin: auto; 
+    padding-bottom: 0px;
+    margin-bottom:0px;
         
 }
 
@@ -47,6 +50,8 @@ h3{
 }
 .sute{
      margin-left:500px;
+     margin-top:0px;
+     padding-top:0px;
      
     
 }
