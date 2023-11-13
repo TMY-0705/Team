@@ -19,9 +19,6 @@ body{
     display: inline-block;
     vertical-align: super;
 }
-.size{
-    font-size: 2vw;
-}
 .sakujo{
     font-family: Inter;
     font-size: 3vw;
