@@ -1,3 +1,7 @@
+html {
+	height: 100%;
+}
+
 body {
 	margin: 0px;
 }
@@ -26,13 +30,16 @@ body {
 
 .m1, .m2, .m3>a {
 	padding: 0 8px;
+	margin: 0;
 }
 
 .m2 {
 	display: inline-flex;
+	box-sizing: border-box;
 }
 .m2>input {
 	width: 40vw;
+	font-size: 30px;
 }
 
 .m3 {
