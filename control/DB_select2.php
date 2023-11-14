@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/header5.css">
     <link rel="stylesheet" href="../css/DB_select2.css">
 </head>
-<!-- header4.html -->
+<!-- header4.php -->
 <p class="edit_profile">
 	　
 </p>

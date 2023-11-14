@@ -2,7 +2,7 @@
 
 <form class="headerbar" name="bar" method="GET">
 	<span class="m1">
-		<a href="control_menu.html"><img class="img_btn" src="../img/Home.png"></a>
+		<a href="control_menu.php"><img class="img_btn" src="../img/Home.png"></a>
 	</span>
     <span class="moji">
 		<a href="#">評価確認</a>

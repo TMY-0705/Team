@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/goodsInsert.css">
 </head>
 <body>
-<!-- header3.html -->
+<!-- header3.php -->
 <span class="yohaku">・商品名　　</span><input type="text" class="text"><br>
 <span class="yohaku">・メーカー名</span><input type="text" class="text"><br>
 <span class="yohaku">・在庫数　　</span><input type="text" class="text"><br>

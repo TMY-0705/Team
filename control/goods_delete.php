@@ -14,7 +14,7 @@
         <h3 class="itiran">メーカー：ＸＸＸ　カテゴリー：ＸＸＸ　　<br>
         商品名：ＸＸＸ　　値段：ＸＸＸ　　　在庫数：ＸＸＸ</h3>
     </button><br>
-    <a href="delete_finish.html" class="yes">はい</a>
+    <a href="delete_finish.php" class="yes">はい</a>
     <a href="#" onclick="history.back()" class="no">いいえ</a>
 </body>
 </html>

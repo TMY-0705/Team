@@ -14,6 +14,6 @@
         <h3 class="itiran">メーカー：ＸＸＸ　カテゴリー：ＸＸＸ<br>
         商品名：ＸＸＸ　　値段：ＸＸＸ　　　在庫数：ＸＸＸ</h3>
     </div>
-    <input type="button" class="button" onclick="location.href='DB_select.html'" value="一覧へ戻る">
+    <input type="button" class="button" onclick="location.href='DB_select.php'" value="一覧へ戻る">
 </body>
 </html>

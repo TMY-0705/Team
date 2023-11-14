@@ -16,9 +16,9 @@
         <p class="two">パスワード</p>
           	<input type="password" class="three" name="password"placeholder="パスワードを入力してください">
         <br>
-        <input type="button" class="login_button" onclick="location.href='control_menu.html'" value="ログイン">
+        <input type="button" class="login_button" onclick="location.href='control_menu.php'" value="ログイン">
         <section></section>
-        <a href="../main/login.html"><div class="link">利用者用ログインページ</div></a>
+        <a href="../main/login.php"><div class="link">利用者用ログインページ</div></a>
       </div>
       </form>
 </body>
