@@ -8,20 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form class="headerbar" name="bar" method="GET">
-        <span class="m1">
-            <a href="about:blank"><img class="img_btn" src="../img/Home.png"></a>
-        </span>
-        <span class="m2">
-            <input type="text" name="key">
-            <a href="about:blank"><img class="img_btn2" src="../img/Search.png"></a>
-        </span>
-        <span class="m3">
-            <a href="about:blank"><img class="img_btn3" src="../img/History.png"></a>
-            <a href="about:blank"><img class="img_btn3" src="../img/Signout.png"></a>
-            <a href="about:blank"><img class="img_btn3" src="../img/Cart.png"></a>
-        </span>
-    </form>
+	<?php require 'header.php'; ?>
     <p class="edit_profile">
         <a href="#">
             アカウント編集
@@ -40,8 +27,6 @@
         <div class="clearfix">
         <button type="submit" >一覧に戻る</button>
         </div>
-    
-    
     </form>    
 </body>
 </html>
