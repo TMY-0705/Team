@@ -1,3 +1,13 @@
+.home{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto; 
+    margin-right: auto;
+    display: block;
+    max-width: 70px;
+    min-width: 20px; 
+}
+
 .html{
     overflow-x: hidden;
     }
@@ -79,6 +89,7 @@
     font-weight: 400;
     line-height: normal;
     text-decoration-line: underline;
+    /* リンク */
 }
 
 .create_button{
@@ -101,12 +112,4 @@ section{
     margin-right: 27px;
     border-top:solid 0.1vw;
     /* ボーダー */
-}
-
-.home{
-    margin-left: auto; 
-    margin-right: auto;
-    display: block;
-    max-width: 70px;
-    min-width: 20px; 
 }

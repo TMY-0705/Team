@@ -1,52 +1,55 @@
-.home{
-    margin-left: auto; 
-    margin-right: auto;
-    display: block;
-    max-width: 70px;
-    min-width: 20px; 
-    /* 画像 */
-}
-
-h1{
-    color: #000;
-    font-family: Inter;
-    font-size: 4vw;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+body{
     text-align: center;
-    margin-top: 7vw;
-    margin-bottom: 11vw;
-    /* ログアウトしますか？ */
 }
-
+.shohin{
+    width: 650px;
+    height: 90px;
+    border: 1px solid #000;
+    background: #FFF;
+}
+.img1{
+    border: 1px solid #000;
+    margin-right: 90px;
+    height: 65px;
+    width: 65px;
+    flex-shrink: 0;
+    margin-left: 15px
+}
+.itiran{
+    display: inline-block;
+    vertical-align: super;
+}
+.sakujo{
+    font-family: Inter;
+    font-size: 3vw;
+    font-style: normal;
+}
 .yes{
+    display: inline-block;
     color: #000;
     font-family: Inter;
-    font-size: 5vw;
+    font-size: 3vw;
     font-style: normal;
-    font-weight: 400;
     line-height: normal;
     text-decoration-line: underline;
     text-decoration: none;
-    margin-left: 24vw;
+    margin-top: 9vw;
     /* はい */
 }
-
 .no{
+    display: inline-block;
     color: #000;
     font-family: Inter;
-    font-size: 5vw;
+    font-size: 3vw;
     font-style: normal;
-    font-weight: 400;
     line-height: normal;
     text-decoration-line: underline;
     text-align: right;
     text-decoration: none;
     margin-left: 24vw;
+    margin-top: 9vw;
     /* いいえ */
 }
-
 /* マウスオーバーで表示を変更 */
 .yes:hover {
     text-decoration: underline;

@@ -1,0 +1,23 @@
+body {
+	margin: 0px;
+}
+
+.detail {
+	margin: 20px;
+	display: inline-flex;
+	align-items: flex-start;
+}
+
+img {
+	max-width: 256px;
+	max-height: 256px;
+	border: 1px solid gray;
+}
+
+table {
+	margin-left: 20px;
+}
+
+td {
+	padding: 10px 80px 0 0;
+}
