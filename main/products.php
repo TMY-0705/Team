@@ -9,18 +9,19 @@
 		<link rel="stylesheet" href="../css/header.css">
 
 		<!-- header -->
-		<?php require 'header.html'; ?>
+		<?php require 'header.php'; ?>
 
-		<div class="image-container">
-			<img src="../img/sansu.png" alt="画像1" width="150" height="150">
-			<img src="../img/hukusyu.png" alt="画像2" width="150" height="150">
-			<img src="../img/sansu2.png" alt="画像3" width="150" height="150">
-		</div>
-		<br>
-		<div class="image-container">
-			<img src="../img/jouhou.png" alt="画像1" width="150" height="150">
-			<img src="../img/ippan.png" alt="画像2" width="150" height="150">
-			<img src="../img/kokugo.png" alt="画像3" width="150" height="150">
-		</div>
+		<table class="menu">
+			<tr>
+				<td><a href="https://www.google.co.jp"><img src="../img/sansu.png" alt="1"></a></td>
+				<td><a href="https://www.google.co.jp"><img src="../img/hukusyu.png" alt="2"></a></td>
+				<td><a href="https://www.google.co.jp"><img src="../img/sansu2.png" alt="3"></a></td>
+			</tr>
+			<tr>
+				<td><a href="https://www.google.co.jp"><img src="../img/jouhou.png" alt="4"></a></td>
+				<td><a href="https://www.google.co.jp"><img src="../img/ippan.png" alt="5"></a></td>
+				<td><a href="https://www.google.co.jp"><img src="../img/kokugo.png" alt="6"></a></td>
+			</tr>
+		</table>
 	</body>
 </html>

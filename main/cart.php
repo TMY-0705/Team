@@ -8,6 +8,8 @@
 </head>
 <body>
 	<!-- header -->
+	<?php require 'header.php'; ?>
+	
 	<div class="content">
 		<div id="product_detail">
 			<span id="title">ショッピングカート</span>

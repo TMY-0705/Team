@@ -16,6 +16,7 @@
         <p class="two">パスワード</p>
         <input type="password" class="three" name="password" placeholder="パスワードを入力してください">
         <br>
+		
         <input type="button" class="login_button" onclick="location.href='products.php'" value="ログイン">
         <section></section>
         <a href="../control/control_login.php"><div class="link">管理者用ログインページ</div></a>

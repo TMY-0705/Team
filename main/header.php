@@ -9,7 +9,7 @@
 		<a href="search_result.php"><img class="img_btn2" src="../img/Search.png"></a>
 	</span>
 	<span class="m3">
-		<a href="#"><img class="img_btn3" src="../img/History.png"></a>
+		<a href="history.php"><img class="img_btn3" src="../img/History.png"></a>
 		<a href="logout.php"><img class="img_btn3" src="../img/Signout.png"></a>
 		<a href="cart.php"><img class="img_btn3" src="../img/Cart.png"></a>
 	</span>
