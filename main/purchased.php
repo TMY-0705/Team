@@ -10,7 +10,7 @@
 <body>
 	<?php require 'header.php'; ?>
     <p class="edit_profile">
-        <a href="#">
+        <a href="account_edit.php">
             アカウント編集
         </a>
     </p>
