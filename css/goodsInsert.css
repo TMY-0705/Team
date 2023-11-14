@@ -18,15 +18,10 @@
     margin-top: 28px;
 }
 .button{
-    width: 180px;
-    height: 38px;
-    flex-shrink: 0;
-    border-radius: 30px;
-    border: 1px solid #000;
+    width: 400px;
+	border: 1px solid #000;
     background: #FFF;
     margin-top: 28px;
-    margin-right: 220px;
-    text-align: center;
 }
 .file{
     margin-right: 100px;
