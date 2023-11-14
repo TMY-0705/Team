@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+	<?php require 'header.php' ?>
     <h1>注文履歴</h1>
     <hr>
     <div class="rireki">

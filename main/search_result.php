@@ -7,6 +7,7 @@
 		<title>数学と検索した結果</title>
 	</head>
 	<body>
+		<?php require 'header.php' ?>
 		<!-- headerr -->
 		<table class="menu">
 			<tr>

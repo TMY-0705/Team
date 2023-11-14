@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="../css/header.css">
 
 		<!-- header -->
-		<?php require 'header.php' ?>
+		<?php require 'header.html'; ?>
 
 		<div class="image-container">
 			<img src="../img/sansu.png" alt="画像1" width="150" height="150">

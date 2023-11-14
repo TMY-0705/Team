@@ -18,7 +18,7 @@
 		
 		<div id="cost">
 			<span>合計金額</span>
-			<form action="#" method="POST">
+			<form action="purchased.php" method="POST">
 				<!-- PHP_START -->
 				<!-- PHP_END -->
 				<button type="submit">購入する</button>
