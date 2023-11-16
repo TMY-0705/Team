@@ -7,17 +7,7 @@
     <link rel="stylesheet" href="../css/header5.css">
     <link rel="stylesheet" href="../css/DB_select2.css">
 </head>
-<form class="headerbar" name="bar" method="GET">
-	<span class="m1">
-		<a href="about:blank"><img class="img_btn" src="../img/Home.png"></a>
-	</span>
-    <span class="moji">
-		<a href="about:blank">評価確認</a>
-	</span>
-    <span>
-        　
-    </span>
-</form>
+<!-- header4.php -->
 <p class="edit_profile">
 	　
 </p>

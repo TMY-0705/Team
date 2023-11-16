@@ -4,30 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>商品登録</title>
-    <link rel="stylesheet" href="../css/header3.css">
     <link rel="stylesheet" href="../css/goodsInsert.css">
 </head>
 <body>
-<form class="headerbar" name="bar" method="GET">
-	<span class="m1">
-		<a href="about:blank"><img class="img_btn" src="../img/Home.png"></a>
-	</span>
-    <span class="moji">
-		<a href="about:blank">商品登録</a>
-	</span>
-	<span class="moji">
-        <a href="about:blank">商品情報編集</a>
-	</span>
-</form>
-<p class="edit_profile">
-	　
-</p>
+
 <span class="yohaku">・商品名　　</span><input type="text" class="text"><br>
 <span class="yohaku">・メーカー名</span><input type="text" class="text"><br>
 <span class="yohaku">・在庫数　　</span><input type="text" class="text"><br>
 <span class="yohaku">・カテゴリー</span><input type="text" class="text"><br>
 <span class="yohaku">・値段　　　</span><input type="text" class="text"><br>
-<span class="file">・商品画像　</span><input type="button" class="button" onclick="location.href='!#'" value="ファイルを開く"><br>
-<input type="button" class="button2" onclick="location.href='!#'" value="登録">
+<span class="file">・商品画像　</span><input type="file" class="button" accept="image"><br>
+<input type="button" class="button2" onclick="location.href='goodsInsert-finish.php'" value="登録">
 </body>
 </html>

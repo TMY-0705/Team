@@ -7,6 +7,9 @@
 	<link rel="stylesheet" href="../css/cart.css">
 </head>
 <body>
+	<!-- header -->
+	<?php require 'header.php'; ?>
+	
 	<div class="content">
 		<div id="product_detail">
 			<span id="title">ショッピングカート</span>
@@ -17,7 +20,7 @@
 		
 		<div id="cost">
 			<span>合計金額</span>
-			<form action="#" method="POST">
+			<form action="purchased.php" method="POST">
 				<!-- PHP_START -->
 				<!-- PHP_END -->
 				<button type="submit">購入する</button>

@@ -10,7 +10,7 @@
 <body>
     <img src="../img/note-only.png" class="home" width="70" height="70">
     <h1>登録完了しました</h1>
-    <input type="button" class="button" onclick="location.href='!#'" value="ログインページ">
+    <input type="button" class="button" onclick="location.href='login.php'" value="ログインページ">
 </div>
 </body>
 </html>
