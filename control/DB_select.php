@@ -9,9 +9,22 @@
 </head>
 <!-- header1 -->
 <body>
+	<?php require 'header.php' ?>
     <button class="shohin"><img class="img1" src="../img/SUGAKU.png" onclick="location.href='goods_update.php'">
-        <h3 class="itiran">メーカー：ＸＸＸ　カテゴリー：ＸＸＸ　　<input type="button" class="button" onclick="location.href='goods_delete.php'" value="削除" ><br>
-        商品名：ＸＸＸ　　値段：ＸＸＸ　　　在庫数：ＸＸＸ</h3>
+		<table class="itiran">
+		<tr>
+			<td>メーカー：ＸＸＸ</td>
+			<td>カテゴリー：ＸＸＸ</td>
+			<td id="btn">
+			<input type="button" class="button" onclick="location.href='goods_delete.php'" value="削除" >
+			</td>
+		</tr>
+		<tr>
+			<td>商品名：ＸＸＸ</td>
+			<td>値段：ＸＸＸ</td>
+			<td>在庫数：ＸＸＸ</td>
+		</tr>
+		</table>
     </button>
 </body>
 </html>

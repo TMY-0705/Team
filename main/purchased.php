@@ -9,11 +9,6 @@
 </head>
 <body>
 	<?php require 'header.php'; ?>
-    <p class="edit_profile">
-        <a href="account_edit.php">
-            アカウント編集
-        </a>
-    </p>
     <h1 class="kanryou">購入完了しました</h1>
     <form action="#">
         <div class="content">
@@ -21,7 +16,7 @@
             <div class="sute">
                 <h1 class="taitol">タイトル</h1>
                 <h3>￥1000</h3>
-                <p>数量：<input type="number" class="num"></p>
+                <p>数量：1</p>
             </div>
         </div>
         <div class="clearfix">

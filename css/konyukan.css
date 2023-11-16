@@ -2,11 +2,9 @@ body{
     margin:0px;
 }
 
-.content{
-    margin-top: 0px;
-    
+form{
+    margin: 0px auto;
 }
-
 
 .kanryou {
     color: #000;
@@ -20,9 +18,7 @@ body{
     padding-bottom: 0px;
     margin-bottom:0px;
     height:40px;
-        
 }
-
 
 .book{
     width: 333.333px;
@@ -50,11 +46,9 @@ h3{
     top: 30; 
 }
 .sute{
-     margin-left:500px;
-     margin-top:0px;
-     padding-top:0px;
-     
-    
+    margin-left:500px;
+    margin-top:0px;
+    padding-top:0px;
 }
 
 

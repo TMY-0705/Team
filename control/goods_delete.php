@@ -7,12 +7,21 @@
     <link rel="stylesheet" href="../css/header2.css">
     <link rel="stylesheet" href="../css/goods_delete.css">
 </head>
-<!-- header1 -->
 <body>
+	<?php require 'header.php' ?>
     <p class="sakujo">削除しますか？</p>
     <button class="shohin"><img class="img1" src="../img/!#">
-        <h3 class="itiran">メーカー：ＸＸＸ　カテゴリー：ＸＸＸ　　<br>
-        商品名：ＸＸＸ　　値段：ＸＸＸ　　　在庫数：ＸＸＸ</h3>
+	<table class="itiran">
+		<tr>
+			<td>メーカー：ＸＸＸ</td>
+			<td>カテゴリー：ＸＸＸ</td>
+		</tr>
+		<tr>
+			<td>商品名：ＸＸＸ</td>
+			<td>値段：ＸＸＸ</td>
+			<td>在庫数：ＸＸＸ</td>
+		</tr>
+	</table>
     </button><br>
     <a href="delete_finish.php" class="yes">はい</a>
     <a href="#" onclick="history.back()" class="no">いいえ</a>

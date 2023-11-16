@@ -11,7 +11,7 @@
 		<!-- headerr -->
 		<table class="menu">
 			<tr>
-				<td><a href="https://www.google.co.jp"><img src="../img/SUGAKU.png" alt="1"></a></td>
+				<td><a href="product_detail.php"><img src="../img/SUGAKU.png" alt="1"></a></td>
 				<td><a href="https://www.google.co.jp"><img src="../img/SUGAKU2.png" alt="2"></a></td>
 				<td><a href="https://www.google.co.jp"><img src="../img/SUGAKU3.png" alt="3"></a></td>
 			</tr>

@@ -12,9 +12,21 @@
 	　
 </p>
 <body>
-    <button class="shohin"><img class="img1" src="../img/!#">
-        <h3 class="itiran">メーカー：ＸＸＸ　カテゴリー：ＸＸＸ　評価：ＸＸＸ<br>
-        商品名：ＸＸＸ　　値段：ＸＸＸ　　　在庫数：ＸＸＸ</h3>
+    <button class="shohin"><img class="img1" src="../img/NoImage.png" onclick="location.href='rate_check.php'">
+        <h3 class="itiran">
+			<table class="itiran">
+			<tr>
+				<td>メーカー：ＸＸＸ</td>
+				<td>カテゴリー：ＸＸＸ</td>
+				<td>評価：ＸＸＸ</td>
+			</tr>
+			<tr>
+				<td>商品名：ＸＸＸ</td>
+				<td>値段：ＸＸＸ</td>
+				<td>在庫数：ＸＸＸ</td>
+			</tr>
+			</table>
+		</h3>
     </button>
 </body>
 </html>

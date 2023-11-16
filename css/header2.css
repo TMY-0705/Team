@@ -20,19 +20,3 @@ body {
 .m1{
 	padding: 0 8px;
 }
-
-.moji>a:link {
-	color: black;
-	text-decoration: none;
-	-webkit-text-stroke: black 0.25px;
-	font-size: x-large;
-	margin-right: 20vw;
-}
-
-.edit_profile {
-	margin: 0px;
-	padding: 4px 52px 0px 0px;
-
-	background-color: #606060;
-	text-align: right;
-}
