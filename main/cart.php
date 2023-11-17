@@ -19,7 +19,7 @@
 			<div class="content">
 				<div id="product_detail">
 					<a href="#">カテゴリー</a><br>
-					<img src="../img/NoImage.png">
+					<img src="../img/SUGAKU.png">
 					<div class="detail">
 						<h1 class="title">タイトル</h1>
 						<h1 class="title">￥1000</h1>

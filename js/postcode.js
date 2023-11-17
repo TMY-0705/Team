@@ -1,21 +1,30 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // ここにコードを書く
-
-// formを取得
-const contactForm = document.forms.contact;
-// formのpostcodeに郵便番号を入力したら関数を実行する
-contactForm.postcode.addEventListener('input', e => {
-  // zipcloud apiを使って、郵便番号の住所データを取得。
-  fetch(`https://zipcloud.ibsnet.co.jp/api/search?zipcode=${e.target.value}`)
-    // 取得したデータをjson形式で読み込み。
-    .then(response => response.json())
-    // 取得したデータを出力
-    .then(data => {
-      contactForm.prefecture.value = data.results[0].address1 + data.results[0].address2;
-      contactForm.town.value = data.results[0].address3;
-    })
-    .catch(error => console.log(error))
-})
-
+//読み込み完了後に実行する
+$(function() {
+    //#btnがクリックされたとき
+    $('#btn').on('click', function(){
+        $.ajax({
+            //リクエスト先のURLを設定
+            url: "https://zipcloud.ibsnet.co.jp/api/search?zipcode=" + $('#zipcode').val(),
+            //レスポンスのデータ形式を設定
+            dataType : 'jsonp',
+        }).done(function(data){
+            //通信が成功したときの処理
+            if(data.results){
+                //データが取得できたとき、setData関数を呼び出す
+                setData(data.results[0]);
+            }else{
+                alert("該当するデータが見つかりませんでした");
+            }
+        }).fail(function(data){
+            //通信が失敗したときの処理
+            alert("通信に失敗しました URL:" + url);
+        });
+    });
 });
-  
+
+function setData(data){
+    //取得データを各HTML要素に代入
+    $('#prefecture').val(data.address1);
+    $('#city').val(data.address2);
+    $('#address').val(data.address3);
+}
