@@ -2,24 +2,22 @@ body {
     margin: 0;
 }
 
-.content {
-    margin: 20px auto auto 20px;
+.content {    
     display: flex;
+	justify-content: space-between;
 }
 
 #product_detail {
-    width: 60vw;
+	padding: 30px;
     display: inline-block; /* 横に並べるためのスタイル追加 */
     vertical-align: top; /* 上端に揃えるためのスタイル追加 */
 }
 
 #cost {
-    margin-right: 50px;
-    margin-left: auto;
-    padding: 20px;
+	padding: 15vh 5vw 30vh 5vw;
+	margin: 0px;
     background-color: #e8e8e8;
     width: 20vw;
-    height: 80vh;
     display: inline-block;
     vertical-align: top;
 }
@@ -34,8 +32,11 @@ body {
     background: #FCFF67;
 }
 
-img {
-    width: 24vw;
+#product_detail>img {
+	width: 24vw;
+	max-width: 384px;
+	max-height: 384px;
+	border: 1px solid #111;
 }
 
 .detail {
@@ -45,7 +46,6 @@ img {
     width: 20vw;
     height: 80vh;
     display: inline-block;
-    vertical-align: top;
 }
 
 .title {
