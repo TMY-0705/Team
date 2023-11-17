@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>削除確認</title>
-    <link rel="stylesheet" href="../css/header2.css">
+    <link rel="stylesheet" href="../css/header1.css">
     <link rel="stylesheet" href="../css/goods_delete.css">
 </head>
 <body>
 	<?php require 'header.php' ?>
     <p class="sakujo">削除しますか？</p>
-    <button class="shohin"><img class="img1" src="../img/!#">
+    <button class="shohin"><img class="img1" src="../img/NoImage.png">
 	<table class="itiran">
 		<tr>
 			<td>メーカー：ＸＸＸ</td>

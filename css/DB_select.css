@@ -1,4 +1,5 @@
 .itiran {
+	display: inline-block;
 	text-align: left;
 }
 
@@ -16,12 +17,17 @@ td#btn {
     text-align: center;
 	z-index: 100;
 }
+
+table {
+	display: inline-block;
+}
+
 .shohin{
     width: 650px;
     height: 90px;
     border: 1px solid #000;
     background: #FFF;
-    margin-top: 30px;
+    
 	z-index: 0;
 }
 .img1{
@@ -30,5 +36,6 @@ td#btn {
     height: 65px;
     width: 65px;
     flex-shrink: 0;
-    margin-left: 15px
+    margin-left: 15px;
+	display: inline;
 }

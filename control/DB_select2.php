@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="../css/DB_select2.css">
 </head>
 <!-- header4.php -->
+<?php require 'header4.php'; ?>
 <p class="edit_profile">
 	　
 </p>
 <body>
+	
     <button class="shohin"><img class="img1" src="../img/NoImage.png" onclick="location.href='rate_check.php'">
         <h3 class="itiran">
 			<table class="itiran">

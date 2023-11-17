@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登録完了</title>
-    <link rel="stylesheet" href="../css/header2.css">
+    <link rel="stylesheet" href="../css/header1.css">
     <link rel="stylesheet" href="../css/goodsInsert-finish.css">
 </head>
 <!-- header1.php -->
 <body>
-	<?php require 'header.php' ?>
+	<?php require 'header2.php' ?>
     <h1>登録しました</h1>
     <button class="shohin"><img class="img1" src="../img/SUGAKU.png">
 
@@ -17,9 +17,6 @@
 		<tr>
 			<td>メーカー：ＸＸＸ</td>
 			<td>カテゴリー：ＸＸＸ</td>
-			<td id="btn">
-			<input type="button" class="button" onclick="location.href='goods_delete.php'" value="削除" >
-			</td>
 		</tr>
 		<tr>
 			<td>商品名：ＸＸＸ</td>
@@ -28,7 +25,7 @@
 		</tr>
 	</table>
     
-	</button><br>
+	</button><br><br><br>
     <input type="button" class="button" onclick="location.href='goodsInsert.php'" value="続けて登録する">
     
 </body>
