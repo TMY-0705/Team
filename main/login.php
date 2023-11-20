@@ -8,7 +8,7 @@
 </head>
 <body>
   	<img src="../img/note-only.png" class="home" width="70" height="70">
-    <form name="login_form">
+    <form name="login_form" method="POST">
         <div class="login_form_top">
 		<p class="login">ログイン</p>
 		<p class="two">メールアドレス</p>
