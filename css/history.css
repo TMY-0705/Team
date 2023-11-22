@@ -30,7 +30,7 @@
     margin-left: auto;
     padding: 20px;
     width: 20vw;
-    height: 80vh;
+    height: auto;
     display: inline-block;
     vertical-align: top;
 }
