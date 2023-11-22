@@ -30,7 +30,7 @@
         <section></section>
         <a href="../control/control_login.php"><div class="link">管理者用ログインページ</div></a>
 	</div>
-	<input type="button" class="create_button" onclick="location.href='data_insert.html'" value="アカウントを作成する">
+	<input type="button" class="create_button" onclick="location.href='data_insert.php'" value="アカウントを作成する">
 	</form>
 </body>
 </html>
