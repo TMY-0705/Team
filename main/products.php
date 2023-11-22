@@ -11,18 +11,20 @@
 
 		<!-- header -->
 		<?php require 'header.php'; ?>
+		<?php require '../php_init/db-connect.php'; ?>
 
 		<table class="menu">
-			<tr>
-				<td><a href="https://www.google.co.jp"><img src="../img/sansu.png" alt="1"></a></td>
-				<td><a href="https://www.google.co.jp"><img src="../img/hukusyu.png" alt="2"></a></td>
-				<td><a href="https://www.google.co.jp"><img src="../img/sansu2.png" alt="3"></a></td>
-			</tr>
-			<tr>
-				<td><a href="https://www.google.co.jp"><img src="../img/jouhou.png" alt="4"></a></td>
-				<td><a href="https://www.google.co.jp"><img src="../img/ippan.png" alt="5"></a></td>
-				<td><a href="https://www.google.co.jp"><img src="../img/kokugo.png" alt="6"></a></td>
-			</tr>
+			<?php
+				$sql = $db -> query('SELECT * FROM Products');
+				$cnt = 0;
+
+				echo '<tr>';
+				foreach($sql as $row){
+					$cnt++; // 1 2 3
+					echo '<td><a href="#"><img src="../img/', $row['product_image'],'" alt="4"></a></td>';
+					if($cnt % 3 == 0) echo '</tr><tr>';
+				}
+			?>
 		</table>
 	</body>
 </html>
