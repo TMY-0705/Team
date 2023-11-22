@@ -1,6 +1,15 @@
+.itiran {
+	display: inline-block;
+	text-align: left;
+}
+
+td#btn {
+    text-align: right;
+}
+
 .button{
-    width: 6vw;
-    height: 3vw;
+    width: 60px;
+    height: 30px;
     flex-shrink: 0;
     border-radius: 2vw;
     border: 1px solid #000;
@@ -8,12 +17,17 @@
     text-align: center;
 	z-index: 100;
 }
+
+table {
+	display: inline-block;
+}
+
 .shohin{
     width: 650px;
     height: 90px;
     border: 1px solid #000;
     background: #FFF;
-    margin-top: 30px;
+    
 	z-index: 0;
 }
 .img1{
@@ -22,9 +36,6 @@
     height: 65px;
     width: 65px;
     flex-shrink: 0;
-    margin-left: 15px
-}
-.itiran{
-    display: inline-block;
-    vertical-align: super;
+    margin-left: 15px;
+	display: inline;
 }

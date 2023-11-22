@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+}
+
+.content {    
+    display: flex;
+	justify-content: space-between;
+}
+
+#product_detail {
+	padding: 30px;
+    display: inline-block; /* 横に並べるためのスタイル追加 */
+    vertical-align: top; /* 上端に揃えるためのスタイル追加 */
+}
+
+#cost {
+	padding: 15vh 5vw 30vh 5vw;
+	margin: 0px;
+    background-color: #e8e8e8;
+    width: 20vw;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#cost>form>button {
+    padding: 8px;
+    border-style: none;
+    border-radius: 20px;
+    width: 100%;
+    color: inherit;
+    cursor: pointer;
+    background: #FCFF67;
+}
+
+#product_detail>img {
+	width: 24vw;
+	max-width: 384px;
+	max-height: 384px;
+	border: 1px solid #111;
+}
+
+.detail {
+    margin-right: 50px;
+    margin-left: auto;
+    padding: 20px;
+    width: 20vw;
+    height: 80vh;
+    display: inline-block;
+}
+
+.title {
+    font-size: 3.5vw;
+}
+
+.yen {
+	font-size: 4vw;
+}
+
+.number {
+    width: 4vw;
+    height: 1.5vw;
+    flex-shrink: 0;
+}

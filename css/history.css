@@ -1,0 +1,65 @@
+.content {
+    margin: auto;
+}
+
+.element {
+    width: auto;
+    height: 30px;
+    flex-shrink: 0;
+    display: flex;
+}
+
+.flame {
+    border: 1px solid #000;
+    padding-top: 10px;
+    padding-left: 5vw;
+    background: rgba(141, 141, 141, 0.20);
+}
+
+.item {
+    width: 100%;
+}
+
+.productimg {
+    width: 25vw; 
+    margin: 2vw;
+}
+
+.detail {
+    margin-right: 50px;
+    margin-left: auto;
+    padding: 20px;
+    width: 20vw;
+    height: 80vh;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.product_detail {
+    width: 60vw;
+    display: flex; /* 横に並べるためのスタイル追加 */
+    vertical-align: top; /* 上端に揃えるためのスタイル追加 */
+}
+
+.title {
+    font-size: 4vw;
+}
+
+.productcount {
+    width: 40px;
+    height: 20px;
+}
+
+.content{
+    display: flex;
+    flex-grow: 0;
+}
+
+.eva {
+    display: flex;
+}
+
+.eve {
+    margin-top: 5vw;
+    font-size: 3vw;
+}

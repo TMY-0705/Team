@@ -113,3 +113,8 @@ section{
     border-top:solid 0.1vw;
     /* ボーダー */
 }
+
+.err_msg {
+	text-align: center;
+	color: #c02000;
+}
