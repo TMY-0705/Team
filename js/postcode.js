@@ -11,8 +11,9 @@ contactForm.postcode.addEventListener('input', e => {
     .then(response => response.json())
     // 取得したデータを出力
     .then(data => {
-      contactForm.prefecture.value = data.results[0].address1 + data.results[0].address2;
-      contactForm.town.value = data.results[0].address3;
+		if(contactForm.prefecture.value = "")
+			contactForm.prefecture.value = data.results[0].address1
+			 + data.results[0].address2 + data.results[0].address3;
     })
     .catch(error => console.log(error))
 })
