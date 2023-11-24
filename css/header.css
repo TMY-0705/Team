@@ -34,11 +34,11 @@ body {
 	font-size: 0px;
 }
 
-.m2 {
+.m2>form {
 	display: inline-flex;
 	box-sizing: border-box;
 }
-.m2>input {
+.m2>form>input {
 	width: 40vw;
 	font-size: 30px;
 }
