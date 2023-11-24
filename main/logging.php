@@ -1,6 +1,5 @@
+<?php session_start() ?>
 <?php require '../php_init/db-connect.php' ?>
-
-<form method="POST">
 <?php
 	// 入力した情報を取得する
 	$user = $_POST['user_id'] ?? null;
@@ -24,6 +23,7 @@
 
     if($res){
 		if($pass == $res['account_pass']){
+			$_SESSION[''];
 			header("Location: products.php");
 		}else{
 			header("Location: login.php?err=1");
@@ -32,4 +32,3 @@
 		header("Location: login.php?err=1");
 	}
 ?>
-</form>
