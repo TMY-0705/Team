@@ -1,6 +1,4 @@
 <?php require '../php_init/db-connect.php' ?>
-
-<form method="POST">
 <?php
 	// 入力した情報を取得する
 	$user = $_POST['user_id'] ?? null;
@@ -32,4 +30,3 @@
 		header("Location: control_login.php?err=1");
 	}
 ?>
-</form>
