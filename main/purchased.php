@@ -10,7 +10,7 @@
 <body>
 	<?php require 'header.php'; ?>
     <h1 class="kanryou">購入完了しました</h1>
-    <form action="#">
+    <form action="products.php">
         <div class="content">
             <img class="book" src="../img/book.jpg" alt="本の写真">
             <div class="sute">
