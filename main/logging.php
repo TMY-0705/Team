@@ -20,10 +20,9 @@
 
     // $logged = password_verify($pass, password_hash($pass, PASSWORD_DEFAULT));
 
-
     if($res){
 		if($pass == $res['account_pass']){
-			$_SESSION[''];
+			
 			header("Location: products.php");
 		}else{
 			header("Location: login.php?err=1");
