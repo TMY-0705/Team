@@ -9,12 +9,13 @@
 		"SELECT * FROM Products
 			JOIN Categories
 			ON Products.category_id = Categories.category_id
-			LEFT JOIN Histories_detail 
-			ON Products.product_id = Histories_detail.product_id
 			WHERE Products.product_id = $id
 		"
 	);
 	$res = $sql->fetch(PDO::FETCH_ASSOC);
+
+	$sql = $db->query("SELECT COUNT(product_id) as cnt, AVG(history_detail_rate) as avg FROM Histories_detail");
+	$res2 = $sql->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <head>
@@ -23,6 +24,7 @@
 	<title><?= $res['product_name'] ?></title>
 	<link rel="stylesheet" href="../css/header.css">
 	<link rel="stylesheet" href="../css/product_detail.css">
+	<script src="../js/product_detail.js"></script>
 </head>
 
 <body>
@@ -30,25 +32,30 @@
 		<!-- PHP_START -->
 		<div id="product_detail">
 			<a href="#">カテゴリー</a><br>
-			<img src='../img/<?= $sql['product_image'] ?>' alt='<?= $sql['product_name'] ?>の画像がでてナイ！'>
+			
+			<img src='../img/<?= $res['product_image'] ?>' alt='<?= $res['product_image'] ?>の画像がでてナイ！'>
 			<div class="detail">
-				<h1 class="title"><?= $sql['product_name'] ?></h1>
-				<a href="#" class="store"><?= $sql['product_maker'] ?>のストアを表示</a>
+				<h1 class="title"><?= $res['product_name'] ?></h1>
+				<a href="#" class="store"><?= $res['product_maker'] ?>のストアを表示</a>
 				<p class="rating">
 					<?php
-						if (isset($sql['product_maker'])) {
-							echo $sql['product_maker'];
+						if (isset($res['product_maker'])) {
+							echo $res['product_maker'];
 						}
 					?>
 				</p>
-				<a href="#">XX件の評価</a>
-				<h1 class="title">￥1000</h1>
+				<a href="#"><?php
+					if( isset($res2['avg']) ){
+						echo $res2['cnt'];
+					} else echo "0";
+				?>件の評価</a>
+				<h1 class="title">￥<?=$res['product_price']?></h1>
 			</div>
 		</div>
 
 		<div id="cost">
 			<form action="cart.php" method="POST">
-				<span class="yen">￥1000</span>
+				<span class="yen">￥<?=$res['product_price']?></span>
 				<p class="any">数量:<input type="number" class="number"></p>
 				<button type="submit">カートに入れる</button>
 			</form>
