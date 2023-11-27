@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="clearfix">
-        <button type="submit" >一覧に戻る</button>
+        <button type="submit" onclick ="location.href='products.php'">一覧に戻る</button>
         </div>
     </form>    
 </body>
