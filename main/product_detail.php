@@ -14,9 +14,9 @@
 	<?php
 		$product_id = $_GET['id'];
 		$sql = $db -> query(
-			"SELECT * FROM Product LEFT JOIN Histories_detail 
-			 ON Product.product_id = Histories_detail.product_id
-			 WHERE product_id = $product_id"
+			"SELECT * FROM Products LEFT JOIN Histories_detail 
+			 ON Products.product_id = Histories_detail.product_id
+			 WHERE Products.product_id = $product_id"
 		);
 		$res = $sql -> fetch(PDO::FETCH_ASSOC);
 	?>
@@ -24,10 +24,10 @@
 		<!-- PHP_START -->
 		<div id="product_detail">
 			<a href="#">カテゴリー</a><br>
-			<img src="../img/<?=$sql['Product.product_image']?>">
+			<img src="../img/<?=$sql['Products.product_image']?>">
 			<div class="detail">
-				<h1 class="title"><?=$sql['Product.product_name']?></h1>
-				<a href="#" class="store"><?=$sql['Product.product_maker']?>のストアを表示</a>
+				<h1 class="title"><?=$sql['Products.product_name']?></h1>
+				<a href="#" class="store"><?=$sql['Products.product_maker']?>のストアを表示</a>
 				<p class="rating"><?php
 					if(isset($sql['Histories_detail.product_maker'])){
 						echo $sql['Histories_detail.product_maker'];
