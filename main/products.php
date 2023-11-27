@@ -30,8 +30,8 @@
 				echo '<tr>';
 				foreach($sql as $row){
 					$cnt++; // 1 2 3
-					echo '<td><a href=product_detail.php?id="', $row['product_id'],
-						 '"><img src="../img/', $row['product_image'], 
+					echo '<td><a href=product_detail.php?id=', $row['product_id'],
+						 '><img src="../img/', $row['product_image'], 
 						 '" alt="', $row['product_name'],
 						 '"></a></td>';
 					if($cnt % 3 == 0) echo '</tr><tr>';

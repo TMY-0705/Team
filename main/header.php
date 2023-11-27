@@ -17,7 +17,7 @@
 	</span>
 </div>
 <p class="edit_profile">
-	<a href="edit_profile.php">
+	<a href="account_edit.php">
 		アカウント編集
 	</a>
 </p>
