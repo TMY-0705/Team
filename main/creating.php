@@ -22,8 +22,9 @@
 		$s = "INSERT INTO Accounts VALUE ('$name', $mail, $pass1, $pass2, $postcode, '$prefecture', '$town', '$house');";
 		$sql = $db -> query($s);
 		$res = $sql -> fetch(PDO::FETCH_ASSOC);
+		header("Location: create_complete.php");
 	} catch (PDOException $e) {
-		header("Location: data_insert.php?err=$err", true, 307);
+		header("Location: account_edit.php?err=$err", true, 307);
 	} catch (Exception $e) {
 		echo '<h2>通常の例外発生！！！<br>', $e, "</h2>";
 		exit();

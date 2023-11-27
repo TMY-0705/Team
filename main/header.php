@@ -5,8 +5,10 @@
 		<a href="products.php"><img class="img_btn" src="../img/Home.png"></a>
 	</span>
 	<span class="m2">
-		<input type="text" name="key">
-		<a href="search_result.php"><img class="img_btn2" src="../img/Search.png"></a>
+		<form name="box" method="GET">
+			<input type="text" name="key">
+			<a href="javascript:box.submit();"><img class="img_btn2" src="../img/Search.png"></a>
+		</form>
 	</span>
 	<span class="m3">
 		<a href="history.php"><img class="img_btn3" src="../img/History.png"></a>
@@ -15,7 +17,7 @@
 	</span>
 </div>
 <p class="edit_profile">
-	<a href="edit_profile.php">
+	<a href="account_edit.php">
 		アカウント編集
 	</a>
 </p>
