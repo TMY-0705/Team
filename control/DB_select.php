@@ -10,21 +10,24 @@
 <!-- header1 -->
 <body>
 	<?php require 'header.php' ?>
-    <button class="shohin"><img class="img1" src="../img/SUGAKU.png" onclick="location.href='goods_update.php'">
+	
+    <button class="shohin" onclick="location.href='goods_update.php'">
+		<img class="img1" src="../img/SUGAKU.png">
 		<table class="itiran">
 			<tr>
-				<td>メーカー：ＸＸＸ</td>
-				<td>カテゴリー：ＸＸＸ</td>
+				<td class="text">メーカー：ＸＸＸ</td>
+				<td class="text">カテゴリー：ＸＸＸ</td>
 				<td id="btn">
-				<input type="button" class="button" onclick="location.href='goods_delete.php'" value="削除" >
+				<a href="goods_delete.php" class="delete"><div class="delin">削除</div></a>
 				</td>
 			</tr>
 			<tr>
-				<td>商品名：ＸＸＸ</td>
-				<td>値段：ＸＸＸ</td>
-				<td>在庫数：ＸＸＸ</td>
+				<td class="text">商品名：ＸＸＸ</td>
+				<td class="text">値段：ＸＸＸ</td>
+				<td class="text">在庫数：ＸＸＸ</td>
 			</tr>
 		</table>
     </button>
+	
 </body>
 </html>
