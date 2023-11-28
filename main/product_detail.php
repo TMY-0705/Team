@@ -55,7 +55,7 @@
 
 		<div id="cost">
 			<form action="cart.php" method="POST">
-				<span class="yen" id="total" mouseDown="reCalc()" onKeyup="recalc()">4</span>
+				<span class="yen" id="total" mouseDown="recalc()" onKeyup="recalc()">4</span>
 				<p class="any" id="amount">数量:<input type="number" class="number"></p>
 				<button type="submit">カートに入れる</button>
 			</form>
