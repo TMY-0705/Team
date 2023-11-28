@@ -7,15 +7,23 @@ td#btn {
     text-align: right;
 }
 
-.button{
-    width: 60px;
-    height: 30px;
+.delete{
+    width: 6vw;
+    height: 2.3vw;
     flex-shrink: 0;
     border-radius: 2vw;
     border: 1px solid #000;
     background: #F33;
     text-align: center;
 	z-index: 100;
+    margin-left:5vw;
+    margin-bottom: 1vw;
+    display: block;
+    /*
+    z-index: -1;
+    pointer-events: auto;
+    */
+
 }
 
 table {
@@ -23,19 +31,32 @@ table {
 }
 
 .shohin{
-    width: 650px;
-    height: 90px;
+    width: 80vw;
+    height: 9vw;
     border: 1px solid #000;
     background: #FFF;
-    
 	z-index: 0;
+    margin-top: 30px;
+    /*
+    z-index: -1;
+    pointer-events: none;
+    */
 }
 .img1{
     border: 1px solid #000;
     margin-right: 90px;
-    height: 65px;
-    width: 65px;
+    height: 6vw;
+    width: 6vw;
     flex-shrink: 0;
     margin-left: 15px;
 	display: inline;
+}
+
+.text{
+    font-size: 1.5vw;
+}
+
+.delin {
+    font-size: 1.5vw;
+    margin: auto;
 }
