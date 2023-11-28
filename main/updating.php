@@ -1,5 +1,6 @@
 <?php session_start() ?>
 <?php require '../php_init/db-connect.php' ?>
+
 <?php
 	unset($_SESSION['loginfo']);
 
@@ -14,19 +15,24 @@
 	$house = $_POST['house'] ?? null;
 
 	// データを挿入する
-	try {
+	try {		
 		$err = 1;
-		$sql = $db -> query('SELECT * FROM Accounts WHERE account_email = '.$mail);
-		// アカウントの存在確認
-		if($sql -> fetch()) header("Location: account_create.php?err=$err", true, 307);
-		
-		$err = 2;
 		if($pass1 != $pass2){
 			header("Location: account_create.php?err=$err", true, 307);
 		}
 
-		$err = 3;
-		$s = "INSERT INTO Accounts VALUE ('$name', $mail, $pass2, $postcode, '$prefecture', '$town', '$house');";
+		$err = 2;
+		if(!$pass1 && !$pass2)
+		$s = "UPDATE Accounts SET 
+			account_name = '$name',
+			account_mail = $mail,
+			account_pass = $pass1,
+			account_postal = $postcode,
+			account_prefecture = '$prefecture',
+			account_town = '$town',
+			account_house = '$house'
+			WHERE account_id = ".$_SESSION['acc_id']."
+			;";
 		$sql = $db -> query($s);
 		$res = $sql -> fetch(PDO::FETCH_ASSOC);
 

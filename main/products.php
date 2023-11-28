@@ -1,3 +1,4 @@
+<?php require '../php_init/login_check.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -6,12 +7,12 @@
 		<link rel="stylesheet" href="../css/search_result.css">
 		<?php
 			$name = $_GET['key'] ?? null;
-			$ctgr = $_GET['ctgr'] ?? null;
+			$maker = $_GET['maker'] ?? null;
 
 			if($name)
 				echo '<title>', $name, ' - 商品検索結果</title>';
-			else if($ctgr)
-				echo '<title>', $ctgr, ' - カテゴリ検索結果</title>';
+			else if($maker)
+				echo '<title>', $maker, ' - メーカー検索結果</title>';
 			else
 				echo '<title>トップ - 商品一覧</title>';
 		?>
@@ -27,9 +28,9 @@
 			<?php
 				if($name)
 					$sql = $db -> query("SELECT * FROM Products WHERE product_name LIKE '%$name%'");
-				else if($ctgr)
+				else if($maker)
 					$sql = $db -> query("SELECT * FROM Products JOIN Categories
-					ON Products.category_id = Categories.category_id WHERE category_name LIKE '%$ctgr%'");
+					ON Products.category_id = Categories.category_id WHERE product_maker LIKE '%$maker%'");
 				else
 					$sql = $db -> query('SELECT * FROM Products');
 				$cnt = 0;

@@ -1,3 +1,4 @@
+<?php require '../php_init/login_check.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
 		<div class="logout_form_top"></div>
 		<img src="../img/note-only.png" class="home" width="70" height="70">
 		<h1>ログアウトしますか？</h1>
-		<a href="login.php" class="yes">はい</a>
+		<a href="seeyou.php" class="yes">はい</a>
 		<a onclick="history.back()" class="no">いいえ</a>
     </form>
 </body>

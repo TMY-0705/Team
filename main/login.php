@@ -1,4 +1,4 @@
-+<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,6 +23,9 @@
 					case 1:
 						echo 'メールアドレスまたはパスワードが違います。';
 						break;
+					case 2:
+						echo 'このサイトを利用するにはログインが必要です。';
+						break;
 				}
 			?>
 		</p>
@@ -30,11 +33,7 @@
         <section></section>
         <a href="../control/control_login.php"><div class="link">管理者用ログインページ</div></a>
 	</div>
-<<<<<<< HEAD
-	<input type="button" class="create_button" onclick="location.href='data_insert.html'" value="アカウントを作成する">
-=======
 	<input type="button" class="create_button" onclick="location.href='account_create.php'" value="アカウントを作成する">
->>>>>>> 92971244bf70ab09eac6429421448391457e94a9
 	</form>
 </body>
 </html>
