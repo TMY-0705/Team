@@ -1,29 +1,36 @@
+<?php require '../php_init/login_check.php' ?>
+<?php require '../php_init/db-connect.php' ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/data_insert.css">
-    <script src="../js/jquery-3.7.0.min.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/data_insert.css">
+	<script src="../js/jquery-3.7.0.min.js"></script>
 	<script src="../js/postcode.js"></script>
-    <title>Document</title>
+	<title>Document</title>
 </head>
+
 <body>
 	<?php
-		$name = $_POST['name'] ?? null;
-		$mail = $_POST['mail'] ?? null;
-		$pass1 = $_POST['pass1'] ?? null;
-		$pass2 = $_POST['pass2'] ?? null;
-		$postcode = $_POST['postcode'] ?? null;
-		$prefecture = $_POST['prefecture'] ?? null;
-		$town = $_POST['town'] ?? null;
-		$house = $_POST['house'] ?? null;
+		$sql = $db -> query('SELECT * FROM Accounts WHERE account_id = '.$_SESSION['loginfo']['acc_id']);
+		$res = $sql -> fetch();
+		
+		$name       = $_POST['name']       ?? $res['account_name'];
+		$mail       = $_POST['mail']       ?? $res['account_email'];
+		$pass1      = "";
+		$pass2      = "";
+		$postcode   = $_POST['postcode']   ?? $res['account_postal'];
+		$prefecture = $_POST['prefecture'] ?? $res['account_addr_main'];
+		$town       = $_POST['town']       ?? $res['account_addr_detail'];
+		$house      = $_POST['house']      ?? $res['account_addr_building'];
 	?>
 
-	<form name="contact" method="POST" action="creating.php">    
-        <img src="../img/note-only.png" class="home" onclick="location.href='login.php'" width="70" height="70">
-        <div>
-			<h1>アカウントを作成</h1>
+	<form name="contact" method="POST" action="updating.php">
+		<img src="../img/note-only.png" class="home" width="70" height="70">
+		<div>
+			<h1>アカウント情報を編集</h1>
 			<p class="char">名前 (最大32文字)</p>
 				<input type="text" name="name" class="text" maxlength="32" value="<?=$name?>">
 			<p class="char">メールアドレス (最大128文字)</p>
@@ -56,8 +63,9 @@
 					}
 				?>
 			</p>
-			<input type="submit" class="insert_button" value="登録する">
+			<input type="submit" class="insert_button" value="編集する">
 		</div>
 	</form>
 </body>
+
 </html>
