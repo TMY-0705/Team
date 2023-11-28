@@ -1,5 +1,9 @@
-function reCalc(){
-	cost = document.getElementById("total");
-	amount = document.getElementById("amount");
-	document.getElementById("total").innerHTML = "￥"+cost*amount;
+function recalc(){
+	var x = document.getElementById("price");
+	var y = document.getElementById("amount");
+	var z = document.getElementById("total");
+
+	var num = x.innerHTML.replace(/,/g, "");
+
+	z.innerHTML = "￥" + (num * y.value).toLocaleString();
 }

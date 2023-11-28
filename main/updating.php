@@ -1,5 +1,6 @@
 <?php session_start() ?>
 <?php require '../php_init/db-connect.php' ?>
+
 <?php
 	unset($_SESSION['loginfo']);
 
@@ -26,7 +27,17 @@
 		}
 
 		$err = 3;
-		$s = "INSERT INTO Accounts VALUE ('$name', $mail, $pass2, $postcode, '$prefecture', '$town', '$house');";
+		if(!$pass1 && !$pass2)
+		$s = "UPDATE Accounts SET 
+			account_name = '$name',
+			account_mail = $mail,
+			account_pass = $pass1,
+			account_postal = $postcode,
+			account_prefecture = '$prefecture',
+			account_town = '$town',
+			account_house = '$house'
+			WHERE account_id = ".$_SESSION['acc_id']."
+			;";
 		$sql = $db -> query($s);
 		$res = $sql -> fetch(PDO::FETCH_ASSOC);
 

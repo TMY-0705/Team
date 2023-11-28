@@ -1,3 +1,4 @@
+<?php require '../php_init/login_check.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +33,7 @@
 			<p class="char">建物名・部屋番号</p>
 			<input type="text" name="house" class="text"><br>
 			<input type="button" class="insert_button" onclick="location.href=''" value="編集する">
-	</form>
+		</form>
 	</div>
 </body>
 

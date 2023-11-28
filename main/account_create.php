@@ -55,7 +55,7 @@
 				}
 			?>
 		</p>
-			<input type="button" class="insert_button" onclick="location.href='inserting.php'" value="登録する">
+			<input type="button" class="insert_button" onclick="location.href='creating.php'" value="登録する">
         </form>
       </div>
 </body>

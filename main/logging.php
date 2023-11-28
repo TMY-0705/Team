@@ -1,6 +1,7 @@
 <?php session_start() ?>
 <?php require '../php_init/db-connect.php' ?>
 <?php
+	unset($_SESSION['loginfo']);
 	// 入力した情報を取得する
 	$user = $_POST['user_id'] ?? null;
 	$pass = $_POST['password'] ?? null;
@@ -22,7 +23,11 @@
 
     if($res){
 		if($pass == $res['account_pass']){
-			
+			$_SESSION['loginfo'] = [
+				'acc_id' => $res['account_id'],
+				'email' => $user,
+				'pass' => $pass,
+			];
 			header("Location: products.php");
 		}else{
 			header("Location: login.php?err=1");
