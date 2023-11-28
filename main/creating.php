@@ -12,13 +12,13 @@
 	$prefecture = $_POST['prefecture'] ?? null;
 	$town = $_POST['town'] ?? null;
 	$house = $_POST['house'] ?? null;
-	
-	// アカウントの存在確認
 
 	// データを挿入する
 	try {
 		$err = 1;
 		$sql = $db -> query('SELECT * FROM Accounts WHERE account_email = '.$mail);
+		// アカウントの存在確認
+		if($sql -> fetch()) header("Location: account_create.php?err=$err", true, 307);
 		
 		$err = 2;
 		if($pass1 != $pass2){

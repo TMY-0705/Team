@@ -32,9 +32,25 @@
 			<input type="text" name="town" class="text">
 			<p class="char">建物名・部屋番号</p>
 			<input type="text" name="house" class="text"><br>
-			<input type="button" class="insert_button" onclick="location.href=''" value="編集する">
-		</form>
-	</div>
+			<p class="err-msg">
+				<?php
+					$err = $_GET['err'] ?? null;
+					switch($err){
+						case 1:
+							echo 'そのメールアドレスは予約済みです。';
+							break;
+						case 2:
+							echo 'パスワードが一致していません。';
+							break;
+						case 3:
+							echo 'データが入力されていない箇所があります。';
+							break;
+					}
+				?>
+			</p>
+			<input type="button" class="insert_button" onclick="location.href='updating.php'" value="編集する">
+		</div>
+	</form>
 </body>
 
 </html>

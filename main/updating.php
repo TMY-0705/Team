@@ -13,20 +13,15 @@
 	$prefecture = $_POST['prefecture'] ?? null;
 	$town = $_POST['town'] ?? null;
 	$house = $_POST['house'] ?? null;
-	
-	// アカウントの存在確認
 
 	// データを挿入する
-	try {
+	try {		
 		$err = 1;
-		$sql = $db -> query('SELECT * FROM Accounts WHERE account_email = '.$mail);
-		
-		$err = 2;
 		if($pass1 != $pass2){
 			header("Location: account_create.php?err=$err", true, 307);
 		}
 
-		$err = 3;
+		$err = 2;
 		if(!$pass1 && !$pass2)
 		$s = "UPDATE Accounts SET 
 			account_name = '$name',
