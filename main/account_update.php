@@ -57,12 +57,10 @@
 						case 2:
 							echo 'パスワードが一致していません。';
 							break;
-						case 3:
-							echo 'データが入力されていない箇所があります。';
-							break;
 					}
 				?>
 			</p>
+			<input type="hidden" name="isPassNull" value="<?= !$pass1 && !$pass2 ?>">
 			<input type="submit" class="insert_button" value="編集する">
 		</div>
 	</form>

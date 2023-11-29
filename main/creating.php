@@ -16,7 +16,7 @@
 	// データを挿入する
 	try {
 		$err = 1;
-		$sql = $db -> query('SELECT * FROM Accounts WHERE account_email = '.$mail);
+		$sql = $db -> query("SELECT * FROM Accounts WHERE account_email = '$mail'");
 		// アカウントの存在確認
 		if($sql -> fetch()) header("Location: account_create.php?err=$err", true, 307);
 		
@@ -26,7 +26,7 @@
 		}
 
 		$err = 3;
-		$s = "INSERT INTO Accounts VALUE ('$name', $mail, $pass2, $postcode, '$prefecture', '$town', '$house');";
+		$s = "INSERT INTO Accounts VALUE (NULL, '$name', '$mail', '$pass2', '$postcode', '$prefecture', '$town', '$house');";
 		$sql = $db -> query($s);
 		$res = $sql -> fetch(PDO::FETCH_ASSOC);
 
@@ -37,6 +37,7 @@
 
 		header("Location: create_complete.php");
 	} catch (PDOException $e) {
+		echo $e;
 		header("Location: account_create.php?err=$err", true, 307);
 	} catch (Exception $e) {
 		echo '<h2>通常の例外発生！！！<br>', $e, "</h2>";
