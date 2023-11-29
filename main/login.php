@@ -13,7 +13,7 @@
         <div class="login_form_top">
 		<p class="login">ログイン</p>
 		<p class="two">メールアドレス</p>
-		<input type="address" class="three" name="user_id" placeholder="メールアドレス入力してください">
+		<input type="address" class="three" name="user_id" placeholder="メールアドレスを入力してください">
         <p class="two">パスワード</p>
         <input type="password" class="three" name="password" placeholder="パスワードを入力してください">
         <p class="err_msg">

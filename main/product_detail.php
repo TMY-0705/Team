@@ -1,9 +1,10 @@
 <?php require '../php_init/login_check.php' ?>
+<?php require '../php_init/db-connect.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <?php require 'header.php' ?>
-<?php require '../php_init/db-connect.php' ?>
+
 <?php
 	$id = $_GET['id'];
 	$sql = $db->query(
@@ -61,7 +62,7 @@
 		</div>
 
 		<div id="cost">
-			<form action="cart.php" method="POST">
+			<form action="cart_add.php" method="POST">
 				<span class="yen" id="total">
 					￥<?=number_format($res['product_price'])?>
 				</span>

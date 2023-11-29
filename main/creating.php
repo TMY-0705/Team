@@ -40,9 +40,7 @@
 		header("Location: account_create.php?err=$err", true, 307);
 	} catch (Exception $e) {
 		echo '<h2>通常の例外発生！！！<br>', $e, "</h2>";
-		exit();
 	} catch (Throwable $e) {
 		echo '<h2>特殊な例外発生！！！<br>', $e, "</h2>";
-		exit();
 	}
 ?>
