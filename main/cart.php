@@ -19,6 +19,14 @@
 			<hr>
 			<!-- PHP_START -->
 			<?php
+			$id = $_GET['id'];
+			$sql = $db->query(
+				"SELECT * FROM Products
+					JOIN Categories
+					ON Products.category_id = Categories.category_id
+					WHERE Products.product_id = $id
+				"
+			);
 			$res = $sql->fetch(PDO::FETCH_ASSOC);
 			?>
 			<div class="content">;
