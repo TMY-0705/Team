@@ -1,6 +1,7 @@
 <?php require '../php_init/login_check.php' ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
 	<link rel="stylesheet" href="../css/cart.css">
 	<link rel="stylesheet" href="../css/product_detail.css">
 </head>
+
 <body>
 	<!-- header -->
 	<?php session_start(); ?>
@@ -19,6 +21,14 @@
 			<hr>
 			<!-- PHP_START -->
 			<?php
+			$id = $_GET['id'];
+			$sql = $db->query(
+				"SELECT * FROM Products
+					JOIN Categories
+					ON Products.category_id = Categories.category_id
+					WHERE Products.product_id = $id
+				"
+			);
 			$res = $sql->fetch(PDO::FETCH_ASSOC);
 			?>
 			<div class="content">;
@@ -41,7 +51,7 @@
 			</div>;
 			<!-- PHP_END -->
 		</div>
-		
+
 		<div id="cost">
 			<span>合計金額</span>
 			<form action="purchased.php" method="POST">
@@ -53,4 +63,5 @@
 		</div>
 	</div>
 </body>
+
 </html>
