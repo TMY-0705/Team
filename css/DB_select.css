@@ -16,8 +16,8 @@ td#btn {
     background: #F33;
     text-align: center;
 	z-index: 100;
-    margin-left:5vw;
-    margin-bottom: 1vw;
+    margin-left:4vw;
+    margin-bottom: 0.5vw;
     display: block;
     /*
     z-index: -1;

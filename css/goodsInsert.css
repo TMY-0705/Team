@@ -1,12 +1,14 @@
 .text{
-    width: 400px;
+    width: 600px;
     height: 25px;
     border: 1px solid #000;
     background: #FFF;
-    margin-top: 28px;
+    margin-top: 57px;
+    margin-left: 20px;
 }
 .yohaku{
-    margin-right: 100px;
+    margin-right: 100p;
+    font-size: 20px;
 }
 .button2{
     width: 130px;
@@ -17,12 +19,14 @@
     background: #FDFFB2;
     margin-top: 28px;
 }
-.button{
-    width: 400px;
+.filebutton{
+    width: 600px;
 	border: 1px solid #000;
     background: #FFF;
-    margin-top: 28px;
+    margin-top: 53px;
 }
 .file{
-    margin-right: 100px;
+    margin-top: 57px;
+    margin-right: 100p;
+    font-size: 20px;
 }
