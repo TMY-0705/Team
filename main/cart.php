@@ -10,6 +10,7 @@
 </head>
 <body>
 	<!-- header -->
+	<?php session_start(); ?>
 	<?php require 'header.php'; ?>
 	<?php require '../php_init/db-connect.php' ?>
 	<div class="content">
@@ -18,24 +19,27 @@
 			<hr>
 			<!-- PHP_START -->
 			<?php
-			echo '<div class="content">';
-				echo '<div id="product_detail">';
-					echo '<a href="#">カテゴリー</a><br>';
-					echo "<img src='../img/<?= $res['product_image'] ?>' alt='<?= $res['product_image'] ?>の画像がでてナイ！'>";
-					echo '<div class="detail">';
-						echo '<h1 class="title">タイトル</h1>';
-						echo '<h1 class="title">￥1000</h1>';
-						echo '<h2 class="a">';
-							echo '<p class="any">数量:<input type="number" class="number"></p>';
-						echo '</h2>';
-						<!-- PHP_START -->
-						<!-- PHP_END -->
-					echo '</div>';
-				echo '</div>';
-			echo '</div>';
+			$res = $sql->fetch(PDO::FETCH_ASSOC);
 			?>
+			<div class="content">;
+				<div id="product_detail">;
+					<a href="#">カテゴリー</a><br>;
+					<img src='../img/<?= $res['product_image'] ?>' alt='<?= $res['product_image'] ?>の画像がでてナイ！'>;
+					<div class="detail">;
+						<h1 class='title'><?= $res['product_name'] ?></h1>;
+						<h1 class='title'><?= $res['product_price'] ?></h1>;
+						<h2 class="a">;
+							<p class="any">数量:<input type="number" class="number"></p>;
+						</h2>;
+						<!-- PHP_START -->
+						<?php
+						
+						?>
+						<!-- PHP_END -->
+					</div>;
+				</div>;
+			</div>;
 			<!-- PHP_END -->
-			
 		</div>
 		
 		<div id="cost">
