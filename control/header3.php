@@ -12,5 +12,5 @@
 	</span>
 </form>
 <p class="edit_profile">
-	
+	　
 </p>
