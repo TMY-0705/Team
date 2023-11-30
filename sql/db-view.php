@@ -1,5 +1,14 @@
 <?php session_start() ?>
 <?php require '../php_init/db-connect.php' ?>
+
+<style>
+    table, th, td{
+        border: 1px solid #000000;
+        border-collapse: collapse;
+        padding: 4px;
+    }
+</style>
+
 <?php
 	// 入力した情報を取得する
 	$name = $_POST['name'] ?? null;
@@ -21,6 +30,20 @@
 			4 => "SELECT * FROM Accounts",
 			5 => "SELECT * FROM Accounts",
 		];
+
+		foreach($sqls as $sql){
+			$res = $db -> query($sql);
+			echo '<table>';
+			foreach($res as $row){
+				echo '<tr>';
+				foreach($row as $i){
+				echo '<td>', $i,'</td>';
+				}
+				echo '</tr>';
+			}
+			echo '</table>';
+		}
+
 	} catch (PDOException $e) {
 		echo '<h2>PDOの例外発生！！！<br>', $e, "</h2>";
 	} catch (Exception $e) {
