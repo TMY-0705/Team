@@ -3,8 +3,11 @@
 <?php
 	$id = $_POST['product_id'] ?? null;
 	$amount = $_POST['amount'] ?? null;
-	$_SESSION['carts'] = [
+
+	$_SESSION['cart'] = [
 		'product_id' => $id,
 		'amount' => $amount,
 	];
+
+	
 ?>
