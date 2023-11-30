@@ -41,11 +41,6 @@
 						<h2 class="a">;
 							<p class="any">数量:<input type="number" class="number"></p>;
 						</h2>;
-						<!-- PHP_START -->
-						<?php
-						
-						?>
-						<!-- PHP_END -->
 					</div>;
 				</div>;
 			</div>;

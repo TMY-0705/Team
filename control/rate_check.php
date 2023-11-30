@@ -12,7 +12,7 @@
 	<?php require 'header4.php' ?>
 
 	<div class="detail">
-		<img src="../img/NoImage.png">
+		<img src="../img/NoImage.png" class="pic" >
 		<table>
 			<tbody>
 				<tr>
