@@ -22,21 +22,20 @@
 			<?php
 				$sql = $db->query(
 					"SELECT * FROM Products
-						JOIN Categories
-						ON Products.product_id = Carts.product_id
+						JOIN Carts ON Products.product_id = Carts.product_id
 					"
 				);
 				$res = $sql->fetch(PDO::FETCH_ASSOC);
 			?>
-			<div class="content">;
-				<div id="product_detail">;
-					<a href="#">カテゴリー</a><br>;
-					<img src='../img/<?= $res['product_image'] ?>' alt='<?= $res['product_image'] ?>の画像がでてナイ！'>;
-					<div class="detail">;
-						<h1 class='title'><?= $res['product_name'] ?></h1>;
-						<h1 class='title'><?= $res['product_price'] ?></h1>;
-						<h2 class="a">;
-							<p class="any">数量:<input type="number" class="number"></p>;
+			<div class="content">
+				<div id="product_detail">
+					<a href="#">カテゴリー</a><br>
+					<img src='../img/<?= $res['product_image'] ?>' alt='<?= $res['product_image'] ?>の画像がでてナイ！'>
+					<div class="detail">
+						<h1 class='title'><?= $res['product_name'] ?></h1>
+						<h1 class='title'><?= $res['product_price'] ?></h1>
+						<h2 class="a">
+							<p class="any">数量:<input type="number" class="number"></p>
 						</h2>;
 					</div>;
 				</div>;
