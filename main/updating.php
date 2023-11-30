@@ -10,7 +10,8 @@
 	$prefecture = $_POST['prefecture'] ?? null;
 	$town = $_POST['town'] ?? null;
 	$house = $_POST['house'] ?? null;
-	$isPassNull = $_POST['isPassNull'] ?? null;
+
+	$isPassNull = !$pass1 && !$pass2;
 
 	// データを挿入する
 	try {
@@ -50,7 +51,7 @@
 		$sql = $db -> query($s);
 		$res = $sql -> fetch(PDO::FETCH_ASSOC);
 
-		header("Location: update_complete.php");
+		header("Location: update_complete.php", true, 307);
 	} catch (PDOException $e) {
 		echo $e;
 		header("Location: account_update.php?err=$err", true, 307);

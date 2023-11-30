@@ -20,14 +20,17 @@
 		<h1>編集完了しました</h1>
 		<input type="button" class="button" 
 		<?php
+			$pass1 = $_POST['pass1'] ?? null;
+
+			$isPassNull = !$pass1;
+
 			if($isPassNull)
 				echo 'onclick="location.href=\'products.php\'" value="商品一覧に戻る"';
 			else {
 				echo 'onclick="location.href=\'seeyou.php\'" value="ログインページ"';
-				echo '<h3>安全性を確保するために、ログアウトしてください。<h3>';
 			}
 		?>
-		>
+		><?php if(!$isPassNull) echo '<h3>安全性を確保するために、ログアウトしてください。<h3>' ?>
 	</div>
 </body>
 

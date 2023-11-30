@@ -36,9 +36,9 @@
 			<p class="char">メールアドレス (最大128文字)</p>
 				<input type="text" name="mail" class="text" maxlength="128" value="<?=$mail?>">
 			<p class="char">パスワード (最大128文字)</p>
-				<input type="password" name="password" class="text" maxlength="128" value="<?=$pass1?>">
+				<input type="password" name="pass1" class="text" maxlength="128" value="<?=$pass1?>">
 			<p class="char">もう一度パスワードを入力してください</p>
-				<input type="password" name="new-password" class="text" maxlength="128" value="<?=$pass2?>">
+				<input type="password" name="pass2" class="text" maxlength="128" value="<?=$pass2?>">
 			<p class="char">郵便番号 (7文字)</p>
 				<input type="text" name="postcode" class="postcode" maxlength="7" value="<?=$postcode?>">
 			<p class="char">都道府県・市区町村 (最大128文字)</p>
@@ -60,7 +60,6 @@
 					}
 				?>
 			</p>
-			<input type="hidden" name="isPassNull" value="<?= !$pass1 && !$pass2 ?>">
 			<input type="submit" class="insert_button" value="編集する">
 		</div>
 	</form>

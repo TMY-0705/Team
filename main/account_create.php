@@ -10,14 +10,14 @@
 </head>
 <body>
 	<?php
-		$name = $_POST['name'] ?? null;
-		$mail = $_POST['mail'] ?? null;
-		$pass1 = $_POST['pass1'] ?? null;
-		$pass2 = $_POST['pass2'] ?? null;
-		$postcode = $_POST['postcode'] ?? null;
-		$prefecture = $_POST['prefecture'] ?? null;
-		$town = $_POST['town'] ?? null;
-		$house = $_POST['house'] ?? null;
+		$name       = $_POST['name']       ?? $res['account_name'];
+		$mail       = $_POST['mail']       ?? $res['account_email'];
+		$pass1      = "";
+		$pass2      = "";
+		$postcode   = $_POST['postcode']   ?? $res['account_postal'];
+		$prefecture = $_POST['prefecture'] ?? $res['account_addr_main'];
+		$town       = $_POST['town']       ?? $res['account_addr_detail'];
+		$house      = $_POST['house']      ?? $res['account_addr_building'];
 	?>
 
 	<form name="contact" method="POST" action="creating.php">    

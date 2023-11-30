@@ -13,9 +13,16 @@
 
 	// データを挿入する
 	try {
+		$sqls = [
+			0 => "SELECT * FROM Accounts",
+			1 => "SELECT * FROM Categories",
+			2 => "SELECT * FROM Products",
+			3 => "SELECT * FROM Product_detail",
+			4 => "SELECT * FROM Accounts",
+			5 => "SELECT * FROM Accounts",
+		];
 	} catch (PDOException $e) {
-		echo $e;
-		
+		echo '<h2>PDOの例外発生！！！<br>', $e, "</h2>";
 	} catch (Exception $e) {
 		echo '<h2>通常の例外発生！！！<br>', $e, "</h2>";
 	} catch (Throwable $e) {
