@@ -15,22 +15,30 @@
 		}
 	</style>
 
+	<?php
+		$pass1 = $_POST['pass1'] ?? null;
+		$isPassNull = !$pass1;
+	?>
 	<div>
 		<img src="../img/note-only.png" class="home" width="70" height="70">
 		<h1>編集完了しました</h1>
-		<input type="button" class="button" 
+
 		<?php
-			$pass1 = $_POST['pass1'] ?? null;
-
-			$isPassNull = !$pass1;
-
+			if(!$isPassNull)
+				echo '<h3>安全性を確保するために、ログアウトしてください。<h3>';
+			else
+				echo '<h3></h3>';
+			
+			echo '<input type="button" class="button" ';
+			
 			if($isPassNull)
 				echo 'onclick="location.href=\'products.php\'" value="商品一覧に戻る"';
-			else {
+			else
 				echo 'onclick="location.href=\'seeyou.php\'" value="ログインページ"';
-			}
+			
+			echo '>';
 		?>
-		><?php if(!$isPassNull) echo '<h3>安全性を確保するために、ログアウトしてください。<h3>' ?>
+		
 	</div>
 </body>
 
