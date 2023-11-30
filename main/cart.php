@@ -36,10 +36,10 @@
 						<h1 class='title'><?= $res['product_price'] ?></h1>
 						<h2 class="a">
 							<p class="any">数量:<input type="number" class="number"></p>
-						</h2>;
-					</div>;
-				</div>;
-			</div>;
+						</h2>
+					</div>
+				</div>
+			</div>
 			<!-- PHP_END -->
 		</div>
 
