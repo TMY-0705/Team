@@ -32,7 +32,7 @@
 	<div class="content">
 		<!-- PHP_START -->
 		<div id="product_detail">			
-			<img src='../img/<?= $res['product_image'] ?>' alt='<?= $res['product_image'] ?>の画像がでてナイ！'>
+			<img src='../img/<?= $res['product_image'] ?>' alt='<?= $res['product_name'] ?>の画像がでてナイ！'>
 			<div class="detail">
 				<h1 class="title"><?= $res['product_name'] ?></h1>
 				<a href="products.php?maker=<?= $res['product_maker'] ?>" class="store">
@@ -67,8 +67,9 @@
 					￥<?=number_format($res['product_price'])?>
 				</span>
 				<p class="any">数量:
-					<input type="number" class="number" id="amount" value="1" min="1" oninput="recalc();">
+					<input type="number" class="number" id="amount" name="amount" value="1" min="1" oninput="recalc();">
 				</p>
+				<input type="hidden" name="product_id" value="<?= $id ?>">
 				<button type="submit">カートに入れる</button>
 			</form>
 		</div>

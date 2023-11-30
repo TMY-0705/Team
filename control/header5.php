@@ -8,8 +8,6 @@
 		<a href="#">評価確認</a>
 	</span>
     <span>
-        　
-    </span>
 </form>
 <p class="edit_profile">
 	　
