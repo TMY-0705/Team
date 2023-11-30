@@ -40,10 +40,10 @@ body {
 }
 
 .detail {
-    margin-right: 50px;
+    margin-right: 0px;
     margin-left: auto;
     padding: 20px;
-    width: 20vw;
+    width: 25vw;
     height: 80vh;
     display: inline-block;
 }

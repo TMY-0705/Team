@@ -11,43 +11,51 @@
 </head>
 
 <body>
-	<!-- header -->
-	<?php require 'header.php'; ?>
+	<?php require 'header.php' ?> <!-- header -->
 	<?php require '../php_init/db-connect.php' ?>
-	<div class="content">
+
+	<?php 
+		$sql=$db->query('SELECT * FROM Products');
+		$res=$sql->fetchAll(PDO::FETCH_ASSOC);
+		$acc_id = $_SESSION['loginfo']['acc_id'];
+		$total_cost = 0;
+	?>
+
+	<div class="master">
 		<div id="product_detail">
 			<span id="title">ショッピングカート</span>
 			<hr>
+			<div class="content">
 			<!-- PHP_START -->
 			<?php
-				$sql = $db->query(
-					"SELECT * FROM Products
-						JOIN Carts ON Products.product_id = Carts.product_id
-					"
-				);
-				$res = $sql->fetch(PDO::FETCH_ASSOC);
+				if($_SESSION['cart']) {
+					foreach($res as $row){
+						if($row['product_id'] != $_SESSION['cart'][$acc_id]['product_id']) continue;
+						echo '<div id="product_detail">';
+						echo '<img src="../img/', $row['product_image'], '" alt="', $row['product_image'], 'の画像がでてナイ！">';
+						
+						echo '<div class="detail">';
+						echo '<h1 class="title">', $row['product_name'], '</h1>';
+						echo '<h1 class="title">￥', $row['product_price'], '</h1>';
+						echo '<h2 class="any">数量: <input type="number" class="number" id="amount" name="amount" value="', $_SESSION['cart'][$acc_id]['amount'],'" min="1"> | <a href="cart_del.php?id=', $_SESSION['cart'][$acc_id]['product_id'],'">削除</a></h2>';
+						echo '</div>';
+						
+						echo '</div>';
+						$total_cost += $_SESSION['cart'][$acc_id]['amount'] * $row['product_price'];
+					}
+				} else {
+					echo '<h1>カートに商品が入っていません。</h1>';
+				}
 			?>
-			<div class="content">
-				<div id="product_detail">
-					<a href="#">カテゴリー</a><br>
-					<img src='../img/<?= $res['product_image'] ?>' alt='<?= $res['product_image'] ?>の画像がでてナイ！'>
-					<div class="detail">
-						<h1 class='title'><?= $res['product_name'] ?></h1>
-						<h1 class='title'><?= $res['product_price'] ?></h1>
-						<h2 class="a">
-							<p class="any">数量:<input type="number" class="number"></p>
-						</h2>
-					</div>
-				</div>
-			</div>
 			<!-- PHP_END -->
+			</div>
 		</div>
 
 		<div id="cost">
 			<span>合計金額</span>
 			<form action="purchased.php" method="POST">
 				<!-- PHP_START -->
-				￥1000
+				￥<?=$total_cost?>
 				<!-- PHP_END -->
 				<button type="submit">購入する</button>
 			</form>

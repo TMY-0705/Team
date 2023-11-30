@@ -3,13 +3,18 @@
 <?php
 	$id = $_POST['product_id'] ?? null;
 	$amount = $_POST['amount'] ?? null;
+	$acc_id = $_SESSION['loginfo']['acc_id'];
+	$current = 0;
 
 	// DBに不備があるため、SESSIONを代用。
 	try {
-		$_SESSION['cart'] = [
-			'account_id' => $_SESSION['loginfo']['acc_id'],
+		if(isset($_SESSION['cart'][$acc_id]['product_id'])) {
+			$current = $_SESSION['cart'][$acc_id]['amount'];
+		}
+
+		$_SESSION['cart'][$acc_id] = [
 			'product_id' => $id,
-			'amount' => $amount,
+			'amount' => $amount + $current,
 		];
 		header("Location: cart.php");
 	} catch (Exception $e) {
