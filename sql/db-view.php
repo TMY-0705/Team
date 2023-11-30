@@ -26,9 +26,9 @@
 			0 => "SELECT * FROM Accounts",
 			1 => "SELECT * FROM Categories",
 			2 => "SELECT * FROM Products",
-			3 => "SELECT * FROM Product_detail",
-			4 => "SELECT * FROM Accounts",
-			5 => "SELECT * FROM Accounts",
+			3 => "SELECT * FROM Histories",
+			4 => "SELECT * FROM Histories_detail",
+			5 => "SELECT * FROM Carts",
 		];
 
 		foreach($sqls as $sql){
@@ -37,11 +37,11 @@
 			foreach($res as $row){
 				echo '<tr>';
 				foreach($row as $i){
-				echo '<td>', $i,'</td>';
+					echo '<td>', $i,'</td>';
 				}
 				echo '</tr>';
 			}
-			echo '</table>';
+			echo '</table><br>';
 		}
 
 	} catch (PDOException $e) {
