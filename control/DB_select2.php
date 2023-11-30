@@ -9,23 +9,30 @@
 </head>
 <!-- header1 -->
 <body>
+	<form action="rate_check.php" method="post">
 	<?php require 'header4.php' ?>
+	<?php require '../php_init/db-connect.php' ?>
+	<?php
 	
-    <button class="shohin" onclick="location.href='rate_check.php'">
-		<img class="img1" src="../img/SUGAKU.png">
-		<table class="itiran">
-			<tr>
-				<td class="text">メーカー：ＸＸＸ</td>
-				<td class="text">カテゴリー：ＸＸＸ</td>
-				<td class="text">評価：ＸＸＸ</td>
-			</tr>
-			<tr>
-				<td class="text">商品名：ＸＸＸ</td>
-				<td class="text">値段：ＸＸＸ</td>
-				<td class="text">在庫数：ＸＸＸ</td>
-			</tr>
-		</table>
-    </button>
-	
+	$sql=$db->query('select * from Products');
+	foreach($sql as $row){
+
+		echo '<button class="shohin" onclick="location.href=\'rate_check.php\'">';
+		echo '<img class="img1" src="../img/'.$row['product_image']. '">';
+		echo '<table class="itiran">';
+			echo '<tr>';
+				echo '<td class="text">メーカー：', $row['product_maker'], '</td>';
+				echo '<td class="text">カテゴリー：', $row['category_id'], '</td>';
+			echo '</tr>';
+			echo '<tr>';
+				echo '<td class="text">商品名：', $row['product_name'], '</td>';
+				echo '<td class="text">値段：', $row['product_price'], '</td>';
+				echo '<td class="text">在庫数：', $row['product_stock'], '</td>';
+			echo '</tr>';
+		echo '</table>';
+    echo '</button>';
+
+	}
+	?>
 </body>
 </html>
