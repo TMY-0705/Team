@@ -4,10 +4,17 @@
 	$id = $_POST['product_id'] ?? null;
 	$amount = $_POST['amount'] ?? null;
 
-	$_SESSION['cart'] = [
-		'product_id' => $id,
-		'amount' => $amount,
-	];
-
-	
+	// DBに不備があるため、SESSIONを代用。
+	try {
+		$_SESSION['cart'] = [
+			'account_id' => $_SESSION['loginfo']['acc_id'],
+			'product_id' => $id,
+			'amount' => $amount,
+		];
+		header("Location: cart.php");
+	} catch (Exception $e) {
+		echo '<h2>通常の例外発生！！！<br>', $e, "</h2>";
+	} catch (Throwable $e) {
+		echo '<h2>特殊な例外発生！！！<br>', $e, "</h2>";
+	}
 ?>

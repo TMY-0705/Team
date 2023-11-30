@@ -12,7 +12,6 @@
 
 <body>
 	<!-- header -->
-	<?php session_start(); ?>
 	<?php require 'header.php'; ?>
 	<?php require '../php_init/db-connect.php' ?>
 	<div class="content">
@@ -21,12 +20,10 @@
 			<hr>
 			<!-- PHP_START -->
 			<?php
-				$id = $_GET['id'];
 				$sql = $db->query(
 					"SELECT * FROM Products
 						JOIN Categories
-						ON Products.category_id = Categories.category_id
-						WHERE Products.product_id = $id
+						ON Products.product_id = Carts.product_id
 					"
 				);
 				$res = $sql->fetch(PDO::FETCH_ASSOC);
