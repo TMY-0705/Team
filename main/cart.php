@@ -40,7 +40,7 @@
 
 							echo '<div class="detail">';
 							echo '<h1 class="title">', $row['product_name'], '</h1>';
-							echo '<h1 class="title">￥', $row['product_price'], '</h1>';
+							echo '<h1 class="title">￥', number_format($row['product_price']), '</h1>';
 							echo '<h2 class="any">数量: <input type="number" class="number" id="amount" name="amount" value="', $_SESSION['cart'][$acc_id][$row['product_id']]['amount'],'" min="1"> | <a href="cart_del.php?id=', $row['product_id'],'">削除</a></h2>';
 							echo '</div>';
 
@@ -57,9 +57,9 @@
 
 		<div id="cost">
 			<span>合計金額</span>
-			<form action="purchased.php" method="POST">
+			<form action="purchase.php" method="POST">
 				<!-- PHP_START -->
-				￥<?=$total_cost?>
+				￥<?=number_format($total_cost)?>
 				<!-- PHP_END -->
 				<button type="submit">購入する</button>
 			</form>
