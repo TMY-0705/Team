@@ -8,12 +8,11 @@
 
 	// DBに不備があるため、SESSIONを代用。
 	try {
-		if(isset($_SESSION['cart'][$acc_id]['product_id'])) {
+		if(isset($_SESSION['cart'][$acc_id][$id])) {
 			$current = $_SESSION['cart'][$acc_id]['amount'];
 		}
 
-		$_SESSION['cart'][$acc_id] = [
-			'product_id' => $id,
+		$_SESSION['cart'][$acc_id][$id] = [
 			'amount' => $amount + $current,
 		];
 		header("Location: cart.php");

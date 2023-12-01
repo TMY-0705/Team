@@ -28,9 +28,10 @@
 			<div class="content">
 			<!-- PHP_START -->
 			<?php
-				if($_SESSION['cart']) {
+				if(isset($_SESSION['cart'][$acc_id])) {
 					foreach($res as $row){
-						if($row['product_id'] != $_SESSION['cart'][$acc_id]['product_id']) continue;
+						echo $row['product_id'], ", ", $_SESSION['cart'][$acc_id];
+						if($row['product_id'] != $_SESSION['cart'][$acc_id]) continue;
 						echo '<div id="product_detail">';
 						echo '<img src="../img/', $row['product_image'], '" alt="', $row['product_image'], 'の画像がでてナイ！">';
 						
