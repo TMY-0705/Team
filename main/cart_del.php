@@ -1,7 +1,7 @@
 <?php require '../php_init/login_check.php' ?>
 <?php require '../php_init/db-connect.php' ?>
 <?php
-	$id = $_GET['product_id'] ?? null;
+	$id = $_GET['id'] ?? null;
 	$acc_id = $_SESSION['loginfo']['acc_id'];
 	$current = 0;
 
