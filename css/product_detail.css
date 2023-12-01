@@ -2,15 +2,18 @@ body {
     margin: 0;
 }
 
-.content {    
+.master {
     display: flex;
 	justify-content: space-between;
 }
 
 #product_detail {
 	padding: 30px;
-    display: inline-block; /* 横に並べるためのスタイル追加 */
-    vertical-align: top; /* 上端に揃えるためのスタイル追加 */
+	vertical-align: top; /* 上端に揃えるためのスタイル追加 */
+}
+
+#content {
+    display: block;
 }
 
 #cost {

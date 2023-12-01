@@ -9,7 +9,7 @@
 	// DBに不備があるため、SESSIONを代用。
 	try {
 		if(isset($_SESSION['cart'][$acc_id][$id])) {
-			$current = $_SESSION['cart'][$acc_id]['amount'];
+			$current = $_SESSION['cart'][$acc_id][$id]['amount'];
 		}
 
 		$_SESSION['cart'][$acc_id][$id] = [

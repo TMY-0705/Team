@@ -30,19 +30,17 @@
 			<?php
 				if(isset($_SESSION['cart'][$acc_id])) {
 					foreach($res as $row){
-						echo $row['product_id'], ", ", $_SESSION['cart'][$acc_id];
-						if($row['product_id'] != $_SESSION['cart'][$acc_id]) continue;
-						echo '<div id="product_detail">';
+						if( is_null( $_SESSION['cart'][$acc_id][$row['product_id']] ?? null ) ) continue;
+						echo '<div id="product_detail_detail">';
 						echo '<img src="../img/', $row['product_image'], '" alt="', $row['product_image'], 'の画像がでてナイ！">';
-						
+						echo '</div>';
 						echo '<div class="detail">';
 						echo '<h1 class="title">', $row['product_name'], '</h1>';
 						echo '<h1 class="title">￥', $row['product_price'], '</h1>';
-						echo '<h2 class="any">数量: <input type="number" class="number" id="amount" name="amount" value="', $_SESSION['cart'][$acc_id]['amount'],'" min="1"> | <a href="cart_del.php?id=', $_SESSION['cart'][$acc_id]['product_id'],'">削除</a></h2>';
-						echo '</div>';
+						echo '<h2 class="any">数量: <input type="number" class="number" id="amount" name="amount" value="', $_SESSION['cart'][$acc_id][$row['product_id']]['amount'],'" min="1"> | <a href="cart_del.php?id=', $_SESSION['cart'][$acc_id][$row['product_id']],'">削除</a></h2>';
 						
-						echo '</div>';
-						$total_cost += $_SESSION['cart'][$acc_id]['amount'] * $row['product_price'];
+						echo '</div><br>';
+						$total_cost += $_SESSION['cart'][$acc_id][$row['product_id']]['amount'] * $row['product_price'];
 					}
 				} else {
 					echo '<h1>カートに商品が入っていません。</h1>';
