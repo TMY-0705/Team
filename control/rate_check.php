@@ -10,7 +10,7 @@
 <body>
 	<link rel="stylesheet" href="../css/rate_check.css">
 	<?php require 'header4.php' ?>
-
+    <?php require '../php_init/db-connect.php' ?>
 	<div class="detail">
 		<img src="../img/NoImage.png" class="pic" >
 		<table>
