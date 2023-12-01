@@ -29,7 +29,7 @@
 </head>
 
 <body>
-	<div class="content">
+	<div class="master">
 		<!-- PHP_START -->
 		<div id="product_detail">			
 			<img src='../img/<?= $res['product_image'] ?>' alt='<?= $res['product_name'] ?>の画像がでてナイ！'>
