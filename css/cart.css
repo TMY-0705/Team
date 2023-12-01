@@ -1,9 +1,6 @@
-body {
-	margin: 0px;
-}
+
 
 .content {
-	
 	display: flex;
 }
 
@@ -22,7 +19,7 @@ body {
 	font-size: 3vw;
 	background-color: #e8e8e8;
 	width: 20vw;
-	height: 80vh;
+	height: inherit;
 }
 
 #cost>form>button {
