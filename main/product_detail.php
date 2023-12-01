@@ -31,7 +31,7 @@
 <body>
 	<div class="master">
 		<!-- PHP_START -->
-		<div id="product_detail">			
+		<div id="product_detail_detail">			
 			<img src='../img/<?= $res['product_image'] ?>' alt='<?= $res['product_name'] ?>の画像がでてナイ！'>
 			<div class="detail">
 				<h1 class="title"><?= $res['product_name'] ?></h1>

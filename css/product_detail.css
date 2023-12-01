@@ -35,7 +35,7 @@ body {
     background: #FCFF67;
 }
 
-#product_detail>img {
+#product_detail_detail>img {
 	width: 24vw;
 	max-width: 384px;
 	max-height: 384px;
@@ -47,7 +47,7 @@ body {
     margin-left: auto;
     padding: 20px;
     width: 25vw;
-    height: 80vh;
+    height: auto;
     display: inline-block;
 }
 
