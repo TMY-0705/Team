@@ -5,7 +5,8 @@
 	$today = date("Ymd");
 	try {
 		$sql = $db -> query("INSERT INTO Histories VALUE (NULL, $acc_id, $today)");
-		
+		$sql = $db -> query("INSERT INTO Histories_detail VALUE (NULL, $acc_id, )");
+		header("Location: purchased.php");
 	} catch (PDOException $e) {
 		echo $e;
 		header("Location: cart.php?err=$err", true, 307);
