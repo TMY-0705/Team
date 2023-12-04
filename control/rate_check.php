@@ -74,7 +74,7 @@
 							echo $res['history_detail_rate'];
 							$hosi = round($res['history_detail_rate'], 0);
 						}
-						for($i=1;$i<=5;i++){
+						for($i=1;$i<=5;$i++){
 							if($hosi>0){
 								echo '★';
 								$hosi--;
@@ -85,7 +85,7 @@
 						 if (isset($res['history_detail_amount'])) {
 							echo $res['phistory_detail_amount'];
 						}else{
-							esho '0';
+							echo '0';
 						}
 						?>件</td>
 				</tr>
