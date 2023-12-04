@@ -60,7 +60,9 @@
 			<form action="purchase.php" method="POST">
 				<!-- PHP_START -->
 				￥<?=number_format($total_cost)?>
+				<input type="hidden" name="detail[]" value="<?= $_SESSION['cart'][$acc_id] ?>">
 				<!-- PHP_END -->
+				
 				<button type="submit">購入する</button>
 			</form>
 		</div>
