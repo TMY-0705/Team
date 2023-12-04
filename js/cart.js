@@ -5,12 +5,12 @@ function recalc(){
 	var num = 0;
 
 	for(var i=0; i<n; i++){
-		var x = document.getElementById("price");
-		var y = document.getElementById("amount");
-		var z = document.getElementById("total");
+		var x = document.getElementById("price_"+i);
+		var y = document.getElementById("amount_"+i);
 
-		num += x.innerHTML.replace(/,/g, "");
+		num += x.innerHTML.replace(/,/g, "") * y.value;
 	}
 
-	z.innerHTML = "￥" + (num * y.value).toLocaleString();
+	var z = document.getElementById("total");
+	z.innerHTML = "￥" + (num).toLocaleString();
 }
