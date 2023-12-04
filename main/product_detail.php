@@ -25,7 +25,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><?= $res['product_name'] ?></title>
 	<link rel="stylesheet" href="../css/header.css">
-	<link rel="stylesheet" href="../css/product_detail.css">
+	<link rel="stylesheet" href="../css/product_detail2.css">
 </head>
 
 <body>
