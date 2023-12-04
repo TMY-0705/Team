@@ -1,5 +1,20 @@
+<?php require '../php_init/db-connect.php' ?>
 <!DOCTYPE html>
 <html lang="ja">
+<?php
+	$id = $_GET['id'];
+	$sql = $db->query(
+		"SELECT * FROM Products
+			JOIN Categories
+			ON Products.category_id = Categories.category_id
+			WHERE Products.product_id = $id
+		"
+	);
+	$res = $sql->fetch(PDO::FETCH_ASSOC);
+
+	$sql = $db->query("SELECT COUNT(product_id) as cnt, AVG(history_detail_rate) as avg FROM Histories_detail");
+	$res2 = $sql->fetch(PDO::FETCH_ASSOC);
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,21 +25,45 @@
 <body>
 	<link rel="stylesheet" href="../css/rate_check.css">
 	<?php require 'header4.php' ?>
-    <?php require '../php_init/db-connect.php' ?>
+    
 	<div class="detail">
-		<img src="../img/NoImage.png" class="pic" >
+	    <img src='../img/<?= $res['product_image'] ?>' alt='<?= $res['product_name'] ?>の画像がでてナイ！'>
 		<table>
 			<tbody>
 				<tr>
-					<td>メーカー：ＸＸＸ</td>
-					<td>カテゴリ：ＸＸＸ</td>
+					<td>	
+						<?php
+						if (isset($res['product_maker'])) {
+							echo $res['product_maker'];
+						}
+						?>
+					</td>
+					<td>
+						<?php
+						if (isset($res['category_name'])) {
+							echo $res['category_name'];
+						}
+						?>
+					</td>
 				</tr>
 				<tr>
-					<td>商品名：ＸＸＸ</td>
-					<td>値段：ＸＸＸ</td>
+					<td><h1 class="title"><?= $res['product_name'] ?></h1></td>
+					<td>値段：
+					<?php
+						if (isset($res['product_price'])) {
+							echo $res['product_price'];
+						}
+						?>
+					</td>
 				</tr>
 				<tr>
-					<td>在庫数：ＸＸＸ</td>
+					<td>在庫数：
+					<?php
+						if (isset($res['product_stock'])) {
+							echo $res['product_stock'];
+						}
+						?>
+					</td>
 				</tr>
 				<tr>
 					<td>3.9 ★★★★☆ 2518件</td>
