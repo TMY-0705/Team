@@ -89,16 +89,20 @@
                                 echo '☆';
 							}
 						}	
-						$sum = $db->query(
-							"SELECT COUNT(history_detail_rate) FROM Histories_detail
-							   WHERE Histories_detail.product_id = $id
-							"
+						$sumQuery = $db->query(
+							"SELECT COUNT(history_detail_rate) as count FROM Histories_detail
+							WHERE Histories_detail.product_id = $id"
 						);
-						 if ($sum) {
-							echo $sum['COUNT(history_detail_rate)'];
-						}else{
+						
+						if ($sumQuery) {
+							$sumResult = $sumQuery->fetch(PDO::FETCH_ASSOC);
+							$sumCount = $sumResult['count'];
+						
+							echo $sumCount;
+						} else {
 							echo '0';
 						}
+						
 						?>件</td>
 				</tr>
 				<tr><td>星5つ 1320件 52.42%</td></tr>
