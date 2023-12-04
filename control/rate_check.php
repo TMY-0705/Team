@@ -7,6 +7,8 @@
 		"SELECT * FROM Products
 			JOIN Categories
 			ON Products.category_id = Categories.category_id
+			JOIN Histories_detail
+			ON Products.product_id = Histories_detail.product_id
 			WHERE Products.product_id = $id
 		"
 	);
@@ -66,7 +68,26 @@
 					</td>
 				</tr>
 				<tr>
-					<td>3.9 ★★★★☆ 2518件</td>
+					<td>
+						<?php
+						if (isset($res['history_detail_rate'])) {
+							echo $res['history_detail_rate'];
+							$hosi = round($res['history_detail_rate'], 0);
+						}
+						for($i=1;$i<=5;i++){
+							if($hosi>0){
+								echo '★';
+								$hosi--;
+							}else{
+                                echo '☆';
+							}
+						}
+						 if (isset($res['history_detail_amount'])) {
+							echo $res['phistory_detail_amount'];
+						}else{
+							esho '0';
+						}
+						?>件</td>
 				</tr>
 				<tr><td>星5つ 1320件 52.42%</td></tr>
 				<tr><td>星4つ 561件 22.28%</td></tr>
