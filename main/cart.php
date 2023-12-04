@@ -22,6 +22,7 @@
 	?>
 
 	<div class="master">
+		<form action="purchase.php" method="POST">
 		<div id="product_detail">
 			<span id="title">ショッピングカート</span>
 			<hr>
@@ -31,7 +32,8 @@
 				if(isset($_SESSION['cart'][$acc_id])) {
 					$i = 0;
 					foreach($res as $row){
-						if( is_null( $_SESSION['cart'][$acc_id][$row['product_id']] ?? null ) ) continue;
+						$product_id = $_SESSION['cart'][$acc_id][$row['product_id']];
+						if( is_null( $product_id ?? null ) ) continue;
 
 						echo '<div class="content">';
 
@@ -60,23 +62,26 @@
 
 		<div id="cost">
 			<span>合計金額</span>
-			<form action="purchase.php" method="POST">
+			
 				<!-- PHP_START -->
 				<span id="total">
 					￥<?=number_format($total_cost)?>
 				</span>
 				<?php
-					foreach($_SESSION['cart'][$acc_id] as $data) {
-						foreach($data as $amount) {
-							echo '<input type="hidden" name="detail[][]" value="', $amount, '">';
-						}
+					foreach($res as $row){
+						$product_id = $_SESSION['cart'][$acc_id][$row['product_id']];
+						$amount = $_SESSION['cart'][$acc_id][$row['product_id']]['amount'];
+
+						// id と 個数をいれる
+						echo '<input type="hidden" name="detail[][0]" value="', $product_id, '">';
+						echo '<input type="hidden" name="detail[][1]" value="', $amount, '">';
 					}
 				?>
 				<!-- PHP_END -->
 				
 				<button type="submit">購入する</button>
-			</form>
-		</div>
+			</div>
+		</form>
 	</div>
 	<script>
 		const user = <?= json_encode($acc_id) ?>;
