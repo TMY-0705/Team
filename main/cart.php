@@ -67,6 +67,7 @@
 			</form>
 		</div>
 	</div>
+	<script src="../js/cart.js" defer></script>
 </body>
 
 </html>
