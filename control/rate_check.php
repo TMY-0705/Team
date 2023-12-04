@@ -72,8 +72,9 @@
 						<?php
 						if (isset($res['history_detail_rate'])) {
 							echo $res['history_detail_rate'];
-							$hosi = round($res['history_detail_rate'], 0);
+						
 						}
+						$hosi = round($res['history_detail_rate'], 0);
 						for($i=1;$i<=5;$i++){
 							if($hosi>0){
 								echo '★';
