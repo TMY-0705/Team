@@ -77,7 +77,7 @@
 						if (isset($res['history_detail_rate'])) {
 							echo $res['history_detail_rate'];
 						
-						}else if{
+						}else{
 							echo '評価なし'
 						}
 						$hosi = round($res['history_detail_rate'] ?? 0);
