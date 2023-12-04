@@ -90,12 +90,12 @@
 							}
 						}	
 						$sum = $db->query(
-							"SELECT COUNT(history_detail_rate)FROM Histories_detail
+							"SELECT COUNT(history_detail_rate) FROM Histories_detail
 							   WHERE Histories_detail.product_id = $id
 							"
 						);
 						 if ($sum) {
-							echo $sum;
+							echo $sum['COUNT(history_detail_rate)'];
 						}else{
 							echo '0';
 						}
