@@ -31,33 +31,35 @@
 <body>
 	<div class="master">
 		<!-- PHP_START -->
-		<div id="product_detail_detail">			
-			<img src='../img/<?= $res['product_image'] ?>' alt='<?= $res['product_name'] ?>の画像がでてナイ！'>
-			<div class="detail">
-				<h1 class="title"><?= $res['product_name'] ?></h1>
-				<a href="products.php?maker=<?= $res['product_maker'] ?>" class="store">
-					<?= $res['product_maker'] ?>のストアを表示
-				</a>
-				<p class="rating">
-					<?php
-						if (isset($res['product_maker'])) {
-							echo $res['product_maker'];
-						}
-					?>
-				</p>
-				<a href="#">
-					<?php
-						if( isset($res2['avg']) ){
-							echo $res2['cnt'];
-						} else echo "0";
-					?>
-					件の評価
-				</a>
-				<h1 class="title">￥
-					<span id="price">
-						<?=number_format($res['product_price'])?>
-					</span>
-				</h1>
+		<div id="product_detail">
+			<div id="product_detail_detail">			
+				<img src='../img/<?= $res['product_image'] ?>' alt='<?= $res['product_name'] ?>の画像がでてナイ！'>
+				<div class="detail">
+					<h1 class="title"><?= $res['product_name'] ?></h1>
+					<a href="products.php?maker=<?= $res['product_maker'] ?>" class="store">
+						<?= $res['product_maker'] ?>のストアを表示
+					</a>
+					<p class="rating">
+						<?php
+							if (isset($res['product_maker'])) {
+								echo $res['product_maker'];
+							}
+						?>
+					</p>
+					<a href="#">
+						<?php
+							if( isset($res2['avg']) ){
+								echo $res2['cnt'];
+							} else echo "0";
+						?>
+						件の評価
+					</a>
+					<h1 class="title">￥
+						<span id="price">
+							<?=number_format($res['product_price'])?>
+						</span>
+					</h1>
+				</div>
 			</div>
 		</div>
 
