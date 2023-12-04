@@ -49,7 +49,11 @@
 					</td>
 				</tr>
 				<tr>
-					<td>商品名：<?= $res['product_name'] ?></td>
+					<td>商品名：<?php
+						if (isset($res['product_name'])) {
+							echo $res['product_name'];
+						}
+						?></td>
 					<td>値段：￥
 					<?php
 						if (isset($res['product_price'])) {
@@ -84,7 +88,7 @@
 							}
 						}
 						 if (isset($res['history_detail_amount'])) {
-							echo $res['phistory_detail_amount'];
+							echo $res['history_detail_amount'];
 						}else{
 							echo '0';
 						}
