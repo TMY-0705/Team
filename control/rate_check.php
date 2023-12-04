@@ -5,9 +5,9 @@
 	$id = $_GET['id'];
 	$sql = $db->query(
 		"SELECT * FROM Products
-			JOIN Categories
+			LEFT JOIN Categories
 			ON Products.category_id = Categories.category_id
-			JOIN Histories_detail
+			LEFT JOIN Histories_detail
 			ON Products.product_id = Histories_detail.product_id
 			WHERE Products.product_id = $id
 		"
