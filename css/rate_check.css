@@ -25,3 +25,8 @@ td {
 	padding: 20px 80px 0 0;
 	font-size: 25px;
 }
+
+img{
+	max-width:300px;
+	max-height:400px;
+}

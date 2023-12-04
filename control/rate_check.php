@@ -31,14 +31,14 @@
 		<table>
 			<tbody>
 				<tr>
-					<td>	
+					<td>メーカー：
 						<?php
 						if (isset($res['product_maker'])) {
 							echo $res['product_maker'];
 						}
 						?>
 					</td>
-					<td>
+					<td>カテゴリー：
 						<?php
 						if (isset($res['category_name'])) {
 							echo $res['category_name'];
@@ -47,7 +47,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td><h1 class="title"><?= $res['product_name'] ?></h1></td>
+					<td>商品名：<?= $res['product_name'] ?><</td>
 					<td>値段：
 					<?php
 						if (isset($res['product_price'])) {
