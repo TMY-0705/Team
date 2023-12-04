@@ -47,8 +47,8 @@
 					</td>
 				</tr>
 				<tr>
-					<td>商品名：<?= $res['product_name'] ?><</td>
-					<td>値段：
+					<td>商品名：<?= $res['product_name'] ?></td>
+					<td>値段：￥
 					<?php
 						if (isset($res['product_price'])) {
 							echo $res['product_price'];
