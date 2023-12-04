@@ -68,7 +68,7 @@
 						if (isset($res['product_stock'])) {
 							echo $res['product_stock'];
 						}
-						?>
+						?>冊
 					</td>
 				</tr>
 				<tr>
@@ -77,6 +77,8 @@
 						if (isset($res['history_detail_rate'])) {
 							echo $res['history_detail_rate'];
 						
+						}else if{
+							echo '評価なし'
 						}
 						$hosi = round($res['history_detail_rate'] ?? 0);
 						for($i=1;$i<=5;$i++){
@@ -86,9 +88,14 @@
 							}else{
                                 echo '☆';
 							}
-						}
-						 if (isset($res['history_detail_amount'])) {
-							echo $res['history_detail_amount'];
+						}	
+						$sum = $db->query(
+							"SELECT COUNT(history_detail_rate)FROM Histories_detail
+							   WHERE Histories_detail.product_id = $id
+							"
+						);
+						 if (isset($res[$sum])) {
+							echo $res[$sum];
 						}else{
 							echo '0';
 						}
