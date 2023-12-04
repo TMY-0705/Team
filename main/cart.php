@@ -19,8 +19,6 @@
 		$res=$sql->fetchAll(PDO::FETCH_ASSOC);
 		$acc_id = $_SESSION['loginfo']['acc_id'];
 		$total_cost = 0;
-
-		var_dump($_SESSION);
 	?>
 
 	<div class="master">
@@ -42,15 +40,16 @@
 							echo '</div>';
 
 							echo '<div class="detail">';
-							echo '<h1 class="title"">', $row['product_name'], '</h1>';
-							echo '<h1 class="title" id="price_',$i,'">￥', number_format($row['product_price']), '</h1>';
-							echo '<h2 class="any">数量: <input type="number" class="number" id="amount_',$i,'" name="amount" value="', $_SESSION['cart'][$acc_id][$row['product_id']]['amount'],'" min="1"> | <a href="cart_del.php?id=', $row['product_id'],'">削除</a></h2>';
+							echo '<p class="title"">', $row['product_name'], '</p>';
+							echo '<p class="title">￥', number_format($row['product_price']), '</p>';
+							echo '<input type="hidden" id="price_',$i,'" value="', $row['product_price'], '">';
+							echo '<h3 class="any">数量: <input type="number" class="number" id="amount_',$i,'" name="amount" value="', $_SESSION['cart'][$acc_id][$row['product_id']]['amount'],'" min="1" oninput="recalc();"> | <a href="cart_del.php?id=', $row['product_id'],'">削除</a></h3>';
 							echo '</div>';
 
 						echo '</div><hr>';
 						
 						$total_cost += $_SESSION['cart'][$acc_id][$row['product_id']]['amount'] * $row['product_price'];
-						$i++;
+						++$i;
 					}
 				} else {
 					echo '<h1>カートに商品が入っていません。</h1>';
@@ -63,11 +62,13 @@
 			<span>合計金額</span>
 			<form action="purchase.php" method="POST">
 				<!-- PHP_START -->
-				<span id="total">￥<?=number_format($total_cost)?></span>
+				<span id="total">
+					￥<?=number_format($total_cost)?>
+				</span>
 				<?php
 					foreach($_SESSION['cart'][$acc_id] as $data) {
 						foreach($data as $amount) {
-							echo '<input type="hidden" name="detail[][]" value="', $amount, '">\n';
+							echo '<input type="hidden" name="detail[][]" value="', $amount, '">';
 						}
 					}
 				?>
@@ -77,6 +78,11 @@
 			</form>
 		</div>
 	</div>
+	<script>
+		const user = <?= json_encode($acc_id) ?>;
+		var n = <?= $i ?>;
+	</script>
+
 	<script src="../js/cart.js" defer></script>
 </body>
 
