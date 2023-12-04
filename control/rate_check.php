@@ -94,8 +94,8 @@
 							   WHERE Histories_detail.product_id = $id
 							"
 						);
-						 if (isset($res[$sum])) {
-							echo $res[$sum];
+						 if ($sum) {
+							echo $sum;
 						}else{
 							echo '0';
 						}
