@@ -74,21 +74,16 @@
 				<tr>
 					<td>
 						<?php
-						if (isset($res['history_detail_rate'])) {
-							echo $res['history_detail_rate'];
-						
-						}else{
-							echo '評価なし';
-						}
-						$hosi = round($res['history_detail_rate'] ?? 0);
-						for($i=1;$i<=5;$i++){
-							if($hosi>0){
-								echo '★';
-								$hosi--;
-							}else{
-                                echo '☆';
-							}
-						}	
+						$hyouka = $db->query(
+							"SELECT SUM(history_detail_rate)
+						     FROM Histories_detail
+						     WHERE Histories_detail.product_id = $id"
+						);
+						if ($hyouka) {
+							$hyoukaResult = $hyouka->fetch(PDO::FETCH_ASSOC);
+							$hyoukaSum = $hyoukaResult['sum'];
+
+						} 		
 						$sumQuery = $db->query(
 							"SELECT COUNT(history_detail_rate) as count FROM Histories_detail
 							WHERE Histories_detail.product_id = $id"
@@ -97,6 +92,28 @@
 						if ($sumQuery) {
 							$sumResult = $sumQuery->fetch(PDO::FETCH_ASSOC);
 							$sumCount = $sumResult['count'];
+						
+						}
+                        $hyoukakan = round($hyoukaSum/$sumCount,1);
+						
+						if ($hyoukakan) {
+							echo $hyoukakan;
+						
+						}else{
+							echo '評価なし';
+						}
+						$hosi = round($hyoukakan ?? 0);
+						for($i=1;$i<=5;$i++){
+							if($hosi>0){
+								echo '★';
+								$hosi--;
+							}else{
+                                echo '☆';
+							}
+						}	
+						
+						if ($sumCount) {
+						
 						
 							echo $sumCount;
 						} else {
