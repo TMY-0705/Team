@@ -136,15 +136,15 @@
                 if ($sql) {
 					$hyoukaResult = $sql->fetch(PDO::FETCH_ASSOC);
 					$hyouka = $hyoukaResult['count'];
-                    $hiritu = round($hyouka/$sumCount,1)*100;
-					echo '<tr><td>星',$i,'つ', $hyouka,'件',$hiritu,'%</td></tr>';
+					if($sumCount){
+                    	$hiritu = round($hyouka/$sumCount,1)*100;
+						echo '<tr><td>星',$i,'つ', $hyouka,'件',$hiritu,'%</td></tr>';
+					}else{
+						echo '<tr><td>星',$i,'つ0件0%</td></tr>';
+					}
 
-				}else{
-					echo '<tr><td>星',$i,'つ0件0%</td></tr>';
 				}
-
 				}
-			
 				?>
 			</tbody>
 		</table>
