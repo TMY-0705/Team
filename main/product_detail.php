@@ -35,7 +35,7 @@
 			<div id="product_detail_detail">			
 				<img src='../img/<?= $res['product_image'] ?>' alt='<?= $res['product_name'] ?>の画像がでてナイ！'>
 				<div class="detail">
-					<h1 class="title"><?= $res['product_name'] ?></h1>
+					<p class="title"><?= $res['product_name'] ?></p>
 					<a href="products.php?maker=<?= $res['product_maker'] ?>" class="store">
 						<?= $res['product_maker'] ?>のストアを表示
 					</a>
@@ -46,7 +46,7 @@
 							}
 						?>
 					</p>
-					<a href="#">
+					<a href="history.php">
 						<?php
 							if( isset($res2['avg']) ){
 								echo $res2['cnt'];
@@ -54,11 +54,11 @@
 						?>
 						件の評価
 					</a>
-					<h1 class="title">￥
+					<p class="title">￥
 						<span id="price">
 							<?=number_format($res['product_price'])?>
 						</span>
-					</h1>
+					</p>
 				</div>
 			</div>
 		</div>
