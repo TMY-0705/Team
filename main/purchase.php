@@ -5,8 +5,7 @@
 
 	$acc_id = $_SESSION['loginfo']['acc_id'];
 	$today = date("Ymd");
-
-	$amount = $_SESSION['cart'][$acc_id]['product_id']['amount'];
+	$amount =  $_SESSION['cart'][$acc_id]['product_id']['amount'];	
 	try {
 		$sql = $db -> query("INSERT INTO Histories VALUE (NULL, $acc_id, $today)");
 		$sql = $db -> query("INSERT INTO Histories_detail VALUE (NULL, $acc_id, $amount)");
