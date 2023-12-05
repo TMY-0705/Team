@@ -13,10 +13,22 @@
 	<?php require '../php_init/db-connect.php' ?>
 	<?php
 	$sql=$db->prepare('insert into Products Values (NULL, ?, ?, ?, ?, ?, ?)');
+<<<<<<< HEAD
 	$sql->execute([$_GET["pname"], $_GET["price"], $_GET["stock"], $_GET["image"], $_GET["mname"], $_GET["category"]]);
     echo '<h1>登録しました</h1>';
 
     echo '<button class="shohin"><img class="img1" src="../img/'.$_POST['image']. '">';
+=======
+	$sql->execute([$_POST["pname"], $_POST["price"], $_POST["stock"], $_FILES['upload_image']['name'], $_POST["mname"], $_POST["category"]]);
+
+	$filename = $_FILES['upload_image']['name'];
+	$uploaded_path = '../img/'.$filename;
+	$result = move_uploaded_file($_FILES['upload_image']['tmp_name'],$uploaded_path);
+
+    echo '<h1>登録しました</h1>';
+
+    echo '<button class="shohin"><img class="img1" src="../img/'.$_FILES['upload_image']['name']. '">';
+>>>>>>> 27cadcb4cdaa563eba4c1ac517c7eb1e73a423d7
 
 	echo '<table class="itiran">';
 		echo '<tr>';
