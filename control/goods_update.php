@@ -27,7 +27,7 @@
 	$sql = $db->query("SELECT COUNT(product_id) as cnt, AVG(history_detail_rate) as avg FROM Histories_detail");
 	$res2 = $sql->fetch(PDO::FETCH_ASSOC);
 ?>
-<form action="update_finish.php?id=<?php$res['product_id']?>" method="post" enctype="multipart/form-data">
+<form action="update_finish.php?id=<?php $res['product_id'] ?>" method="post" enctype="multipart/form-data">
 <span class="yohaku">・商品名　　</span><input type="text" name="pname" class="text" value="<?php
 						if (isset($res['product_name'])) {
 							echo $res['product_name'];
