@@ -24,7 +24,7 @@
      
 } finally {
     // DB接続を閉じる
-    $pdo = null;
+    $db = null;
 }
  
 ?>
