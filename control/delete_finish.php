@@ -14,8 +14,8 @@
     try{
     $id = $_GET['id'];
 	
-    $stmt = $pdo->prepare("DELETE FROM users 
-                            WHERE id = $id ");
+    $stmt = $db->prepare("DELETE FROM Products 
+                            WHERE product_id = $id ");
     $stmt->execute();
  
 } catch (PDOException $e) {
@@ -24,10 +24,11 @@
      
 } finally {
     // DB接続を閉じる
-    $pdo = null;
+    $db = null;
 }
  
 ?>
+
     
 	<br><br><br><br>
 	<h1>削除しました。</h1>
