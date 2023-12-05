@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>商品登録</title>
-    <link rel="stylesheet" href="../css/goodsInsert.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>商品登録</title>
+	<link rel="stylesheet" href="../css/goodsInsert.css">
 </head>
+
 <body>
 <?php require 'header3.php' ?>
 <?php require '../php_init/db-connect.php' ?>
@@ -28,4 +30,5 @@
 <input type="submit" class="button2" value="登録">
 </form>
 </body>
+
 </html>
