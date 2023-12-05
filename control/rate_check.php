@@ -75,13 +75,15 @@
 					<td>
 						<?php
 						$hyouka = $db->query(
-							"SELECT SUM(history_detail_rate)
-						     FROM Histories_detail
-						     WHERE Histories_detail.product_id = $id"
+							"SELECT SUM(history_detail_rate) as sum
+ 							 FROM Histories_detail
+ 							WHERE Histories_detail.product_id = $id"
+
 						);
 						if ($hyouka) {
 							$hyoukaResult = $hyouka->fetch(PDO::FETCH_ASSOC);
-							$hyoukaSum = $hyoukaResult['sum'];
+                            $hyoukaSum = $hyoukaResult['sum'];
+
 
 						} 		
 						$sumQuery = $db->query(
@@ -94,8 +96,11 @@
 							$sumCount = $sumResult['count'];
 						
 						}
+						if($hyoukaSum&&$sumCount){
                         $hyoukakan = round($hyoukaSum/$sumCount,1);
-						
+						}else{
+							$hyoukakan=null;
+						}
 						if ($hyoukakan) {
 							echo $hyoukakan;
 						
@@ -120,6 +125,7 @@
 							echo '0';
 						}
 						
+
 						?>件</td>
 				</tr>
 				<tr><td>星5つ 1320件 52.42%</td></tr>
