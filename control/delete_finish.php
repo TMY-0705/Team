@@ -15,7 +15,7 @@
     $id = $_GET['id'];
 	
     $stmt = $pdo->prepare("DELETE FROM Products 
-                            WHERE id = $id ");
+                            WHERE product_id = $id ");
     $stmt->execute();
  
 } catch (PDOException $e) {
