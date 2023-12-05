@@ -15,10 +15,9 @@
 	<?php require '../php_init/db-connect.php' ?>
 
 	<?php
-	$sql = $db->query('SELECT * FROM Products');
-	$res = $sql->fetchAll(PDO::FETCH_ASSOC);
-	$acc_id = $_SESSION['loginfo']['acc_id'];
-	$total_cost = 0;
+		$sql = $db->query('SELECT * FROM Carts LEFT JOIN Products');
+		$res = $sql->fetchAll(PDO::FETCH_ASSOC);
+		$total_cost = 0;
 	?>
 
 	<form action="purchase.php" method="POST">
@@ -29,10 +28,10 @@
 
 				<!-- PHP_START -->
 				<?php
-				if (isset($_SESSION['cart'][$acc_id])) {
+				if () {
 					$i = 0;
 					foreach ($res as $row) {
-						$product_id = $_SESSION['cart'][$acc_id][$row['product_id']] ?? null;
+						$product_id = $row['product'] ?? null;
 						if (is_null($product_id ?? null)) continue;
 
 						echo '<div class="content">';
@@ -45,7 +44,9 @@
 						echo '<p class="title"">', $row['product_name'], '</p>';
 						echo '<p class="title">￥', number_format($row['product_price']), '</p>';
 						echo '<input type="hidden" id="price_', $i, '" value="', $row['product_price'], '">';
-						echo '<h3 class="any">数量: <input type="number" class="number" id="amount_', $i, '" name="amount" value="', $_SESSION['cart'][$acc_id][$row['product_id']]['amount'], '" min="1" oninput="recalc();"> | <a href="cart_del.php?id=', $row['product_id'], '">削除</a></h3>';
+						echo '<h3 class="any">数量: ';
+						echo '<input type="number" class="number" id="amount_', $i, '" name="amount" value="', $_SESSION['cart'][$acc_id][$row['product_id']]['amount'], '" min="1" oninput="recalc();">';
+						echo ' | <a href="cart_del.php?id=', $row['product_id'], '">削除</a></h3>';
 						echo '</div>';
 
 						echo '</div><hr>';
@@ -64,7 +65,7 @@
 				<span>合計金額</span>
 
 				<!-- PHP_START -->
-				<span id="total">
+				<span id="total" onload="defaultCost();">
 					￥<?= number_format($total_cost) ?>
 				</span>
 				<?php
