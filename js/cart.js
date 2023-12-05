@@ -1,5 +1,4 @@
 function recalc(){
-	// $_SESSION['cart'][$acc_id]
 	var num = 0;
 
 	for(var i=0; i<n; i++){

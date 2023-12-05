@@ -1,3 +1,7 @@
+function defaultCost() {
+	
+}
+
 function recalc(){
 	var x = document.getElementById("price");
 	var y = document.getElementById("amount");
