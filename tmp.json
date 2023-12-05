@@ -1,0 +1,15 @@
+[
+	{
+		[
+			"amount"
+		] => string(1) "2"[
+			"product_id"
+		] => string(1) "3"
+	},
+	{
+		"card_id": 1,
+		"account_id": 0,
+		"product_id": 3,
+		"amount": 21
+	}
+]

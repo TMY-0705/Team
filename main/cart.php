@@ -15,7 +15,7 @@
 	<?php require '../php_init/db-connect.php' ?>
 
 	<?php
-		$sql = $db->query('SELECT * FROM Carts LEFT JOIN Products');
+		$sql = $db->query('SELECT * FROM Carts LEFT JOIN Products ON Carts.product_id = Products.product_id');
 		$res = $sql->fetchAll(PDO::FETCH_ASSOC);
 		$total_cost = 0;
 	?>
@@ -28,11 +28,11 @@
 
 				<!-- PHP_START -->
 				<?php
-				if () {
+				if ($res) {
 					$i = 0;
 					foreach ($res as $row) {
-						$product_id = $row['product'] ?? null;
-						if (is_null($product_id ?? null)) continue;
+						$product_id = $row['product_id'] ?? null;
+						if (is_null($product_id)) continue;
 
 						echo '<div class="content">';
 
@@ -45,13 +45,13 @@
 						echo '<p class="title">￥', number_format($row['product_price']), '</p>';
 						echo '<input type="hidden" id="price_', $i, '" value="', $row['product_price'], '">';
 						echo '<h3 class="any">数量: ';
-						echo '<input type="number" class="number" id="amount_', $i, '" name="amount" value="', $_SESSION['cart'][$acc_id][$row['product_id']]['amount'], '" min="1" oninput="recalc();">';
+						echo '<input type="number" class="number" id="amount_', $i, '" name="amount" value="', $row['amount'], '" min="1" oninput="recalc();">';
 						echo ' | <a href="cart_del.php?id=', $row['product_id'], '">削除</a></h3>';
 						echo '</div>';
 
 						echo '</div><hr>';
 
-						$total_cost += $_SESSION['cart'][$acc_id][$row['product_id']]['amount'] * $row['product_price'];
+						$total_cost += $row['amount'] * $row['product_price'];
 						++$i;
 					}
 				} else {
@@ -69,10 +69,10 @@
 					￥<?= number_format($total_cost) ?>
 				</span>
 				<?php
-				if (isset($_SESSION['cart'][$acc_id])) {
+				if ($_SESSION['loginfo']['acc_id']) {
 					foreach ($res as $row) {
-						$product_id = $_SESSION['cart'][$acc_id][$row['product_id']] ?? null;
-						$amount = $_SESSION['cart'][$acc_id][$row['product_id']]['amount'] ?? null;
+						$product_id = $row['product_id'] ?? null;
+						$amount = $row['amount'] ?? null;
 						if (is_null($product_id) || is_null($amount)) continue;
 
 						// id と 個数をいれる
