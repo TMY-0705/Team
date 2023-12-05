@@ -12,8 +12,8 @@
 	<?php require 'header.php' ?>
 	<?php require '../php_init/db-connect.php' ?>
 	<?php
-	$sql=$db->prepare('updata Products set product_name=?,product_price=?,product_stock=?,product_image=?,product_maker=?,category_id=? WHERE product_id=NULL)');
-	$sql->execute([$_POST["pname"], $_POST["price"], $_POST["stock"], $_FILES['upload_image']['name'], $_POST["mname"], $_POST["category"]]);
+	$sql=$db->prepare('updata Products set product_name=?,product_price=?,product_stock=?,product_image=?,product_maker=?,category_id=? WHERE product_id=?)');
+	$sql->execute([$_POST["pname"], $_POST["price"], $_POST["stock"], $_FILES['upload_image']['name'], $_POST["mname"], $_POST["category"],$_GET['id']]);
 
 	$filename = $_FILES['upload_image']['name'];
 	$uploaded_path = '../img/'.$filename;
