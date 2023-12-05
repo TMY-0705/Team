@@ -17,7 +17,7 @@
 	$sql=$db->query('SELECT * FROM Products JOIN Categories ON Products.category_id = Categories.category_id');
 	foreach($sql as $row){
 
-		echo '<button class="shohin" onclick="location.href=\'goods_update.php\'">';
+		echo '<button class="shohin" onclick="location.href=\'goods_update.php\?id=' . $row['product_id'] . '\'">';
 		echo '<img class="img1" src="../img/'.$row['product_image']. '">';
 		echo '<table class="itiran">';
 			echo '<tr>';
