@@ -42,10 +42,10 @@
 		<tr>
 			<td>商品名：<?php
 						if (isset($res['product_name'])) {
-							echo $res['product_name'];
+							echo mb_substr($res['product_name'],0,10);
 						}
-						?></td>
-			<td>値段：<?php
+						?>…</td>
+			<td>値段：￥<?php
 						if (isset($res['product_price'])) {
 							echo $res['product_price'];
 						}
