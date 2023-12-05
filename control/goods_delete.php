@@ -28,13 +28,33 @@
     <button class="shohin"><img class="img1" src='../img/<?= $res['product_image'] ?>' alt='<?= $res['product_image'] ?>の画像がでてナイ！'>
 	<table class="itiran">
 		<tr>
-			<td>メーカー：ＸＸＸ</td>
-			<td>カテゴリー：ＸＸＸ</td>
+			<td>メーカー：<?php
+							if (isset($res['product_maker'])) {
+								echo $res['product_maker'];
+							}
+						?></td>
+			<td>カテゴリー：<?php
+						if (isset($res['category_name'])) {
+							echo $res['category_name'];
+						}
+						?></td>
 		</tr>
 		<tr>
-			<td>商品名：ＸＸＸ</td>
-			<td>値段：ＸＸＸ</td>
-			<td>在庫数：ＸＸＸ</td>
+			<td>商品名：<?php
+						if (isset($res['product_name'])) {
+							echo $res['product_name'];
+						}
+						?></td>
+			<td>値段：<?php
+						if (isset($res['product_price'])) {
+							echo $res['product_price'];
+						}
+						?></td>
+			<td>在庫数：<?php
+						if (isset($res['product_stock'])) {
+							echo $res['product_stock'];
+						}
+						?>冊</td>
 		</tr>
 	</table>
     </button><br>
