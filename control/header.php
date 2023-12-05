@@ -8,7 +8,7 @@
 		<a href="goodsInsert.php">商品登録</a>
 	</span>
 	<span class="moji">
-        <a href="goods_update.php">商品情報編集</a>
+        <a href="DB_select.php">商品情報編集</a>
 	</span>
 </form>
 <p class="edit_profile">
