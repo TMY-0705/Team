@@ -75,13 +75,15 @@
 					<td>
 						<?php
 						$hyouka = $db->query(
-							"SELECT SUM(history_detail_rate)
-						     FROM Histories_detail
-						     WHERE Histories_detail.product_id = $id"
+							"SELECT SUM(history_detail_rate) as sum
+ 							 FROM Histories_detail
+ 							WHERE Histories_detail.product_id = $id"
+
 						);
 						if ($hyouka) {
 							$hyoukaResult = $hyouka->fetch(PDO::FETCH_ASSOC);
-							$hyoukaSum = $hyoukaResult['sum'];
+                            $hyoukaSum = $hyoukaResult['sum'];
+
 
 						} 		
 						$sumQuery = $db->query(
