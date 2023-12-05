@@ -74,21 +74,18 @@
 				<tr>
 					<td>
 						<?php
-						if (isset($res['history_detail_rate'])) {
-							echo $res['history_detail_rate'];
-						
-						}else{
-							echo '評価なし';
-						}
-						$hosi = round($res['history_detail_rate'] ?? 0);
-						for($i=1;$i<=5;$i++){
-							if($hosi>0){
-								echo '★';
-								$hosi--;
-							}else{
-                                echo '☆';
-							}
-						}	
+						$hyouka = $db->query(
+							"SELECT SUM(history_detail_rate) as sum
+ 							 FROM Histories_detail
+ 							WHERE Histories_detail.product_id = $id"
+
+						);
+						if ($hyouka) {
+							$hyoukaResult = $hyouka->fetch(PDO::FETCH_ASSOC);
+                            $hyoukaSum = $hyoukaResult['sum'];
+
+
+						} 		
 						$sumQuery = $db->query(
 							"SELECT COUNT(history_detail_rate) as count FROM Histories_detail
 							WHERE Histories_detail.product_id = $id"
@@ -98,19 +95,57 @@
 							$sumResult = $sumQuery->fetch(PDO::FETCH_ASSOC);
 							$sumCount = $sumResult['count'];
 						
+						}
+						if($hyoukaSum&&$sumCount){
+                        $hyoukakan = round($hyoukaSum/$sumCount,1);
+						}else{
+							$hyoukakan=null;
+						}
+						if ($hyoukakan) {
+							echo $hyoukakan;
+						
+						}else{
+							echo '評価なし';
+						}
+						$hosi = round($hyoukakan ?? 0);
+						for($i=1;$i<=5;$i++){
+							if($hosi>0){
+								echo '★';
+								$hosi--;
+							}else{
+                                echo '☆';
+							}
+						}	
+						
+						if ($sumCount) {
+						
+						
 							echo $sumCount;
 						} else {
 							echo '0';
 						}
 						
+
 						?>件</td>
 				</tr>
-				<tr><td>星5つ 1320件 52.42%</td></tr>
-				<tr><td>星4つ 561件 22.28%</td></tr>
-				<tr><td>星3つ 128件 5.083%</td></tr>
-				<tr><td>星2つ 179件 7.109%</td></tr>
-				<tr><td>星1つ 330件 13.11%</td></tr>
-				</tr>
+				<?php
+				for($i =1;$i<=5;$i++){
+				
+				$sql = $db->query("SELECT COUNT(product_id) as count FROM Histories_detail
+				WHERE Histories_detail.history_detail_rate = $i");
+                if ($sql) {
+					$hyoukaResult = $sql->fetch(PDO::FETCH_ASSOC);
+					$hyouka = $hyoukaResult['count'];
+					if($sumCount){
+                    	$hiritu = round($hyouka/$sumCount,1)*100;
+						echo '<tr><td>星',$i,'つ', $hyouka,'件',$hiritu,'%</td></tr>';
+					}else{
+						echo '<tr><td>星',$i,'つ0件0%</td></tr>';
+					}
+
+				}
+				}
+				?>
 			</tbody>
 		</table>
 	</div>
