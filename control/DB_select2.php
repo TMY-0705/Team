@@ -26,7 +26,7 @@
 			echo '</tr>';
 			echo '<tr>';
 				if(strlen($row['product_name'])>10) {
-					echo '<td class="text">商品名：', mb_substr($row['product_name'], 0, 10), '…</td>';
+					echo '<td class="text">商品名：', mb_substr($row['product_name'], 0,8), '…</td>';
 				} else {
 					echo '<td class="text">商品名：', $row['product_name'], '</td>';
 				}
