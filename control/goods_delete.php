@@ -57,10 +57,8 @@
 						?>冊</td>
 		</tr>
 	</table>
-    </button><br>	<?php
-    echo '<a href=delete_finish.php?id=', $id,'d';
-	?>
-    <a href="delete_finish.php?id=$i" class="yes">はい</a>
+    </button><br>	
+    <a href="delete_finish.php?id=$id" class="yes">はい</a>
     <a href="#" onclick="history.back()" class="no">いいえ</a>
 </body>
 </html>
