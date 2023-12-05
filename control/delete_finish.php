@@ -14,7 +14,7 @@
     try{
     $id = $_GET['id'];
 	
-    $stmt = $pdo->prepare("DELETE FROM Products 
+    $stmt = $db->prepare("DELETE FROM Products 
                             WHERE product_id = $id ");
     $stmt->execute();
  
