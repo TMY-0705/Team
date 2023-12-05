@@ -96,8 +96,11 @@
 							$sumCount = $sumResult['count'];
 						
 						}
+						if($hyoukaSum&&$sumCount){
                         $hyoukakan = round($hyoukaSum/$sumCount,1);
-						
+						}else{
+							$hyoukakan=null;
+						}
 						if ($hyoukakan) {
 							echo $hyoukakan;
 						
@@ -122,6 +125,7 @@
 							echo '0';
 						}
 						
+
 						?>件</td>
 				</tr>
 				<tr><td>星5つ 1320件 52.42%</td></tr>
