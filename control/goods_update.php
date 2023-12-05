@@ -28,22 +28,22 @@
 	$res2 = $sql->fetch(PDO::FETCH_ASSOC);
 ?>
 <form action="update_finish.php" method="post" enctype="multipart/form-data">
-<span class="yohaku">・商品名　　</span><input type="text" class="text" value="<?php
+<span class="yohaku">・商品名　　</span><input type="text" name="pname" class="text" value="<?php
 						if (isset($res['product_name'])) {
 							echo $res['product_name'];
 						}
 						?>"><br>
-<span class="yohaku">・メーカー名</span><input type="text" class="text" value="<?php
+<span class="yohaku">・メーカー名</span><input type="text" name="mname" class="text" value="<?php
 						if (isset($res['product_maker'])) {
 							echo $res['product_maker'];
 						}
 						?>"><br>
-<span class="yohaku">・在庫数　　</span><input type="text" class="text" value="<?php
+<span class="yohaku">・在庫数　　</span><input type="text" name="stock" class="text" value="<?php
 						if (isset($res['product_stock'])) {
 							echo $res['product_stock'];
 						}
 						?>"><br>
-<span class="yohaku">・カテゴリー</span><select name="category" class="text">
+<span class="yohaku">・カテゴリー</span><select name="category" name="category" class="text">
 <option value="" selected hidden><?php
 						if (isset($res['category_name'])) {
 							echo $res['category_name'];
@@ -57,12 +57,12 @@
 <option value="6">英語参考書</option>
 <option value="7">理科参考書</option>
 <option value="8">その他の参考書</option></select><br>
-<span class="yohaku">・値段　　　</span><input type="text" class="text" value="<?php
+<span class="yohaku">・値段　　　</span><input type="text" name="price" class="text" value="<?php
 						if (isset($res['product_price'])) {
 							echo $res['product_price'];
 						}
 						?>"><br>
-<span class="file">・商品画像　　</span><input type="file" class="filebutton" accept="image/*" value="<?php
+<span class="file">・商品画像　　</span><input type="file" name="upload_image" class="filebutton" accept="image/*" value="<?php
 						if (isset($res['product_image'])) {
 							echo $res['product_image'];
 						}
