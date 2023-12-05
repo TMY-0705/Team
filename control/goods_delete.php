@@ -58,9 +58,10 @@
 		</tr>
 	</table>
     </button><br>	
-    <a href="delete_finish.php?id=$id" class="yes">はい</a>
+	<?php
+    echo "<a href=delete_finish.php?id=$id>はい</a>";
+	?>
+   
     <a href="#" onclick="history.back()" class="no">いいえ</a>
-
-	
 </body>
 </html>
