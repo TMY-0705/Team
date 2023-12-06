@@ -22,7 +22,7 @@
 	$result = move_uploaded_file($_FILES['upload_image']['tmp_name'],$uploaded_path);
 
     echo '<h1>更新しました</h1>';
-	echo '<button class="shohin"><img class="img1" src="../img/'.$_FILES['upload_image']['name']. '">';
+	echo '<button class="shohin"><img class="img1" src="../img/'.$filename. '">';
 	echo '<table class="itiran">';
 	echo '<tr>';
 			echo '<td>メーカー：', $_POST['mname'], '</td>';
