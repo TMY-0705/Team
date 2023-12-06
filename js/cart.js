@@ -1,9 +1,3 @@
-var defaultCost = null;
-
-function defaultCost() {
-	defaultCost = document.getElementById("total").innerHTML;
-}
-
 function recalc(){
 	var num = 0;
 
@@ -15,5 +9,5 @@ function recalc(){
 	}
 
 	var z = document.getElementById("total");
-	z.innerHTML = defaultCost+"\n　　↓"+"\n￥" + (num).toLocaleString();
+	z.innerHTML = "<span id='changed'>￥"+(defaultCost).toLocaleString()+"<br>↓</span><br>￥" + (num).toLocaleString();
 }
