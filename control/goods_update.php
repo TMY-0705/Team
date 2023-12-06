@@ -44,7 +44,11 @@
 						}
 						?>"><br>
 <span class="yohaku">・カテゴリー</span><select name="category" name="category" class="text">
-<option value="" selected hidden><?php
+<option value="<?php
+						if (isset($res['category_id'])) {
+							echo $res['category_id'];
+						}
+						?>" selected hidden><?php
 						if (isset($res['category_name'])) {
 							echo $res['category_name'];
 						}
