@@ -12,9 +12,10 @@
 	<?php require 'header.php' ?>
 	<?php require '../php_init/db-connect.php' ?>
 	<?php
+	echo $_POST["category"];
 	$id = $_GET['id'];
 	$filename = $_FILES['upload_image']['name'];
-	$sql=$db->prepare('update Products set product_name=?,product_price=?,product_stock=?,product_image=?,product_maker=?,category_id=? WHERE product_id=?)');
+	$sql=$db->prepare('update Products set product_name=?,product_price=?,product_stock=?,product_image=?,product_maker=?,category_id=? WHERE product_id=?');
 	$sql->execute([$_POST["pname"], $_POST["price"], $_POST["stock"], $filename, $_POST["mname"], $_POST["category"],$id]);
 
 	
@@ -22,7 +23,7 @@
 	$result = move_uploaded_file($_FILES['upload_image']['tmp_name'],$uploaded_path);
 
     echo '<h1>更新しました</h1>';
-	echo '<button class="shohin"><img class="img1" src="../img/'.$_FILES['upload_image']['name']. '">';
+	echo '<button class="shohin"><img class="img1" src="../img/'.$filename. '">';
 	echo '<table class="itiran">';
 	echo '<tr>';
 			echo '<td>メーカー：', $_POST['mname'], '</td>';
