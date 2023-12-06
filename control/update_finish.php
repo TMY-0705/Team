@@ -14,7 +14,7 @@
 	<?php
 	$id = $_GET['id'];
 	$filename = $_FILES['upload_image']['name'];
-	$sql=$db->prepare('update Products set product_name=?,product_price=?,product_stock=?,product_image=?,product_maker=?,category_id=? WHERE product_id=?)');
+	$sql=$db->prepare('update Products set product_name=?,product_price=?,product_stock=?,product_image=?,product_maker=?,category_id=? WHERE product_id=?');
 	$sql->execute([$_POST["pname"], $_POST["price"], $_POST["stock"], $filename, $_POST["mname"], $_POST["category"],$id]);
 
 	
