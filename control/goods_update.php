@@ -48,7 +48,7 @@
 						if (isset($res['category_name'])) {
 							echo $res['category_name'];
 						}else{
-							echo 'ねーよ！！'
+							echo 'ねーよ！！';
 						}
 						?></option>
 <option value="1">5科参考書</option>
