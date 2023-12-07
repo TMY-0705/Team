@@ -15,6 +15,7 @@
 				echo '<title>', $maker, ' - メーカー検索結果</title>';
 			else
 				echo '<title>トップ - 商品一覧</title>';
+
 		?>
 	</head>
 	<body>
@@ -23,14 +24,17 @@
 		<!-- header -->
 		<?php require 'header.php'; ?>
 		<?php require '../php_init/db-connect.php'; ?>
-
+      
 		<table class="menu">
 			<?php
 				if($name)
-					$sql = $db -> query("SELECT * FROM Products WHERE product_name LIKE '%$name%'");
+				    echo $name,' の検索結果';
+					$sql = $db -> query("SELECT * FROM Products WHERE product_name LIKE '%$name%'");	
 				else if($maker)
+				    echo $maker,' の検索結果'
 					$sql = $db -> query("SELECT * FROM Products JOIN Categories
 					ON Products.category_id = Categories.category_id WHERE product_maker LIKE '%$maker%'");
+					
 				else
 					$sql = $db -> query('SELECT * FROM Products');
 				$cnt = 0;
