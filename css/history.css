@@ -1,5 +1,7 @@
 .content {
     margin: auto;
+    display: flex;
+	justify-content: space-between;
 }
 
 .element {
@@ -9,7 +11,7 @@
     display: flex;
 }
 
-.flame {
+.frame {
     border: 1px solid #000;
     padding-top: 10px;
     padding-left: 5vw;
@@ -48,11 +50,6 @@
 .productcount {
     width: 40px;
     height: 20px;
-}
-
-.content{
-    display: flex;
-    flex-grow: 0;
 }
 
 .eva {

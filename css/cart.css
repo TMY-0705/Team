@@ -31,3 +31,8 @@
 	cursor: pointer;
 	background: #FCFF67;
 }
+
+#changed {
+	display: inline-block;
+	text-align: center;
+}

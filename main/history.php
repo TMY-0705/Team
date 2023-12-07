@@ -1,4 +1,5 @@
 <?php require '../php_init/login_check.php' ?>
+<?php require '../php_init/db-connect.php' ?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -13,68 +14,62 @@
 	<?php require 'header.php' ?>
 	<h1>注文履歴</h1>
 	<hr>
-	<div class="flame">
-		<div class="element">
-			<div class="item">注文日</div>
-			<div class="item">合計金額</div>
-			<div class="item">お届け先</div>
-		</div>
-		<div class="element">
-			<div class="item">YYYY年MM月DD日</div>
-			<div class="item">￥2000</div>
-			<div class="item">000-0000</div>
-		</div>
-	</div>
-	<div class="content">
-		<div id="product_detail">
-			<img src="../img/book.jpg" class="productimg">
-			<div class="detail">
-				<h1 class="title">タイトル</h1>
-				<h1 class="title">￥1000</h1>
-				<p class="count">数量:<input type="text" name="productcount" class="productcount"> | <a href="#">削除</a></p>
-			</div>
-		</div>
-		<div id="eva">
-			<form action="#">
-				<h1 class="eve">評価する</h2>
-					😂🤣😅
-			</form>
-		</div>
-	</div>
-	</div>
-	<hr>
+	<?php 
+		$sql = $db -> query("SELECT * FROM Histories");
+		$result = $sql -> fetchAll();
 
-	<div class="flame">
-		<div class="element">
-			<div class="item">注文日</div>
-			<div class="item">合計金額</div>
-			<div class="item">お届け先</div>
-		</div>
-		<div class="element">
-			<div class="item">YYYY年MM月DD日</div>
-			<div class="item">￥2000</div>
-			<div class="item">000-0000</div>
-		</div>
-	</div>
+		$sql = $db -> query(
+			"SELECT * FROM Histories LEFT JOIN Histories_detail 
+			ON Histories.history_id = Histories_detail.history_id"
+		);
+		$detail = $sql -> fetchAll();
 
-	<div class="content">
-		<div id="product_detail">
-			<img src="../img/book.jpg" class="productimg">
-			<div class="detail">
-				<h1 class="title">タイトル</h1>
-				<h1 class="title">￥1000</h1>
-				<p class="count">数量:<input type="text" name="productcount" class="productcount"> | <a href="#">削除</a></p>
-			</div>
-		</div>
-		<div id="eva">
-			<form action="#">
-				<h1 class="eve">評価する</h2>
-					😂🤣😅
-			</form>
-		</div>
-	</div>
-	</div>
+		foreach($result as $sheet){
+			echo "<div class='master'>";
 
+				echo "<table class='frame'>";
+
+					echo "<thead class='element'><tr>";
+						echo "<th class='item'>注文日</th>";
+						echo "<th class='item'>合計金額</th>";
+						echo "<th class='item'>お届け先</th>";
+					echo "</tr></thead>";
+
+					echo "<tbody class='element'><tr>";
+						echo "<td class='item'>", $sheet['history_date'], "</td>";
+						echo "<td class='item'>￥2000</td>";
+						echo "<td class='item'>000-0000</td>";
+					echo "</tr></tbody>";
+
+				echo "</table>";
+
+			foreach($detail as $row){
+			
+				echo "<div class='content'>";
+
+					echo "<div id='product_detail'>";
+						echo "<img src='../img/book.jpg' class='productimg'>";
+					echo "</div>";
+
+					echo "<div class='detail'>";
+						echo "<h1 class='title'>タイトル</h1>";
+						echo "<h1 class='title'>￥1000</h1>";
+						echo "<p class='count'>数量: | <a href='#'>削除</a></p>";
+					echo "</div>";
+
+					echo "<div id='eva'>";
+						echo "<form action='#'>";
+							echo "<h1 class='eve'>評価する</h2>";
+							echo "😂🤣😅";
+						echo "</form>";
+					echo "</div>";
+
+				echo "</div>";
+			}
+			echo "</div>";
+			echo "<hr>";
+		}
+	?>
 </body>
 
 </html>
