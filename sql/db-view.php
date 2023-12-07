@@ -32,7 +32,7 @@
 		];
 
 		foreach($sqls as $sql){
-			$res = $db -> query($sql);
+			$res = $db -> query($sql, PDO::FETCH_ASSOC);
 			echo '<table>';
 			foreach($res as $row){
 				echo '<tr>';

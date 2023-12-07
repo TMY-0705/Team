@@ -7,6 +7,8 @@
 	$products = $_POST['product'] ?? null;
 	$prices = $_POST['price'] ?? null;
 	$amounts = $_POST['amount'] ?? null;
+	// $isChanged = filter_var($_POST['isChanged']) ?? false;
+
 	$today = date("Ymd");
 	
 	try {
@@ -29,6 +31,9 @@
 				$sql = $db -> query("INSERT INTO Histories_detail VALUE ($next_id, ".$products[$i].", ".$amounts[$i].",0)");
 				$i++;
 			}
+
+			$sql = $db -> query("DELETE FROM Carts WHERE account_id = $acc_id");
+
 			header("Location: purchased.php");
 		} else if(!$products) {
 			header("Location: cart.php?err=1");

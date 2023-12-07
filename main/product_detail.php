@@ -33,7 +33,7 @@
 		<!-- PHP_START -->
 		<div id="product_detail">
 			<div id="product_detail_detail">			
-				<img src='../img/<?= $res['product_image'] ?>' alt='<?= $res['product_name'] ?>の画像がでてナイ！'>
+				<img src='../img/<?= $res['product_image'] ? $res['product_image'] : 'NoImage.png' ?>' alt='<?= $res['product_name'] ?>の画像がでてナイ！'>
 				<div class="detail">
 					<p class="title"><?= $res['product_name'] ?></p>
 					<a href="products.php?maker=<?= $res['product_maker'] ?>" class="store">

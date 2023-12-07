@@ -18,7 +18,7 @@
 	foreach($sql as $row){
 
 		echo '<button class="shohin" onclick="location.href=\'goods_update.php\?id=' . $row['product_id'] . '\'">';
-		echo '<img class="img1" src="../img/'.$row['product_image']. '">';
+		echo '<img class="img1" src="../img/'.$row['product_image'] ? $row['product_image'] : 'NoImage.png'. '">';
 		echo '<table class="itiran">';
 			echo '<tr>';
 				echo '<td class="text">メーカー：', $row['product_maker'], '</td>';

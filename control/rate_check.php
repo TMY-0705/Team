@@ -29,7 +29,7 @@
 	<?php require 'header4.php' ?>
     
 	<div class="detail">
-	    <img src='../img/<?= $res['product_image'] ?>' alt='<?= $res['product_name'] ?>の画像がでてナイ！'>
+	    <img src='../img/<?= $res['product_image'] ? $res['product_image'] : 'NoImage.png' ?>' alt='<?= $res['product_name'] ?>の画像がでてナイ！'>
 		<table>
 			<tbody>
 				<tr>

@@ -38,14 +38,14 @@
 						echo '<div class="content">', "\n";
 
 						echo '<div id="product_detail_detail">', "\n";
-						echo '<img src="../img/', $row['product_image'], '" alt="', $row['product_image'], 'の画像がでてナイ！">', "\n";
+						echo '<img src="../img/', $row['product_image'] ? $row['product_image'] : 'NoImage.png', '" alt="', $row['product_image'], 'の画像がでてナイ！">', "\n";
 						echo '</div>', "\n";
 
 						echo '<div class="detail">', "\n";
 						echo '<input type="hidden" name="product[]" value="', $product_id, '"></input>';
 						echo '<p class="title"">', $row['product_name'], '</p>', "\n";
 						echo '<p class="title">￥', number_format($row['product_price']), '</p>', "\n";
-						echo '<input type="hidden" name="price[] id="price_', $i, '" value="', $row['product_price'], '">', "\n";
+						echo '<input type="hidden" name="price[]" id="price_', $i, '" value="', $row['product_price'], '">', "\n";
 						echo '<h3 class="any">数量: ', "\n";
 						echo '<input type="number" name="amount[]" class="number" id="amount_', $i, '" name="amount" value="', $row['amount'], '" min="1" oninput="recalc();">', "\n";
 						echo ' | <a href="cart_del.php?id=', $row['product_id'], '">削除</a></h3>', "\n";
@@ -70,6 +70,7 @@
 				<span id="total" onload="defaultCost();">
 					￥<?= number_format($total_cost) ?>
 				</span>
+				<input id="isChanged" type="hidden" name="isChanged" value="false">
 				<?php
 				if ($res) {
 					foreach ($res as $row) {
@@ -87,7 +88,7 @@
 		</div>
 	</form>
 
-	<script>
+	<script type="text/javascript">
 		const user = <?= json_encode($acc_id) ?>;
 		var n = <?= $i ?>;
 		var defaultCost = <?= $total_cost ?>;

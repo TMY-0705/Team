@@ -2,16 +2,18 @@
 	padding: 24px;
 }
 
-.content {
-    margin: auto;
-    display: flex;
-	justify-content: space-between;
-}
-
 .menu_name {
 	margin: auto 8px;
 	font-weight: bold;
-	font-size: 6vw;
+	font-size: 4.5vw;
+}
+
+.frame {
+	width: 100%;
+    padding: 10px 2.5vw;
+    background: rgba(141, 141, 141, 0.20);
+	border: 1px solid #000;
+	font-size: 1.6vw;
 }
 
 .element {
@@ -19,74 +21,87 @@
     height: 30px;
 }
 
-.frame {
-	width: 100%;
-    padding: 10px 5vw;
-    background: rgba(141, 141, 141, 0.20);
-	border: 1px solid #000;
-	font-size: 2.5vw;
-}
-
-.rate {
-	font-size: 3vw;
-}
-
 th, td {
 	text-align: left;
-	font-size: 3vw;
+	font-size: 2vw;
 }
 
-.item1 {
-    width: 40%;
-}
-.item2 {
-    width: 25%;
-}
-.item3 {
-    width: 35%;
+.item1 { width: 40%; }
+.item2 { width: 25%; }
+.item3 { width: 35%; }
+
+.content {
+    margin: auto;
+    display: flex;
+	justify-content: space-between;
 }
 
-.productimg {
-    width: 25vw; 
-    margin: 2vw;
+.product_img {
+    width: 20vw;
 	border: 3px solid black;
 }
 
-.image {
-	width: 15vw;
-}
-
 .detail {
-    margin-right: auto;
-    margin-left: auto;
+	/*	 top left bottom right	 */
+    margin: auto 2vw auto 2vw;
     padding: 20px;
-    width: auto;
+    width: -webkit-fill-available; /* For Chrome */
+    width: -moz-available; /* For Firefox/Gecko */
     height: auto;
-    display: inline-block;
-    vertical-align: top;
-}
-
-.product_detail {
-    width: auto;
-    display: flex; /* 横に並べるためのスタイル追加 */
-    vertical-align: top; /* 上端に揃えるためのスタイル追加 */
 }
 
 .title {
     font-size: 4vw;
+	font-weight: bold;
 }
 
-.productcount {
-    width: 40px;
-    height: 20px;
+.count {
+	font-size: 2.5vw;
 }
 
-.eva {
-    display: flex;
-	vertical-align: middle;
+.ratezone {
+	width: 30vw;
+	margin: auto;
+	text-align: center;
 }
 
-.eve {
-    margin-top: 5vw;
-    font-size: 3vw;
+.rate_txt {
+	font-size: 2vw;
+}
+
+.rater {
+	width: 70%;
+}
+
+#rate {
+	font-size: 3vw;
+}
+
+.submittt {
+    font-size: 2vw;
+	
+	padding: 8px;
+	border: 1px solid black;
+	border-radius: 20px;
+	width: 100%;
+	color: inherit;
+	cursor: pointer;
+	background: #FCFF67;
+
+	transition: all 0.1s;
+}
+
+.submittt:hover {
+	background: rgb(255, 176, 103);
+}
+
+.submittt:active {
+	background: rgb(53, 50, 255);
+	color: wheat;
+}
+
+.submittt:disabled {
+	background: rgb(156, 156, 156);
+	cursor: not-allowed;
+	color: wheat;
 }

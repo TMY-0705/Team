@@ -10,4 +10,7 @@ function recalc(){
 
 	var z = document.getElementById("total");
 	z.innerHTML = "<span id='changed'>￥"+(defaultCost).toLocaleString()+"<br>↓</span><br>￥" + (num).toLocaleString();
+
+	var changed = document.getElementById("isChanged");
+	changed.value = "true";
 }

@@ -25,7 +25,7 @@
 	$res2 = $sql->fetch(PDO::FETCH_ASSOC);
 ?>
     <p class="sakujo">削除しますか？</p>
-    <button class="shohin"><img class="img1" src='../img/<?= $res['product_image'] ?>' alt='<?= $res['product_image'] ?>の画像がでてナイ！'>
+    <button class="shohin"><img class="img1" src='../img/<?= $res['product_image'] ? $res['product_image'] : 'NoImage.png' ?>' alt='<?= $res['product_image'] ?>の画像がでてナイ！'>
 	<table class="itiran">
 		<tr>
 			<td>メーカー：<?php
