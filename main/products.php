@@ -28,10 +28,9 @@
 		<table class="menu">
 			<?php
 				if($name)
-				    echo $name,' の検索結果';
+				  
 					$sql = $db -> query("SELECT * FROM Products WHERE product_name LIKE '%$name%'");	
 				else if($maker)
-				    echo $maker,' の検索結果';
 					$sql = $db -> query("SELECT * FROM Products JOIN Categories
 					ON Products.category_id = Categories.category_id WHERE product_maker LIKE '%$maker%'");
 					
