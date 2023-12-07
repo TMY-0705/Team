@@ -26,7 +26,7 @@
 			$i = 0;
 
 			foreach($res as $row){
-				$sql = $db -> query("INSERT INTO Histories_detail VALUE ($next_id, ".$products[$i].", ".$prices[$i].", ".$amounts[$i].")");
+				$sql = $db -> query("INSERT INTO Histories_detail VALUE ($next_id, ".$products[$i].", ".$amounts[$i].",0)");
 				$i++;
 			}
 			header("Location: purchased.php");

@@ -1,44 +1,73 @@
+.base {
+	padding: 24px;
+}
+
 .content {
     margin: auto;
     display: flex;
 	justify-content: space-between;
 }
 
+.menu_name {
+	margin: auto 8px;
+	font-weight: bold;
+	font-size: 6vw;
+}
+
 .element {
     width: auto;
     height: 30px;
-    flex-shrink: 0;
-    display: flex;
 }
 
 .frame {
-    border: 1px solid #000;
-    padding-top: 10px;
-    padding-left: 5vw;
+	width: 100%;
+    padding: 10px 5vw;
     background: rgba(141, 141, 141, 0.20);
+	border: 1px solid #000;
+	font-size: 2.5vw;
 }
 
-.item {
-    width: 100%;
+.rate {
+	font-size: 3vw;
+}
+
+th, td {
+	text-align: left;
+	font-size: 3vw;
+}
+
+.item1 {
+    width: 40%;
+}
+.item2 {
+    width: 25%;
+}
+.item3 {
+    width: 35%;
 }
 
 .productimg {
     width: 25vw; 
     margin: 2vw;
+	border: 3px solid black;
+}
+
+.image {
+	width: 15vw;
 }
 
 .detail {
-    margin-right: 50px;
+    margin-right: auto;
     margin-left: auto;
     padding: 20px;
-    width: 20vw;
+    width: auto;
     height: auto;
     display: inline-block;
     vertical-align: top;
 }
 
 .product_detail {
-    width: 60vw;
+    width: auto;
     display: flex; /* 横に並べるためのスタイル追加 */
     vertical-align: top; /* 上端に揃えるためのスタイル追加 */
 }
@@ -54,6 +83,7 @@
 
 .eva {
     display: flex;
+	vertical-align: middle;
 }
 
 .eve {

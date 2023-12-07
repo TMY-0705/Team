@@ -12,64 +12,76 @@
 
 <body>
 	<?php require 'header.php' ?>
-	<h1>注文履歴</h1>
-	<hr>
-	<?php 
-		$sql = $db -> query("SELECT * FROM Histories");
-		$result = $sql -> fetchAll();
+	<div class="base">
+		<p class="menu_name">注文履歴</p>
+		<hr>
+		<?php 
+			$sql = $db -> query("SELECT * FROM Histories");
+			$result = $sql -> fetchAll();
+			$sql = $db -> query("SELECT * FROM Accounts WHERE account_id = ".$_SESSION['loginfo']['acc_id']);
+			$accinfo = $sql -> fetch();
 
-		$sql = $db -> query(
-			"SELECT * FROM Histories LEFT JOIN Histories_detail 
-			ON Histories.history_id = Histories_detail.history_id"
-		);
-		$detail = $sql -> fetchAll();
+			$sql = $db -> query(
+				"SELECT * FROM Histories LEFT JOIN Histories_detail 
+				ON Histories.history_id = Histories_detail.history_id
+				JOIN Products ON Histories_detail.product_id = Products.product_id"
+			);
+			$detail = $sql -> fetchAll();
 
-		foreach($result as $sheet){
-			echo "<div class='master'>";
+			foreach($result as $sheet){
+				$total_cost = 0;
+				foreach($detail as $cost){
+					$total_cost += $cost['product_price'];
+				}
+				$postal = (substr($accinfo['account_postal'],0,3)."-".substr($accinfo['account_postal'],3)) ?? "行方不明";
 
-				echo "<table class='frame'>";
+				echo "<div class='master'>";
 
-					echo "<thead class='element'><tr>";
-						echo "<th class='item'>注文日</th>";
-						echo "<th class='item'>合計金額</th>";
-						echo "<th class='item'>お届け先</th>";
-					echo "</tr></thead>";
+					echo "<table class='frame'>";
 
-					echo "<tbody class='element'><tr>";
-						echo "<td class='item'>", $sheet['history_date'], "</td>";
-						echo "<td class='item'>￥2000</td>";
-						echo "<td class='item'>000-0000</td>";
-					echo "</tr></tbody>";
+						echo "<thead class='element'><tr>";
+							echo "<th class='item1'>注文日</th>";
+							echo "<th class='item2'>合計金額</th>";
+							echo "<th class='item3'>お届け先</th>";
+						echo "</tr></thead>";
 
-				echo "</table>";
+						echo "<tbody class='element'><tr>";
+							echo "<td class='item1'>", date("Y年m月d日", strtotime($sheet['history_date'])), "</td>";
+							echo "<td class='item2'>￥", $total_cost, "</td>";
+							echo "<td class='item3'>", $postal, "</td>";
+						echo "</tr></tbody>";
 
-			foreach($detail as $row){
-			
-				echo "<div class='content'>";
+					echo "</table>";
 
-					echo "<div id='product_detail'>";
-						echo "<img src='../img/book.jpg' class='productimg'>";
+				foreach($detail as $row){
+				
+					echo "<div class='content'>";
+
+						echo "<div class='image'>";
+							echo "<img src='../img/".$row['product_image']."' class='productimg'>";
+						echo "</div>";
+
+						echo "<div class='detail'>";
+							echo "<h1 class='title'>".$row['product_name']."</h1>";
+							echo "<h1 class='title'>￥".$row['product_price']."</h1>";
+							echo "<p class='count'>数量: ".$row['history_detail_amount']."</p>";
+						echo "</div>";
+
+						echo "<div id='eva'>";
+							echo "<form method='POST' action='rating.php'>";
+								echo "<input type='range' min='1' max='5' value='3'>";
+								echo "<span id='rate'>3</span><br>";
+								echo "<button class='eve'>評価する</button>";
+							echo "</form>";
+						echo "</div>";
+
 					echo "</div>";
-
-					echo "<div class='detail'>";
-						echo "<h1 class='title'>タイトル</h1>";
-						echo "<h1 class='title'>￥1000</h1>";
-						echo "<p class='count'>数量: | <a href='#'>削除</a></p>";
-					echo "</div>";
-
-					echo "<div id='eva'>";
-						echo "<form action='#'>";
-							echo "<h1 class='eve'>評価する</h2>";
-							echo "😂🤣😅";
-						echo "</form>";
-					echo "</div>";
-
+				}
 				echo "</div>";
+				echo "<hr>";
 			}
-			echo "</div>";
-			echo "<hr>";
-		}
-	?>
+		?>
+	</div>
 </body>
 
 </html>
