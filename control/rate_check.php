@@ -131,7 +131,7 @@
 				<?php
 				$zeroQuery = $db->query(
 					"SELECT COUNT(history_detail_rate) AS zerocou FROM Histories_detail
-					WHERE Histories_detail.product_id = $id AND Histories_detail.histrory_detail_rate = 0"
+					WHERE Histories_detail.product_id = $id AND Histories_detail.history_detail_rate = 0"
 					
 				);
 				$zeroResult = $zeroQuery->fetch(PDO::FETCH_ASSOC);
