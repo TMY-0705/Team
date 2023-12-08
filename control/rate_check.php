@@ -87,13 +87,13 @@
 
 						} 		
 						$sumQuery = $db->query(
-							"SELECT COUNT(history_detail_rate) as count FROM Histories_detail
+							"SELECT COUNT(history_detail_rate) as cou FROM Histories_detail
 							WHERE Histories_detail.product_id = $id"
 						);
 						
 						if ($sumQuery) {
 							$sumResult = $sumQuery->fetch(PDO::FETCH_ASSOC);
-							$sumCount = $sumResult['count'];
+							$sumCount = $sumResult['cou'];
 						
 						}
 						if($hyoukaSum&&$sumCount){
@@ -144,6 +144,9 @@
                 if ($sql) {
 					$hyoukaResult = $sql->fetch(PDO::FETCH_ASSOC);
 					$hyouka = $hyoukaResult['count'];
+					echo $hyouka;
+					echo $sumCount;
+					$h
 					if($sumCount&&$zeroCount==0){
                     	$hiritu = round($hyouka/$sumCount,1)*100;
 						echo '<tr><td>星',$i,'つ ', $hyouka,'件 ',$hiritu,'%</td></tr>';
