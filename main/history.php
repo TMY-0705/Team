@@ -31,6 +31,7 @@
 
 			$current_id = $detail[0]['history_id'];
 			$target_id = $current_id;
+			$index = 1;
 
 			foreach($result as $sheet){
 				$total_cost = 0;
@@ -59,6 +60,7 @@
 					echo "</table>", "\n";
 
 				foreach($detail as $row){
+					$rated = false;
 					$current_id = $row['history_id'];
 
 					// echo $current_id, ", ", $target_id, "<br>", "\n";
@@ -85,35 +87,48 @@
 
 						echo "<form class='ratezone' method='POST' action='rating.php'>", "\n";
 							echo "<span class='rate_txt'>評価決定欄</span><br><br>", "\n";
-							echo "<span id='rate'>", "\n";
+							echo "<span class='rate' id='rate_$index'>", "\n";
 							if($row['history_detail_rate']){
 								echo "星".$row['history_detail_rate'];
 								$rated = true;
 							} else echo "？";
 							echo "</span><br>", "\n";
-							echo "<input class='rater' id='rater' type='range' name='rate' min='1' max='5' value='";
+							echo "<input class='rater' id='rater_$index' type='range' name='rate' min='1' max='5' value='";
 							if($row['history_detail_rate']){
 								echo $row['history_detail_rate'];
 							} else echo "0";
-							echo "' onInput='rateValueChange()'><br><br>", "\n";
+							echo "' onInput='rateValueChange_$index()'><br><br>", "\n";
 							echo "<input type='hidden' name='product_id' value=".$row['product_id'].">", "\n";
 							echo "<input type='hidden' name='account_id' value=".$row['account_id'].">", "\n";
 							
-							echo "<button class='submittt' id='submittt' disabled>", "\n";
+							echo "<button class='submittt' id='submittt_$index' disabled>", "\n";
 							if($row['history_detail_rate']) echo "評価済み", "\n";
 							else echo "？", "\n";
 							echo "</button>", "\n";
-						echo "</form>", "\n";
+							$rated_mes = $rated ? "変更する" : "評価する";
+							echo "
+<script defer>
+	let rate_$index = document.getElementById(\"rate_$index\");
+	let rater_$index = document.getElementById(\"rater_$index\");
+	let rated_$index = document.getElementById(\"rated_$index\");
 
+	function rateValueChange_$index(){
+		rate_$index.innerHTML = \"星\" + rater_$index.value;
+		
+		let button_$index = document.getElementById(\"submittt_$index\");
+		button_$index.disabled = false;
+		button_$index.innerHTML = \"$rated_mes\";
+	}
+</script>";
+						echo "</form>", "\n";
 					echo "</div>", "\n";
+					echo "<input type='hidden' id='rated_$index' value=".$rated.">", "\n";
+					$index++;
 				}
 				echo "</div>", "\n";
 				echo "<hr>", "\n";
-				
 			}
-			echo "<input type='hidden' id='rated' value=".$rated.">", "\n";
 		?>
-		<script src="../js/history.js" defer></script>
 	</div>
 </body>
 
