@@ -18,7 +18,8 @@
 	$filename = $_FILES['upload_image']['name'];
 	$uploaded_path = '../img/'.$filename;
 	$result = move_uploaded_file($_FILES['upload_image']['tmp_name'],$uploaded_path);
-
+	$array = ['なし', '5科参考書', '情報参考書','国語参考書','数学参考書','社会参考書','英語参考書','理科参考書','その他の参考書'];
+	$i = $_POST['category'];
     echo '<h1>登録しました</h1>';
 
     echo '<button class="shohin"><img class="img1" src="../img/'.$_FILES['upload_image']['name']. '">';
@@ -26,7 +27,7 @@
 	echo '<table class="itiran">';
 		echo '<tr>';
 			echo '<td>メーカー：', $_POST['mname'], '</td>';
-			echo '<td>カテゴリー：', $_POST['category'], '</td>';
+			echo '<td>カテゴリー：', $array[$i] , '</td>';
 		echo '</tr>';
 		echo '<tr>';
 			echo '<td>商品名：', $_POST['pname'], '</td>';
