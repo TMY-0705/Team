@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>新規登録完了</title>
 	<link rel="stylesheet" href="../css/insert_complete.css">
 </head>
 

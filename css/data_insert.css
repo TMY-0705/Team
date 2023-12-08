@@ -93,3 +93,8 @@ div{
     line-height: normal;
     /* Pタグ */
 }
+
+.err-msg {
+	text-align: center;
+	color: #ff4040;
+}

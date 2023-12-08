@@ -7,14 +7,13 @@
 	$products = $_POST['product'] ?? null;
 	$prices = $_POST['price'] ?? null;
 	$amounts = $_POST['amount'] ?? null;
-	// $isChanged = filter_var($_POST['isChanged']) ?? false;
+	$rate = 0;
 
 	$today = date("Ymd");
 	
 	try {
 		$sql = $db -> query("SELECT * FROM Carts WHERE account_id = $acc_id");
 		$res = $sql -> fetchAll(PDO::FETCH_ASSOC);
-		$override = false;
 
 		if($res && $products) {
 			$sql = $db -> query("SHOW TABLE STATUS LIKE 'Histories'");
@@ -28,7 +27,14 @@
 			$i = 0;
 
 			foreach($res as $row){
-				$sql = $db -> query("INSERT INTO Histories_detail VALUE ($next_id, ".$products[$i].", ".$amounts[$i].",0)");
+				$sql = $db -> query(
+					"SELECT * FROM Histories LEFT JOIN Histories_detail
+					 ON Histories.history_id = Histories_detail.history_id
+					 WHERE account_id = $acc_id AND product_id = ".$products[$i]);
+				$res = $sql -> fetch(PDO::FETCH_ASSOC);
+				if($res) $rate = $res['history_detail_rate'];
+
+				$sql = $db -> query("INSERT INTO Histories_detail VALUE ($next_id, ".$products[$i].", ".$amounts[$i].", $rate)");
 				$i++;
 			}
 

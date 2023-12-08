@@ -5,9 +5,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>カート一覧</title>
+	<title>カート内容</title>
 	<link rel="stylesheet" href="../css/cart.css">
-	<link rel="stylesheet" href="../css/product_detail.css">
+	<link rel="stylesheet" href="../css/product_detail2.css">
 </head>
 
 <body>
@@ -38,8 +38,9 @@
 						echo '<div class="content">', "\n";
 
 						echo '<div id="product_detail_detail">', "\n";
+						echo '<a href="product_detail.php?id='.$product_id.'">';
 						echo '<img src="../img/', $row['product_image'] ? $row['product_image'] : 'NoImage.png', '" alt="', $row['product_image'], 'の画像がでてナイ！">', "\n";
-						echo '</div>', "\n";
+						echo '</a></div>', "\n";
 
 						echo '<div class="detail">', "\n";
 						echo '<input type="hidden" name="product[]" value="', $product_id, '"></input>';

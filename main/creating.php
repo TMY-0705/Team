@@ -4,21 +4,23 @@
 	unset($_SESSION['loginfo']);
 
 	// 入力した情報を取得する
-	$name = $_POST['name'] ?? null;
-	$mail = $_POST['mail'] ?? null;
-	$pass1 = $_POST['pass1'] ?? null;
-	$pass2 = $_POST['pass2'] ?? null;
-	$postcode = $_POST['postcode'] ?? null;
-	$prefecture = $_POST['prefecture'] ?? null;
-	$town = $_POST['town'] ?? null;
-	$house = $_POST['house'] ?? null;
+	$name = "'".$_POST['name']."'" ?? null;
+	$mail = "'".$_POST['mail']."'" ?? null;
+	$pass1 = "'".$_POST['pass1']."'" ?? "";
+	$pass2 = "'".$_POST['pass2']."'" ?? "";
+	$postcode = "'".$_POST['postcode']."'" ?? null;
+	$prefecture = "'".$_POST['prefecture']."'" ?? null;
+	$town = "'".$_POST['town']."'" ?? null;
+	$house = "'".$_POST['house']."'" ?? null;
 
 	// データを挿入する
 	try {
 		$err = 1;
-		$sql = $db -> query("SELECT * FROM Accounts WHERE account_email = '$mail'");
+		$sql = $db -> query("SELECT * FROM Accounts WHERE account_email = $mail");
+		$res = $sql -> fetch(PDO::FETCH_ASSOC);
+		
 		// アカウントの存在確認
-		if($sql -> fetch()) header("Location: account_create.php?err=$err", true, 307);
+		if(!empty($res)) header("Location: account_create.php?err=$err", true, 307);
 		
 		$err = 2;
 		if($pass1 != $pass2){
@@ -26,7 +28,7 @@
 		}
 
 		$err = 3;
-		$s = "INSERT INTO Accounts VALUE (NULL, '$name', '$mail', '$pass2', '$postcode', '$prefecture', '$town', '$house');";
+		$s = "INSERT INTO Accounts VALUE (NULL, $name, $mail, $pass2, $postcode, $prefecture, $town, $house);";
 		$sql = $db -> query($s);
 		$res = $sql -> fetch(PDO::FETCH_ASSOC);
 

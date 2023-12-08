@@ -5,5 +5,5 @@ function recalc(){
 
 	var num = x.innerHTML.replace(/,/g, "");
 
-	z.innerHTML = "￥" + (num * y.value).toLocaleString();
+	z.innerHTML = "￥ " + (num * y.value).toLocaleString();
 }
