@@ -146,7 +146,6 @@
 					$hyouka = $hyoukaResult['count'];
 					echo $hyouka;
 					echo $sumCount;
-					$h
 					if($sumCount&&$zeroCount==0){
                     	$hiritu = round($hyouka/$sumCount,1)*100;
 						echo '<tr><td>星',$i,'つ ', $hyouka,'件 ',$hiritu,'%</td></tr>';
