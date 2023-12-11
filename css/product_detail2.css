@@ -35,10 +35,9 @@ body {
     background: #FCFF67;
 }
 
-#product_detail_detail>img {
+#product_detail_detail>a>img {
 	width: 24vw;
-	max-width: 384px;
-	max-height: 384px;
+	height: auto;
 	border: 1px solid #111;
 }
 

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../css/data_insert.css">
     <script src="../js/jquery-3.7.0.min.js"></script>
 	<script src="../js/postcode.js"></script>
-    <title>Document</title>
+    <title>新規登録</title>
 </head>
 <body>
 	<?php
