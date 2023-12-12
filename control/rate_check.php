@@ -125,13 +125,9 @@
 						?>件</td>
 				</tr>
 				<?php
-				$zeroQuery = $db->query(
-					"SELECT COUNT(history_detail_rate) AS zerocou FROM Histories_detail
-					WHERE Histories_detail.product_id = $id AND Histories_detail.history_detail_rate = 0"
+			
 					
-				);
-				$zeroResult = $zeroQuery->fetch(PDO::FETCH_ASSOC);
-				$zeroCount = $zeroResult['zerocou'];
+				
 				
 				for($i =1;$i<=5;$i++){
 				
@@ -145,7 +141,7 @@
                 if ($sql) {
 					$hyoukaResult = $sql->fetch(PDO::FETCH_ASSOC);
 					$hyouka = $hyoukaResult['count'];
-					if($sumCount&&$zeroCount==0){
+					if($sumCount){
                     	$hiritu = round($hyouka/$sumCount,1)*100;
 						echo '<tr><td>星',$i,'つ ', $hyouka,'件 ',$hiritu,'%</td></tr>';
 					}else{
