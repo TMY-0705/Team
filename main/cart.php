@@ -48,7 +48,7 @@
 						echo '<p class="title">￥', number_format($row['product_price']), '</p>', "\n";
 						echo '<input type="hidden" name="price[]" id="price_', $i, '" value="', $row['product_price'], '">', "\n";
 						echo '<h3 class="any">数量: ', "\n";
-						echo '<input type="number" name="amount[]" class="number" id="amount_', $i, '" name="amount" value="', $row['amount'], '" min="1" oninput="recalc();">', "\n";
+						echo '<input type="number" name="amount[]" class="number" id="amount_', $i, '" name="amount" value="', $row['amount'], '" min="1" max="', $row['product_stock'], '" oninput="recalc();">', "\n";
 						echo ' | <a href="cart_del.php?id=', $row['product_id'], '">削除</a></h3>', "\n";
 						echo '</div>', "\n";
 

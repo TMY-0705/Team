@@ -30,11 +30,17 @@
 				$sql = $db -> query(
 					"SELECT * FROM Histories LEFT JOIN Histories_detail
 					 ON Histories.history_id = Histories_detail.history_id
-					 WHERE account_id = $acc_id AND product_id = ".$products[$i]);
+					 LEFT JOIN Products ON Histories_detail.product_id = Products.product_id
+					 WHERE account_id = $acc_id AND Products.product_id = ".$products[$i]);
 				$res = $sql -> fetch(PDO::FETCH_ASSOC);
-				if($res) $rate = $res['history_detail_rate'];
+				if($res) {
+					$rate = $res['history_detail_rate'];
+					$stock = $res['product_stock'];
+				}
 
 				$sql = $db -> query("INSERT INTO Histories_detail VALUE ($next_id, ".$products[$i].", ".$amounts[$i].", $rate)");
+				$sql = $db -> query("UPDATE Products SET product_stock = product_stock - ".$amounts[$i]." WHERE product_stock >= 1");
+				$sql = $db -> query("UPDATE Products SET product_stock = 0 WHERE product_stock < 0");
 				$i++;
 			}
 

@@ -24,29 +24,35 @@
 		<!-- header -->
 		<?php require 'header.php'; ?>
 		<?php require '../php_init/db-connect.php'; ?>
-      
+
+		<?php
+			if($name)
+				$sql = $db -> query("SELECT * FROM Products WHERE product_name LIKE '%$name%'");	
+			else if($maker)
+				$sql = $db -> query("SELECT * FROM Products JOIN Categories
+				ON Products.category_id = Categories.category_id WHERE product_maker LIKE '%$maker%'");
+			else
+				$sql = $db -> query('SELECT * FROM Products');
+			$cnt = 0;
+		?>
+
 		<table class="menu">
 			<?php
-				if($name)
-				  
-					$sql = $db -> query("SELECT * FROM Products WHERE product_name LIKE '%$name%'");	
-				else if($maker)
-					$sql = $db -> query("SELECT * FROM Products JOIN Categories
-					ON Products.category_id = Categories.category_id WHERE product_maker LIKE '%$maker%'");
-					
-				else
-					$sql = $db -> query('SELECT * FROM Products');
-				$cnt = 0;
-
 				echo '<tr>';
 				foreach($sql as $row){
+					if($row['product_stock'] > 0) {
+						echo '<td><a href=product_detail.php?id=', $row['product_id'],
+							'><img src="../img/', $row['product_image'] ? $row['product_image'] : 'NoImage.png', 
+							'" alt="', $row['product_name'],
+							'"></a></td>';
+					} else {
+						continue;
+					}
+					
 					$cnt++; // 1 2 3
-					echo '<td><a href=product_detail.php?id=', $row['product_id'],
-						 '><img src="../img/', $row['product_image'] ? $row['product_image'] : 'NoImage.png', 
-						 '" alt="', $row['product_name'],
-						 '"></a></td>';
 					if($cnt % 3 == 0) echo '</tr><tr>';
 				}
+				echo '</tr>';
 			?>
 		</table>
 	</body>

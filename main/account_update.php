@@ -15,7 +15,7 @@
 <body>
 	<?php
 		$sql = $db -> query('SELECT * FROM Accounts WHERE account_id = '.$_SESSION['loginfo']['acc_id']);
-		$res = $sql -> fetch();
+		$res = $sql -> fetch(PDO::FETCH_ASSOC);
 		
 		$name       = $_POST['name']       ?? $res['account_name'];
 		$mail       = $_POST['mail']       ?? $res['account_email'];
@@ -36,9 +36,9 @@
 			<p class="char">メールアドレス (最大128文字)</p>
 				<input type="text" required name="mail" class="text" maxlength="128" value="<?=$mail?>">
 			<p class="char">パスワード (最大128文字)</p>
-				<input type="password" required name="pass1" class="text" maxlength="128" value="<?=$pass1?>">
+				<input type="password" name="pass1" class="text" maxlength="128" value="<?=$pass1?>">
 			<p class="char">もう一度パスワードを入力してください</p>
-				<input type="password" required name="pass2" class="text" maxlength="128" value="<?=$pass2?>">
+				<input type="password" name="pass2" class="text" maxlength="128" value="<?=$pass2?>">
 			<p class="char">郵便番号 (7文字)</p>
 				<input type="text" required name="postcode" class="postcode" maxlength="7" value="<?=$postcode?>">
 			<p class="char">都道府県・市区町村 (最大128文字)</p>

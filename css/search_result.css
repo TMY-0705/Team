@@ -4,14 +4,14 @@ table {
 }
 
 td {
-    border: 1px solid #000;
     background: #FFF;
 	
 	text-align: center;
 }
 
 
-img {
+td > a > img {
     max-width: 198px;
     max-height: 198px;
+	border: 1px solid #000;
 }
