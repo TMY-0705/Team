@@ -88,7 +88,7 @@
 						} 		
 						$sumQuery = $db->query(
 							"SELECT COUNT(history_detail_rate) as cou FROM Histories_detail
-							WHERE Histories_detail.product_id = $id Histories_detail.history_detail_rate >= 1"
+							WHERE Histories_detail.product_id = $id AND Histories_detail.history_detail_rate >= 1"
 						);
 						
 						if ($sumQuery) {
