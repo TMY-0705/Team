@@ -13,9 +13,6 @@
 		"
 	);
 	$res = $sql->fetch(PDO::FETCH_ASSOC);
-
-	$sql = $db->query("SELECT COUNT(product_id) as cnt, AVG(history_detail_rate) as avg FROM Histories_detail");
-	$res2 = $sql->fetch(PDO::FETCH_ASSOC);
 ?>
 <head>
     <meta charset="UTF-8">
@@ -119,8 +116,7 @@
 						
 						if ($sumCount) {
 						
-						
-							echo $sumCount;
+						   echo $sumCount;
 						} else {
 							echo '0';
 						}
@@ -140,7 +136,12 @@
 				for($i =1;$i<=5;$i++){
 				
 				$sql = $db->query("SELECT COUNT(product_id) as count FROM Histories_detail
-				WHERE Histories_detail.history_detail_rate = $i");
+				WHERE Histories_detail.history_detail_rate = $i
+				AND Histories_detail.product_id = $id"
+				
+
+				);
+
                 if ($sql) {
 					$hyoukaResult = $sql->fetch(PDO::FETCH_ASSOC);
 					$hyouka = $hyoukaResult['count'];
