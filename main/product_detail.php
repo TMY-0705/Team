@@ -14,6 +14,7 @@
 			WHERE Products.product_id = $id
 		");
 	$res = $sql->fetch(PDO::FETCH_ASSOC);
+	$stock = $res['product_stock'] ?? -1;
 
 	$sql = $db->query("SELECT product_id, COUNT(product_id) as cnt, AVG(history_detail_rate) as avg
 	FROM Histories_detail WHERE product_id=$id GROUP BY product_id");
@@ -77,7 +78,7 @@
 					￥&nbsp;<?=number_format($res['product_price'])?>
 				</span>
 				<p class="any">数量:
-					<input type="number" class="number" id="amount" name="amount" value="1" min="1" oninput="recalc();">
+					<input type="number" class="number" id="amount" name="amount" value="1" min="1" max="<?= $stock ?>" oninput="recalc();">
 				</p>
 				<input type="hidden" name="product_id" value="<?= $id ?>">
 				<button type="submit">カートに入れる</button>

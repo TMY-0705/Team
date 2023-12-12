@@ -12,10 +12,10 @@
 	<?php require 'header2.php' ?>
 	<?php require '../php_init/db-connect.php' ?>
 	<?php
-	$sql=$db->prepare('insert into Products Values (NULL, ?, ?, ?, ?, ?, ?)');
-	$sql->execute([$_POST["pname"], $_POST["price"], $_POST["stock"], $_FILES['upload_image']['name'], $_POST["mname"], $_POST["category"]]);
-
+	
 	$filename = $_FILES['upload_image']['name'];
+	$sql=$db->prepare('insert into Products Values (NULL, ?, ?, ?, ?, ?, ?)');
+	$sql->execute([$_POST["pname"], $_POST["price"], $_POST["stock"], $real_name, $_POST["mname"], $_POST["category"]]);
 	$uploaded_path = '../img/'.$filename;
 	$result = move_uploaded_file($_FILES['upload_image']['tmp_name'],$uploaded_path);
 	$array = ['なし', '5科参考書', '情報参考書','国語参考書','数学参考書','社会参考書','英語参考書','理科参考書','その他の参考書'];

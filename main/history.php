@@ -19,17 +19,17 @@
 		<?php
 			$acc_id = $_SESSION['loginfo']['acc_id'];
 			$sql = $db -> query("SELECT * FROM Histories WHERE account_id = $acc_id");
-			$result = $sql -> fetchAll();
+			$result = $sql -> fetchAll(PDO::FETCH_ASSOC);
 			$sql = $db -> query("SELECT * FROM Accounts WHERE account_id = $acc_id");
-			$accinfo = $sql -> fetch();
+			$accinfo = $sql -> fetch(PDO::FETCH_ASSOC);
 
 			$sql = $db -> query(
 				"SELECT * FROM Histories LEFT JOIN Histories_detail 
 				ON Histories.history_id = Histories_detail.history_id
-				JOIN Products ON Histories_detail.product_id = Products.product_id
+				LEFT JOIN Products ON Histories_detail.product_id = Products.product_id
 				WHERE account_id = $acc_id"
 			);
-			$detail = $sql -> fetchAll();
+			$detail = $sql -> fetchAll(PDO::FETCH_ASSOC);
 
 			if($detail) {
 				$current_id = $detail[0]['history_id'];
