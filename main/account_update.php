@@ -40,13 +40,13 @@
 			<p class="char">もう一度パスワードを入力してください</p>
 				<input type="password" required name="pass2" class="text" maxlength="128" value="<?=$pass2?>">
 			<p class="char">郵便番号 (7文字)</p>
-				<input type="text" name="postcode" class="postcode" maxlength="7" value="<?=$postcode?>">
+				<input type="text" required name="postcode" class="postcode" maxlength="7" value="<?=$postcode?>">
 			<p class="char">都道府県・市区町村 (最大128文字)</p>
-				<input type="text" name="prefecture" class="text" maxlength="128" value="<?=$prefecture?>">
+				<input type="text" required name="prefecture" class="text" maxlength="128" value="<?=$prefecture?>">
 			<p class="char">丁目・番地・号 (最大128文字)</p>
-				<input type="text" name="town" class="text" maxlength="128" value="<?=$town?>">
+				<input type="text" required name="town" class="text" maxlength="128" value="<?=$town?>">
 			<p class="char">建物名・部屋番号 (最大128文字)</p>
-				<input type="text" name="house" class="text" maxlength="128" value="<?=$house?>"><br>
+				<input type="text" required name="house" class="text" maxlength="128" value="<?=$house?>"><br>
 			<p class="err-msg">
 				<?php
 					$err = $_GET['err'] ?? null;
