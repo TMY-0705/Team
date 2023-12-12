@@ -32,13 +32,13 @@
 		<div>
 			<h1>アカウント情報を編集</h1>
 			<p class="char">名前 (最大32文字)</p>
-				<input type="text" name="name" class="text" maxlength="32" value="<?=$name?>">
+				<input type="text" required name="name" class="text" maxlength="32" value="<?=$name?>">
 			<p class="char">メールアドレス (最大128文字)</p>
-				<input type="text" name="mail" class="text" maxlength="128" value="<?=$mail?>">
+				<input type="text" required name="mail" class="text" maxlength="128" value="<?=$mail?>">
 			<p class="char">パスワード (最大128文字)</p>
-				<input type="password" name="pass1" class="text" maxlength="128" value="<?=$pass1?>">
+				<input type="password" required name="pass1" class="text" maxlength="128" value="<?=$pass1?>">
 			<p class="char">もう一度パスワードを入力してください</p>
-				<input type="password" name="pass2" class="text" maxlength="128" value="<?=$pass2?>">
+				<input type="password" required name="pass2" class="text" maxlength="128" value="<?=$pass2?>">
 			<p class="char">郵便番号 (7文字)</p>
 				<input type="text" name="postcode" class="postcode" maxlength="7" value="<?=$postcode?>">
 			<p class="char">都道府県・市区町村 (最大128文字)</p>
