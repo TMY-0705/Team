@@ -41,9 +41,9 @@
 				foreach($sql as $row){
 					$cnt++; // 1 2 3
 					echo '<td><a href=product_detail.php?id=', $row['product_id'],
-						 '><img src="../img/', $row['product_image'], 
+						 'style="text-decoration:none;"><img src="../img/', $row['product_image'], 
 						 '" alt="', $row['product_name'],
-						 '">',$row['product_name'],'<br>￥',$row['product_price'],'</a></td>';
+						 '"><br>',$row['product_name'],'<br>￥',$row['product_price'],'</a></td>';
 					if($cnt % 3 == 0) echo '</tr><tr>';
 				}
 			?>
