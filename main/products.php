@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="../css/search_result.css">
+		<link rel="stylesheet" href="../css/products.css">
 		<?php
 			$name = $_GET['key'] ?? null;
 			$maker = $_GET['maker'] ?? null;
