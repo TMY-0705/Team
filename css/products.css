@@ -9,9 +9,13 @@ td {
 	text-align: center;
 }
 
-
 td > a > img {
     max-width: 198px;
     max-height: 198px;
 	border: 1px solid #000;
+}
+
+.result {
+	margin: 30px 60px 0px 60px;
+	font-size: 25px;
 }
