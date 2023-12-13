@@ -39,7 +39,7 @@
 			<p class="char">丁目・番地・号 (最大128文字)</p>
 				<input type="text" required name="town" class="text" maxlength="128" value="<?=$town?>">
 			<p class="char">建物名・部屋番号 (最大128文字)</p>
-				<input type="text" required name="house" class="text" maxlength="128" value="<?=$house?>"><br>
+				<input type="text" name="house" class="text" maxlength="128" value="<?=$house?>"><br>
 			<p class="err-msg">
 				<?php
 					$err = $_GET['err'] ?? null;
