@@ -55,6 +55,11 @@
 					$cnt++; // 1 2 3
 					if($cnt % 3 == 0) echo '</tr><tr>';
 				}
+				if($cnt == 0)
+					if($name || $maker)
+						echo '<p class="notFound">検索条件に合う商品はありません。</p>';
+					else
+						echo '<p class="notFound">利用可能な商品はありません。</p>';
 				echo '</tr>';
 			?>
 		</table>
