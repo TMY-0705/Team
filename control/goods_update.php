@@ -68,7 +68,7 @@
 							echo $res['product_price'];
 						}
 						?>"><br>
-<span class="file">・商品画像　　</span><input type="file" name="upload_image" class="filebutton" accept="image/*" value="<?php
+<span class="yohaku">・商品画像　　</span><input type="file" name="upload_image" class="filebutton" accept="image/*" value="<?php
 						if (isset($res['product_image'])) {
 							echo $res['product_image'];
 						}
