@@ -1,3 +1,5 @@
+<?php require '../php_init/login_check_control.php' ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>

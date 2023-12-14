@@ -1,4 +1,6 @@
+<?php require '../php_init/login_check_control.php' ?>
 <?php require '../php_init/db-connect.php' ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <?php

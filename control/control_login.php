@@ -20,8 +20,11 @@
 				    $err = $_GET['err'] ?? null;
 				    switch($err){
 					    case 1:
-						  echo 'メールアドレスまたはパスワードが違います。';
-						  break;
+                echo 'メールアドレスまたはパスワードが違います。';
+                break;
+					    case 2:
+                echo '管理者専用アカウントでのログインが必要です。';
+                break;
 				    }
 			    ?>
 		    </p>

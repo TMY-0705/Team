@@ -2,14 +2,14 @@
 <?php require '../php_init/db-connect.php' ?>
 <?php
 	// 入力した情報を取得する
-	$name = $_POST['name'] ?? null;
-	$mail = $_POST['mail'] ?? null;
-	$pass1 = $_POST['pass1'] ?? null;
-	$pass2 = $_POST['pass2'] ?? null;
-	$postcode = $_POST['postcode'] ?? null;
-	$prefecture = $_POST['prefecture'] ?? null;
-	$town = $_POST['town'] ?? null;
-	$house = $_POST['house'] ?? null;
+	$name = $_POST['name'] ? $_POST['name'] : null;
+	$mail = $_POST['mail'] ? $_POST['mail'] : null;
+	$pass1 = $_POST['pass1'] ? $_POST['pass1'] : "";
+	$pass2 = $_POST['pass2'] ? $_POST['pass2'] : "";
+	$postcode = $_POST['postcode'] ? $_POST['postcode'] : null;
+	$prefecture = $_POST['prefecture'] ? $_POST['prefecture'] : null;
+	$town = $_POST['town'] ? $_POST['town'] : null;
+	$house = $_POST['house'] ? $_POST['house'] : null;
 
 	$isPassNull = !$pass1 && !$pass2;
 

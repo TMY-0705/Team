@@ -4,6 +4,8 @@
 	$user = $_POST['user_id'] ?? null;
 	$pass = $_POST['password'] ?? null;
 
+	if($user != 0) header("Location: control_login.php?err=2");
+
 	// アカウントテーブルの内容を入力した情報にそって検索する
 	$s = 'SELECT * FROM Accounts WHERE account_email = '."'$user'";
 	// echo $s;
@@ -22,6 +24,11 @@
 
     if($res){
 		if($pass == $res['account_pass']){
+			$_SESSION['loginfo'] = [
+				'acc_id' => $res['account_id'],
+				'email' => $user,
+				'pass' => $pass,
+			];
 			header("Location: control_menu.php");
 		}else{
 			header("Location: control_login.php?err=1");
