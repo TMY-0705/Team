@@ -5,7 +5,7 @@
 		<a href="products.php"><img class="img_btn" src="../img/Home.png"></a>
 	</span>
 	<span class="m2">
-		<form name="box" method="GET">
+		<form action="products.php" name="box" method="GET">
 			<input type="text" name="key">
 			<a href="javascript:box.submit();"><img class="img_btn2" src="../img/Search.png"></a>
 		</form>
