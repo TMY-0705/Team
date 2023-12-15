@@ -3,8 +3,8 @@
 <?php
 	unset($_SESSION['loginfo']);
 	// 入力した情報を取得する
-	$user = $_POST['user_id'] ?? null;
-	$pass = $_POST['password'] ?? null;
+	$user = $_POST['user_id'] ? $_POST['user_id'] : null;
+	$pass = $_POST['password'] ? $_POST['password'] : null;
 
 	// アカウントテーブルの内容を入力した情報にそって検索する
 	$s = 'SELECT * FROM Accounts WHERE account_email = '."'$user'";
@@ -19,10 +19,10 @@
 	// echo $pass, ", ", $res['account_pass'];
 	// print_r($res);
 
-    // $logged = password_verify($pass, password_hash($pass, PASSWORD_DEFAULT));
+	$logged = password_verify($pass, password_hash($pass, PASSWORD_DEFAULT));
 
     if($res){
-		if($pass == $res['account_pass']){
+		if($pass == $res['account_pass'] || $logged){
 			$_SESSION['loginfo'] = [
 				'acc_id' => $res['account_id'],
 				'email' => $user,

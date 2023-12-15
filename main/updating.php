@@ -25,6 +25,7 @@
 		if($pass1 != $pass2){
 			header("Location: account_update.php?err=$err", true, 307);
 		}
+		$pass_enc = password_hash($pass1, PASSWORD_DEFAULT);
 
 		$err = 3;
 		// パスワードが空かどうかで処理を分ける
@@ -41,7 +42,7 @@
 			$s = "UPDATE Accounts SET 
 				account_name = '$name',
 				account_email = '$mail',
-				account_pass = '$pass1',
+				account_pass = '$pass_enc',
 				account_postal = '$postcode',
 				account_addr_main = '$prefecture',
 				account_addr_detail = '$town',

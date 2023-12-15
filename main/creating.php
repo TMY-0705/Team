@@ -30,9 +30,10 @@
 		if($pass1 != $pass2){
 			header("Location: account_create.php?err=$err", true, 307);
 		}
+		$pass_enc = password_hash($pass2, PASSWORD_DEFAULT);
 
 		$err = 3;
-		$s = "INSERT INTO Accounts VALUE (NULL, '$name', '$mail', '$pass2', '$postcode', '$prefecture', '$town', '$house');";
+		$s = "INSERT INTO Accounts VALUE (NULL, '$name', '$mail', '$pass_enc', '$postcode', '$prefecture', '$town', '$house');";
 		$sql = $db -> query($s);
 		$res = $sql -> fetch(PDO::FETCH_ASSOC);
 

@@ -10,6 +10,7 @@
 </style>
 
 <?php
+	echo password_hash("Admin", PASSWORD_DEFAULT);
 	// 入力した情報を取得する
 	$name = $_POST['name'] ?? null;
 	$mail = $_POST['mail'] ?? null;
